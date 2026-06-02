@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-15,SENSEX 15 APR 76800 PE Downtrend,Downtrend,PE,76800,97.0,11:17:00 IST,11:30:00 IST,575.04,581.0,581.0,1.04,Success,stop_loss_hit

@@ -1,0 +1,3 @@
+Way to run code 
+
+"NSE-Option-Scanner-Backtest.py" 2026-05-21

@@ -1,0 +1,3 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-16,NIFTY 16 JAN 23300 PE General Buy / Sell,PE,23300,85.0,10:51:00 IST,11:00:00 IST,246.14,247.55,247.55,0.57,Success,stop_loss_hit
+2025-01-16,NIFTY 16 JAN 23100 CE General Buy / Sell,CE,23100,85.0,12:47:00 IST,13:25:00 IST,255.83,250.15,250.15,-2.22,Failure,stop_loss_hit

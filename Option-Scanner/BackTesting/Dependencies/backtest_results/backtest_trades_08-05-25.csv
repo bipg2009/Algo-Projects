@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-05-08,SENSEX 8 MAY 80800 PE Downtrend,Downtrend,PE,80800,97.0,09:50:00 IST,09:51:00 IST,1329.92,1319.92,1319.92,-0.75,Failure,stop_loss_hit

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Testing Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo"></div>
+                <h2>Algo Engine</h2>
+            </div>
+            <nav>
+                <a href="/dashboard" class="nav-item">Live Dashboard</a>
+                <a href="#" class="nav-item">Trade History</a>
+                <a href="#" class="nav-item">System Logs</a>
+                <a href="/testing" class="nav-item active">Testing</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <h1 style="font-size: 1.5rem; color: var(--text-primary);">CSV Testing Simulator</h1>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Upload historical CSVs or trade books to run a backtest simulation.</p>
+                </div>
+            </header>
+
+            <div class="metrics-grid" style="margin-top: 24px; display: block;">
+                <!-- Upload Panel -->
+                <div class="panel" style="max-width: 600px; margin: 0 auto;">
+                    <h3 style="margin-bottom: 16px;">Simulation Configuration</h3>
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div class="form-group">
+                            <label for="csv-upload" style="font-weight: 500;">Upload CSV File</label>
+                            <input type="file" id="csv-upload" accept=".csv" class="form-control" style="padding: 12px; cursor: pointer; border: 2px dashed var(--border-color); background: transparent;">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="test-type" style="font-weight: 500;">Simulation Type</label>
+                            <select id="test-type" class="form-control" style="padding: 12px;">
+                                <option value="tradebook">Tradebook Analysis</option>
+                                <option value="tick_replay">Tick Replay Simulator</option>
+                                <option value="custom">Custom Backtest Logic</option>
+                            </select>
+                        </div>
+
+                        <button id="run-test-btn" class="btn btn-buy" style="padding: 12px; font-size: 1rem; width: 100%; margin-top: 8px;">Run Simulator</button>
+                    </div>
+                    
+                    <div id="test-status" style="margin-top: 24px; padding: 16px; border-radius: 8px; background: rgba(0,0,0,0.2); display: none;">
+                        <h4 style="margin-bottom: 8px; font-size: 0.9rem;">Simulation Status:</h4>
+                        <pre id="test-output-log" style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #a1a1aa; white-space: pre-wrap; word-wrap: break-word;">Waiting to begin...</pre>
+                    </div>
+                </div>
+                
+                <!-- Results Panel -->
+                <div class="panel" id="results-panel" style="margin-top: 24px; display: none;">
+                    <h3>Simulation Results</h3>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; margin-bottom: 24px;">
+                        <div class="metric-card" style="padding: 16px;">
+                            <div class="metric-label">Total Trades</div>
+                            <div class="metric-value" id="res-total-trades">0</div>
+                        </div>
+                        <div class="metric-card" style="padding: 16px;">
+                            <div class="metric-label">Win Rate</div>
+                            <div class="metric-value" id="res-win-rate">0%</div>
+                        </div>
+                        <div class="metric-card" style="padding: 16px;">
+                            <div class="metric-label">Net P&L</div>
+                            <div class="metric-value" id="res-pnl" style="color: var(--success-color);">₹ 0.00</div>
+                        </div>
+                        <div class="metric-card" style="padding: 16px;">
+                            <div class="metric-label">Max Drawdown</div>
+                            <div class="metric-value" id="res-drawdown" style="color: var(--danger-color);">₹ 0.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/assets/testing.js"></script>
+</body>
+</html>

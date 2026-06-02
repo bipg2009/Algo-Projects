@@ -1,0 +1,4 @@
+symbol,time_ist,datetime_ist,option_ltp,rsi_1m,trailing_sl,action,reason
+SENSEX 27 JAN 75500 CE General Buy / Sell,11:23:00 IST,27-01-25 11:23:00 IST,809.7,58.62431286375271,807.8,HOLD,no_exit_condition_met
+SENSEX 27 JAN 75500 CE General Buy / Sell,11:24:00 IST,27-01-25 11:24:00 IST,809.7,56.21661480180884,807.8,HOLD,no_exit_condition_met
+SENSEX 27 JAN 75500 CE General Buy / Sell,11:25:00 IST,27-01-25 11:25:00 IST,715.5,59.69346094081448,807.8,EXIT,stop_loss_hit

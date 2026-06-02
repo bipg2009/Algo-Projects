@@ -1,0 +1,6 @@
+CE_RSI_TRIGGER: 61.0 (RSI must be at or above this value to trigger a potential Call Trade)
+PE_RSI_TRIGGER: 40.0 (RSI must be at or below this value to trigger a potential Put Trade)
+CE_RSI_MIN: 61.0 (Lower boundary of Call RSI alerts)
+CE_RSI_MAX: 90.0 (Upper boundary of Call RSI alerts)
+PE_RSI_MIN: 10.0 (Lower boundary of Put RSI alerts)
+PE_RSI_MAX: 40.0 (Upper boundary of Put RSI alerts)

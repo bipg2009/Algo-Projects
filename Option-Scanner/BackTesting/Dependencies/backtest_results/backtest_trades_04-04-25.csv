@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-04,SENSEX 4 APR 75700 PE Downtrend,Downtrend,PE,75700,97.0,11:43:00 IST,11:55:00 IST,479.75,472.5,472.5,-1.51,Failure,stop_loss_hit
+2025-04-04,SENSEX 4 APR 75600 PE Downtrend,Downtrend,PE,75600,97.0,12:08:00 IST,12:30:00 IST,404.25,507.3,507.3,25.49,Success,stop_loss_hit
+2025-04-04,SENSEX 4 APR 75400 PE Downtrend,Downtrend,PE,75400,107.0,13:47:00 IST,14:00:00 IST,361.93,352.2,352.2,-2.69,Failure,stop_loss_hit

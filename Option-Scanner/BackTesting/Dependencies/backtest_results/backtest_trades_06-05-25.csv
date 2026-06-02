@@ -1,0 +1,3 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-05-06,SENSEX 6 MAY 80700 PE Downtrend,Downtrend,PE,80700,97.0,10:09:00 IST,10:25:00 IST,720.48,789.8,789.8,9.62,Success,stop_loss_hit
+2025-05-06,SENSEX 6 MAY 80500 CE Uptrend,Uptrend,CE,80500,107.0,11:55:00 IST,12:00:00 IST,732.1,722.1,722.1,-1.37,Failure,stop_loss_hit

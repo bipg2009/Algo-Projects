@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-24,SENSEX 24 JAN 76500 CE General Buy / Sell,CE,76500,85.0,10:40:00 IST,10:50:00 IST,566.46,570.0,570.0,0.62,Success,stop_loss_hit

@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-07,NIFTY 7 JAN 23800 PE General Buy / Sell,PE,23800,85.0,12:04:00 IST,12:30:00 IST,285.58,275.58,275.58,-3.5,Failure,stop_loss_hit

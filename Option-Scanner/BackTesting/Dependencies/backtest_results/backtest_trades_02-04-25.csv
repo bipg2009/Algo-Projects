@@ -1,0 +1,3 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-02,SENSEX 2 APR 76500 PE Downtrend,Downtrend,PE,76500,97.0,11:19:00 IST,11:55:00 IST,501.47,507.75,507.75,1.25,Success,stop_loss_hit
+2025-04-02,SENSEX 2 APR 76400 PE Downtrend,Downtrend,PE,76400,107.0,12:59:00 IST,15:12:00 IST,507.17,502.15,497.17,-0.99,Failure,TIME_DECAY

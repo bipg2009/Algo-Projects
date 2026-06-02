@@ -1,0 +1,5 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-08,NIFTY 8 JAN 23750 PE General Buy / Sell,PE,23750,95.0,10:28:00 IST,10:35:00 IST,222.05,212.05,212.05,-4.5,Failure,stop_loss_hit
+2025-01-08,NIFTY 8 JAN 23650 PE General Buy / Sell,PE,23650,95.0,10:47:00 IST,11:00:00 IST,106.35,108.5,108.5,2.02,Success,stop_loss_hit
+2025-01-08,NIFTY 8 JAN 23700 PE General Buy / Sell,PE,23700,95.0,11:23:00 IST,11:30:00 IST,170.29,160.29,160.29,-5.87,Failure,stop_loss_hit
+2025-01-08,NIFTY 8 JAN 23600 PE General Buy / Sell,PE,23600,95.0,12:42:00 IST,15:12:00 IST,90.19,89.3,80.19,-0.99,Failure,TIME_DECAY

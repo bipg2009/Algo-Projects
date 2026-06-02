@@ -1,0 +1,2 @@
+symbol,time_ist,datetime_ist,option_ltp,rsi_1m,trailing_sl,action,reason
+SENSEX 21 MAY 81700 PE Downtrend,11:51:00 IST,21-05-25 11:51:00 IST,1066.9,25.548907694519926,1067.57,EXIT,stop_loss_hit

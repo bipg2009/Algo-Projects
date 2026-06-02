@@ -1,0 +1,53 @@
+# Secrets — never commit API tokens
+cred.env
+.env
+*.env
+!*.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Runtime / session state
+scanner_state.json
+signal.json
+exit_signal.json
+chain_state.json
+trading_execution_ledger.csv
+
+# Logs and generated data
+Dependencies/log_files/
+Dependencies/hourly_logs/
+Dependencies/oi_volume_alerts*.csv
+Dependencies/all_instrument*.csv
+
+# Excel workbooks (live market data; keep locally)
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# Ignore all PDF files anywhere in the project
+*.pdf
+
+# Ignore Word documents and text logs
+*.docx
+*.txt
+ALERTS.txt
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore Cursor settings and histories
+.cursor/
+.history/

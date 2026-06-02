@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-20,SENSEX 20 JAN 76700 CE General Buy / Sell,CE,76700,85.0,10:22:00 IST,10:34:00 IST,656.5,650.0,646.5,-0.99,Failure,time_cutoff_12m

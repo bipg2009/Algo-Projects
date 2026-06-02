@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+08-05-25,2025-05-08_35,09:50:00 IST,BUY,SENSEX 8 MAY 80800 PE,Downtrend,PE,1329.92,1319.92,41.35987901295367,194340,
+08-05-25,2025-05-08_35,09:51:00 IST,SELL,SENSEX 8 MAY 80800 PE,Downtrend,PE,1319.92,1319.92,43.904423102033434,194340,Failure

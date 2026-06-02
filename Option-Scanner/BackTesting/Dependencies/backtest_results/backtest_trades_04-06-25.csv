@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-06-04,SENSEX 4 JUN 80800 CE Uptrend,Uptrend,CE,80800,105.0,12:13:00 IST,12:30:00 IST,925.77,957.3,957.3,3.41,Success,stop_loss_hit

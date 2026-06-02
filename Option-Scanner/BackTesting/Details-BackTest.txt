@@ -1,0 +1,28 @@
+BackTesting
+
+You can run python BackTesting\analyze_score_buckets.py at any time after running massive backtests to instantly regenerate these two segregated files!
+
+If you run the standard scanner (Running-Backtest.py or NSE_Option_Scanner_Backtest.py), they dump directly into BackTesting/Reports/.
+If you use the massive batch runner (run_massive_backtests.py), it organizes them into subfolders like BackTesting/Reports/May-Runs/.
+
+
+Great question. I just dug into the entire chain of how run_massive_backtests.py executes, and here is exactly how it is wired right now:
+
+You run run_massive_backtests.py.
+That script launches multi_day_backtest.py for each date chunk.
+Inside multi_day_backtest.py (on line 11), the engine is hardcoded to NSE:
+python
+
+
+file_path = os.path.join(os.path.dirname(__file__), "NSE-Option-Scanner-Backtest.py")
+Because of this hardcoded line, your massive backtests are currently only running NSE (NIFTY/BANKNIFTY/FINNIFTY/MIDCPNIFTY).
+
+If you want to be able to seamlessly switch between NSE and BSE, I can quickly upgrade
+
+multi_day_backtest.py and run_massive_backtests.py to accept an index argument (e.g., you tell it "BSE" and it will load BSE-Option-Scanner-Backtest.py instead). Would you like me to make that change?
+
+I just implemented the upgrade for you!
+
+I modified both multi_day_backtest.py and run_massive_backtests.py to seamlessly accept and route an Exchange argument.
+
+If you open run_massive_backtests.py now, look at Line 11. You will see a brand new configuration variable:

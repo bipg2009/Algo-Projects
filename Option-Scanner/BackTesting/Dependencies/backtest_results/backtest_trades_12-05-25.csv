@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-05-12,SENSEX 12 MAY 81800 PE Downtrend,Downtrend,PE,81800,97.0,12:27:00 IST,12:35:00 IST,682.51,677.15,677.15,-0.79,Failure,stop_loss_hit

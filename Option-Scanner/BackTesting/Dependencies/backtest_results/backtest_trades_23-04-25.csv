@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-23,SENSEX 23 APR 79700 CE Uptrend,Uptrend,CE,79700,97.0,12:48:00 IST,12:50:00 IST,650.74,640.74,640.74,-1.54,Failure,stop_loss_hit

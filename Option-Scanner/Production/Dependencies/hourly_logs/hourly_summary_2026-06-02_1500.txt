@@ -1,0 +1,28 @@
+Hour bucket: 2026-06-02_1500 (IST wall-clock hour)
+Detail CSV: C:\Biplab\ALGO-Projects\Option-Scanner\Production\Dependencies\hourly_logs\signal_hourly_2026-06-02_1500.csv
+Total events: 40
+  HOUR_START: 1
+  REJECT: 27
+  RSI_BAND: 12
+Top rejects (score>=85):
+  2026-06-02 15:00:04 NIFTY 02 JUN 23550 PUT score=85.0 — insufficient_directional_volume_ratio
+  2026-06-02 15:00:16 NIFTY 02 JUN 23550 PUT score=85.0 — insufficient_directional_volume_ratio
+  2026-06-02 15:00:26 NIFTY 02 JUN 23550 PUT score=85.0 — insufficient_directional_volume_ratio
+  2026-06-02 15:00:35 NIFTY 02 JUN 23550 PUT score=85.0 — insufficient_directional_volume_ratio
+  2026-06-02 15:00:44 NIFTY 02 JUN 23550 PUT score=85.0 — insufficient_directional_volume_ratio
+  2026-06-02 15:00:53 NIFTY 02 JUN 23550 PUT score=85.0 — insufficient_directional_volume_ratio
+  2026-06-02 15:01:03 NIFTY 02 JUN 23550 PUT score=85.0 — insufficient_directional_volume_ratio
+  2026-06-02 15:01:12 NIFTY 02 JUN 23550 PUT score=85.0 — insufficient_directional_volume_ratio
+  2026-06-02 15:01:21 NIFTY 02 JUN 23550 PUT score=85.0 — not_deep_itm_need_100pt
+  2026-06-02 15:01:31 NIFTY 02 JUN 23550 PUT score=85.0 — insufficient_directional_volume_ratio
+  2026-06-02 15:01:41 NIFTY 02 JUN 23550 PUT score=85.0 — not_deep_itm_need_100pt
+  2026-06-02 15:01:50 NIFTY 02 JUN 23550 PUT score=85.0 — not_deep_itm_need_100pt
+  2026-06-02 15:02:00 NIFTY 02 JUN 23550 PUT score=85.0 — not_deep_itm_need_100pt
+  2026-06-02 15:02:10 NIFTY 02 JUN 23550 PUT score=85.0 — not_deep_itm_need_100pt
+  2026-06-02 15:03:07 NIFTY 02 JUN 23550 PUT score=85.0 — insufficient_directional_volume_ratio
+  2026-06-02 15:03:16 NIFTY 02 JUN 23550 PUT score=85.0 — not_deep_itm_need_100pt
+  2026-06-02 15:03:25 NIFTY 02 JUN 23550 PUT score=85.0 — not_deep_itm_need_100pt
+  2026-06-02 15:03:34 NIFTY 02 JUN 23550 PUT score=85.0 — not_deep_itm_need_100pt
+  2026-06-02 15:03:44 NIFTY 02 JUN 23550 PUT score=85.0 — not_deep_itm_need_100pt
+  2026-06-02 15:03:53 NIFTY 02 JUN 23550 PUT score=85.0 — not_deep_itm_need_100pt
+  ... +7 more in CSV

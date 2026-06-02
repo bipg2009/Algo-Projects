@@ -1,0 +1,4 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-30,SENSEX 30 JAN 76600 CE General Buy / Sell,CE,76600,85.0,10:07:00 IST,10:08:00 IST,1333.81,1323.81,1323.81,-0.75,Failure,stop_loss_hit
+2025-01-30,SENSEX 30 JAN 76800 CE General Buy / Sell,CE,76800,85.0,10:33:00 IST,10:34:00 IST,1190.74,1180.74,1180.74,-0.84,Failure,stop_loss_hit
+2025-01-30,SENSEX 30 JAN 76700 CE General Buy / Sell,CE,76700,85.0,11:16:00 IST,11:17:00 IST,1293.2,1283.2,1283.2,-0.77,Failure,stop_loss_hit

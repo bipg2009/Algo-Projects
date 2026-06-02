@@ -1,0 +1,3 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-24,SENSEX 24 APR 80000 PE Downtrend,Downtrend,PE,80000,97.0,11:44:00 IST,11:45:00 IST,1184.17,1174.17,1174.17,-0.84,Failure,stop_loss_hit
+2025-04-24,SENSEX 24 APR 79900 PE Downtrend,Downtrend,PE,79900,97.0,12:14:00 IST,12:30:00 IST,830.22,980.4,980.4,18.09,Success,stop_loss_hit

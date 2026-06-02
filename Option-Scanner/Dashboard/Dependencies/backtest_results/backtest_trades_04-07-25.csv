@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-07-04,NIFTY 4 JUL 25500 PE,PE,25500,100,11:23:00 IST,12:35:00 IST,190.59,201.1,201.1,5.51,Success,stop_loss_hit

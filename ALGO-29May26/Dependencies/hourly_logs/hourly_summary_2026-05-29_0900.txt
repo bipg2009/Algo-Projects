@@ -1,0 +1,33 @@
+Hour bucket: 2026-05-29_0900 (IST wall-clock hour)
+Detail CSV: C:\Biplab\ALGO-Projects\ALGO-29May26\Dependencies\hourly_logs\signal_hourly_2026-05-29_0900.csv
+Total events: 54
+  HOUR_START: 1
+  REJECT: 17
+  RSI_BAND: 29
+  SIGNAL_VERIFIED: 7
+Signals:
+  2026-05-29 09:56:54 NIFTY 02 JUN 24000 PUT score=87.0 RSI=41.7 trend=RED
+  2026-05-29 09:57:08 NIFTY 02 JUN 24000 PUT score=87.0 RSI=41.7 trend=RED
+  2026-05-29 09:57:21 NIFTY 02 JUN 24000 PUT score=87.0 RSI=41.7 trend=RED
+  2026-05-29 09:57:34 NIFTY 02 JUN 24000 PUT score=87.0 RSI=41.7 trend=RED
+  2026-05-29 09:57:48 NIFTY 02 JUN 24000 PUT score=87.0 RSI=41.3 trend=RED
+  2026-05-29 09:58:03 NIFTY 02 JUN 24000 PUT score=87.0 RSI=41.3 trend=RED
+  2026-05-29 09:58:16 NIFTY 02 JUN 24000 PUT score=87.0 RSI=41.3 trend=RED
+Top rejects (score>=85):
+  2026-05-29 09:56:54 NIFTY 02 JUN 23900 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:56:54 NIFTY 02 JUN 23950 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:57:08 NIFTY 02 JUN 23900 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:57:08 NIFTY 02 JUN 23950 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:57:21 NIFTY 02 JUN 23900 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:57:21 NIFTY 02 JUN 23950 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:57:34 NIFTY 02 JUN 23900 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:57:34 NIFTY 02 JUN 23950 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:57:48 NIFTY 02 JUN 23900 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:57:48 NIFTY 02 JUN 23950 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:58:03 NIFTY 02 JUN 23900 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:58:03 NIFTY 02 JUN 23950 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:58:16 NIFTY 02 JUN 23900 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:58:16 NIFTY 02 JUN 23950 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:58:31 NIFTY 02 JUN 23900 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:58:31 NIFTY 02 JUN 23950 PUT score=87.0 — not_deep_itm_need_100pt
+  2026-05-29 09:58:31 NIFTY 02 JUN 24000 PUT score=87.0 — not_deep_itm_need_100pt

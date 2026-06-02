@@ -1,0 +1,3 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-28,SENSEX 28 JAN 75700 CE General Buy / Sell,CE,75700,95.0,10:43:00 IST,10:44:00 IST,1631.1,1621.1,1621.1,-0.61,Failure,stop_loss_hit
+2025-01-28,SENSEX 28 JAN 75900 CE General Buy / Sell,CE,75900,85.0,11:03:00 IST,11:04:00 IST,1472.78,1462.78,1462.78,-0.68,Failure,stop_loss_hit

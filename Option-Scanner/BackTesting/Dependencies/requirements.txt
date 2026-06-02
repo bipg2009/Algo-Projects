@@ -1,0 +1,8 @@
+dhanhq
+pandas
+xlwings
+openpyxl
+requests
+python-dotenv
+mibian
+scipy

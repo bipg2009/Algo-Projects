@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-02-07,NIFTY 7 FEB 23600 PE,PE,23600,General Buy / Sell,95.0,12:12:00 IST,12:18:00 IST,188.11,184.4,173.11,-1.97,Failure,time_cutoff_6m

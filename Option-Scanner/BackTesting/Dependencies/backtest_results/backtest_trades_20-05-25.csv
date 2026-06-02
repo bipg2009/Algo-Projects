@@ -1,0 +1,6 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-05-20,SENSEX 20 MAY 82000 PE Downtrend,Downtrend,PE,82000,97.0,09:47:00 IST,09:50:00 IST,794.06,784.06,784.06,-1.26,Failure,stop_loss_hit
+2025-05-20,SENSEX 20 MAY 81900 CE Uptrend,Uptrend,CE,81900,97.0,10:38:00 IST,10:40:00 IST,835.27,825.27,825.27,-1.2,Failure,stop_loss_hit
+2025-05-20,SENSEX 20 MAY 81900 PE Downtrend,Downtrend,PE,81900,107.0,11:30:00 IST,11:40:00 IST,901.53,949.55,949.55,5.33,Success,stop_loss_hit
+2025-05-20,SENSEX 20 MAY 81800 PE Downtrend,Downtrend,PE,81800,97.0,11:54:00 IST,11:55:00 IST,808.56,798.56,798.56,-1.24,Failure,stop_loss_hit
+2025-05-20,SENSEX 20 MAY 81700 PE Downtrend,Downtrend,PE,81700,97.0,12:56:00 IST,13:10:00 IST,718.82,727.4,727.4,1.19,Success,stop_loss_hit

@@ -1,0 +1,3 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-11,SENSEX 11 APR 75100 CE Uptrend,Uptrend,CE,75100,107.0,11:02:00 IST,11:05:00 IST,659.83,649.83,649.83,-1.52,Failure,stop_loss_hit
+2025-04-11,SENSEX 11 APR 75400 PE Downtrend,Downtrend,PE,75400,107.0,12:39:00 IST,13:05:00 IST,813.76,803.76,803.76,-1.23,Failure,stop_loss_hit

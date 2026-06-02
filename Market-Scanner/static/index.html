@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOCK FINDER - Market Scanner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <h1>STOCK<span>FINDER</span></h1>
+                <p>52-Week Breakout & Value Scanner</p>
+            </div>
+            <div class="controls-wrapper" style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-end;">
+                <div class="controls">
+                    <button class="nav-btn active" data-scanner="breakout">🚀 Momentum Breakout</button>
+                    <button class="nav-btn" data-scanner="value">💎 Deep Value (Near 52W Low)</button>
+                </div>
+                <div class="timeframe-controls" style="display: flex; gap: 0.5rem; background: var(--card-bg); padding: 0.25rem; border-radius: 8px; border: 1px solid var(--card-border);">
+                    <button class="time-btn active" data-time="daily" style="padding: 0.5rem 1rem; border: none; background: transparent;">Daily</button>
+                    <button class="time-btn" data-time="weekly" style="padding: 0.5rem 1rem; border: none; background: transparent;">Weekly</button>
+                    <button class="time-btn" data-time="monthly" style="padding: 0.5rem 1rem; border: none; background: transparent;">Monthly</button>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-cat="Large_Cap">Large Cap</button>
+                <button class="tab-btn" data-cat="Mid_Cap">Mid Cap</button>
+                <button class="tab-btn" data-cat="Small_Cap">Small Cap</button>
+                <button class="tab-btn" data-cat="Financial">FinCap</button>
+            </div>
+
+            <div class="results-container">
+                <div class="loader" id="loader" style="display: none;"></div>
+                <div class="table-wrapper">
+                    <table id="results-table">
+                        <thead>
+                            <tr id="table-head">
+                                <!-- Dynamically filled -->
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Dynamically filled -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/static/app.js"></script>
+</body>
+</html>

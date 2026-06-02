@@ -1,0 +1,6 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-07-02,NIFTY 2 JUL 25650 PE,PE,25650,100.0,10:03:00 IST,10:25:00 IST,122.11,114.9,114.9,-5.9,Failure,stop_loss_hit
+2025-07-02,NIFTY 2 JUL 25600 PE,PE,25600,100.0,10:40:00 IST,11:10:00 IST,73.78,74.85,74.85,1.45,Success,stop_loss_hit
+2025-07-02,NIFTY 2 JUL 25400 CE,CE,25400,100.0,12:14:00 IST,12:20:00 IST,104.99,89.99,89.99,-14.29,Failure,stop_loss_hit
+2025-07-02,NIFTY 2 JUL 25550 PE,PE,25550,92.0,13:19:00 IST,13:40:00 IST,73.07,63.4,63.4,-13.23,Failure,stop_loss_hit
+2025-07-02,NIFTY 2 JUL 25500 PE,PE,25500,97.0,13:43:00 IST,14:55:00 IST,17.12,94.65,94.65,452.86,Success,stop_loss_hit

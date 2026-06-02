@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+15-04-25,2025-04-15_122,11:17:00 IST,BUY,SENSEX 15 APR 76800 PE,Downtrend,PE,575.04,565.04,45.46838739745414,180320,
+15-04-25,2025-04-15_122,11:30:00 IST,SELL,SENSEX 15 APR 76800 PE,Downtrend,PE,581.0,581.0,55.97206072124964,193160,Success

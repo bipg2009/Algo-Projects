@@ -1,0 +1,3 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-07-02,SENSEX 2 JUL 83800 PE General Buy / Sell,PE,83800,85.0,10:18:00 IST,10:25:00 IST,437.73,477.5,477.5,9.09,Success,stop_loss_hit
+2025-07-02,SENSEX 2 JUL 83600 PE General Buy / Sell,PE,83600,85.0,11:10:00 IST,11:15:00 IST,429.25,419.25,419.25,-2.33,Failure,stop_loss_hit

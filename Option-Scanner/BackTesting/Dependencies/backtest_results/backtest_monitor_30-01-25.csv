@@ -1,0 +1,4 @@
+symbol,time_ist,datetime_ist,option_ltp,rsi_1m,trailing_sl,action,reason
+SENSEX 30 JAN 76600 CE General Buy / Sell,10:08:00 IST,30-01-25 10:08:00 IST,1320.6,74.3639515188603,1323.81,EXIT,stop_loss_hit
+SENSEX 30 JAN 76800 CE General Buy / Sell,10:34:00 IST,30-01-25 10:34:00 IST,1178.95,61.16565678882998,1180.74,EXIT,stop_loss_hit
+SENSEX 30 JAN 76700 CE General Buy / Sell,11:17:00 IST,30-01-25 11:17:00 IST,1280.4,66.92905087210232,1283.2,EXIT,stop_loss_hit

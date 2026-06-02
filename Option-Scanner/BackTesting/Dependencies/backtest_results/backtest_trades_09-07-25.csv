@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-07-09,SENSEX 9 JUL 83800 PE General Buy / Sell,PE,83800,85.0,11:55:00 IST,12:00:00 IST,683.26,673.26,673.26,-1.46,Failure,stop_loss_hit

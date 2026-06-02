@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-05-18,NIFTY 18 MAY 23900 PE,PE,23900,100,09:48:00 IST,10:03:00 IST,165.5,237.6,225.72,43.56,Failure,SUPERTREND_REVERSAL

@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-05-21,SENSEX 21 MAY 81700 PE Downtrend,Downtrend,PE,81700,97.0,11:50:00 IST,11:51:00 IST,1077.57,1067.57,1067.57,-0.93,Failure,stop_loss_hit

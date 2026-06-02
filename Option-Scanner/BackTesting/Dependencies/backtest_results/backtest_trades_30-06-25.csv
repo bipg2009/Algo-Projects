@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-06-30,SENSEX 30 JUN 83900 PE Downtrend,Downtrend,PE,83900,95.0,09:59:00 IST,10:10:00 IST,242.05,239.0,239.0,-1.26,Failure,stop_loss_hit
