@@ -307,12 +307,47 @@ def market_scan_iteration():
     dashboard_queue.put({"type": "MARKET_TREND", "payload": market_trend})
     push_atr_to_dashboard(tsl)
 
+    # --- ISOLATED DASHBOARD STATE EXPORT ---
+    try:
+        import json, os
+        import datetime as dt_dash
+        last_bar = df_1m.iloc[-2] if not df_1m.empty and len(df_1m) > 1 else {}
+        vwap_val = float(last_bar.get("VWAP", 0)) if "VWAP" in last_bar else 0
+        ema20_val = float(last_bar.get("EMA20", 0)) if "EMA20" in last_bar else 0
+        ema50_val = float(last_bar.get("EMA50", 0)) if "EMA50" in last_bar else 0
+        
+        state = {
+            "timestamp": dt_dash.datetime.now().strftime("%H:%M:%S"),
+            "symbol": "NIFTY LIVE",
+            "nifty_ltp": nifty_spot,
+            "vwap": vwap_val,
+            "ema20": ema20_val,
+            "ema50": ema50_val,
+            "adx": current_adx,
+            "trend_direction": market_trend,
+            "pcr": float(pcr_val),
+            "oi_change_pct": 0.0,
+            "premium_change_pct": 0.0,
+            "atm_iv": 0.0,
+            "bull_score": 50,
+            "score_breakdown": {
+                "trend": 15 if market_trend == "UP" else -15,
+                "vwap": 15 if nifty_spot >= vwap_val else -15
+            }
+        }
+        out_path = os.path.join(os.path.dirname(__file__), "..", "StreamLit Dashboard", "live_dashboard_state.json")
+        with open(out_path, "w") as f:
+            json.dump(state, f)
+    except Exception:
+        pass
+    # ---------------------------------------
+
     target_type = "CE" if st_color == "GREEN" else "PE"
     log_rsi_band_alerts(df_1m, target_type, st_color)
 
     options_list = chain.get("options", [])
     atm = round(nifty_spot / 50) * 50
-    target_strike = (atm - 100) if target_type == "CE" else (atm + 100)
+    target_strike = atm
     valid_options = [
         o for o in options_list 
         if isinstance(o, dict) and o.get("option_type") == target_type and int(o.get("strike", 0)) == int(target_strike)

@@ -1,0 +1,31 @@
+Hour bucket: 2026-06-03_1100 (IST wall-clock hour)
+Detail CSV: C:\Biplab\ALGO-Projects\Option-Scanner\Production\Dependencies\hourly_logs\signal_hourly_2026-06-03_1100.csv
+Total events: 104
+  HOUR_START: 1
+  REJECT: 27
+  RSI_BAND: 75
+  SIGNAL_VERIFIED: 1
+Signals:
+  2026-06-03 11:10:22 NIFTY 09 JUN 23300 PUT score=100 RSI=33.0 trend=RED
+Top rejects (score>=85):
+  2026-06-03 11:07:00 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:07:09 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:07:18 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:07:26 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:07:35 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:07:44 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:07:53 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:08:04 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:08:13 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:08:22 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:08:31 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:08:50 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:08:59 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:09:10 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:09:19 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:09:31 NIFTY 09 JUN 23300 PUT score=100 — atr_volatility_not_expanding
+  2026-06-03 11:09:46 NIFTY 09 JUN 23300 PUT score=100 — atr_volatility_not_expanding
+  2026-06-03 11:10:01 NIFTY 09 JUN 23300 PUT score=100 — atr_volatility_not_expanding
+  2026-06-03 11:14:00 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 11:14:10 NIFTY 09 JUN 23300 PUT score=100 — not_deep_itm_need_100pt
+  ... +7 more in CSV

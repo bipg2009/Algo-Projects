@@ -1,1 +1,3 @@
-date,trade id,time ist,event,symbol,option_type,price,trailing_sl,rsi,oi,outcome
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+07-01-26,2026-01-07_111,11:06:00 IST,BUY,NIFTY 7 JAN 26000 CE,,CE,30.21,20.21,74.27070373486455,8607690,
+07-01-26,2026-01-07_111,11:18:00 IST,SELL,NIFTY 7 JAN 26000 CE,,CE,28.5,20.21,33.01138446484619,9174100,Failure

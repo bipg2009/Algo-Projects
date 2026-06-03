@@ -1,1 +1,3 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-02-16,NIFTY 16 FEB 25650 CE,,CE,25650,80.0,10:02:00 IST,10:14:00 IST,14.48,13.7875,4.48,-4.78,Failure,stale_trade_12m_loss
+2026-02-16,NIFTY 16 FEB 25700 CE,,CE,25700,90.0,12:16:00 IST,13:00:00 IST,13.37,12.7,12.7,-5.01,Failure,stop_loss_hit

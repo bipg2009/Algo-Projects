@@ -1,1 +1,3 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-01-19,NIFTY 19 JAN 25500 PE,,PE,25500,100,10:29:00 IST,10:41:00 IST,15.19,12.075,5.19,-20.51,Failure,stale_trade_12m_loss
+2026-01-19,NIFTY 19 JAN 25450 PE,,PE,25450,100,12:38:00 IST,12:55:00 IST,11.19,10.825,6.14,-3.26,Failure,stale_trade_12m_loss

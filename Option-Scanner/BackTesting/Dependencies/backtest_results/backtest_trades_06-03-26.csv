@@ -1,1 +1,2 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-03-06,NIFTY 6 MAR 24600 PE,,PE,24600,80.0,10:53:00 IST,11:05:00 IST,54.53,47.8625,44.53,-12.23,Failure,stale_trade_12m_loss

@@ -1,1 +1,2 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-01-07,NIFTY 7 JAN 26000 CE,,CE,26000,100,11:06:00 IST,11:18:00 IST,30.21,28.5,20.21,-5.66,Failure,stale_trade_12m_loss

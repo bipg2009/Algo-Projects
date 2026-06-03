@@ -1,3 +1,1 @@
-date,trade id,time ist,event,symbol,option_type,price,trailing_sl,rsi,oi,outcome
-22-05-26,2026-05-22_55,11:46:00 IST,BUY,NIFTY 22 MAY 23600 CE,CE,223.3,178.64,66.47604679686631,2681445,
-22-05-26,2026-05-22_55,15:12:00 IST,SELL,NIFTY 22 MAY 23600 CE,CE,223.3,178.64,31.241158688384516,2681445,Breakeven
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome

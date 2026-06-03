@@ -520,8 +520,8 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
         if chain and df_slice is not None:
             spot = chain["spot"]
             atm = round(spot / 50) * 50
-            target_ce_strike = atm - 100
-            target_pe_strike = atm + 100
+            target_ce_strike = atm
+            target_pe_strike = atm
             
             for opt in chain["options"]:
                 ot = opt["option_type"]

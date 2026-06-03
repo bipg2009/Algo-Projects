@@ -1,6 +1,7 @@
 import time
 import datetime
 import pandas as pd
+import sys
 from System_Config import (
     CE_RSI_MIN, CE_RSI_MAX,
     PE_RSI_MIN, PE_RSI_MAX
@@ -13,6 +14,13 @@ _rsi_band_alert_last = 0.0
 _rsi_prev_value = None
 _heartbeat_last_print = 0.0
 _HEARTBEAT_INTERVAL = 30.0
+
+# Prevent Windows console cp1252 UnicodeEncodeError (emojis/box-drawing chars).
+try:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 
 def log_rsi_trend_mismatch(df_1m: pd.DataFrame) -> None:
     global _rsi_mismatch_last_log
@@ -111,6 +119,8 @@ def print_heartbeat(df_1m: pd.DataFrame, chain: dict, target_type: str, valid_op
         confirmation = StateClassifier.classify_3m_confirmation(df_3m)
         execution = StateClassifier.classify_1m_execution(df_1m)
         state_str = f"   └── [SEDA] 10m:{regime.market_regime} | 5m:{structure.trend_structure} | 3m:{confirmation.vwap_state} | 1m:{execution.momentum_velocity}"
+    except ImportError:
+        state_str = ""
     except Exception as e:
         state_str = f"   └── [SEDA Error] {str(e)}"
 

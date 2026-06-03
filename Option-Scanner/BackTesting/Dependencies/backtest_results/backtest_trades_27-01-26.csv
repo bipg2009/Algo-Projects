@@ -1,1 +1,5 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-01-27,NIFTY 27 JAN 25250 CE,,CE,25250,100.0,10:21:00 IST,10:33:00 IST,63.77,60.2875,53.77,-5.46,Failure,stale_trade_12m_loss
+2026-01-27,NIFTY 27 JAN 25300 PE,,PE,25300,76.0,10:46:00 IST,10:58:00 IST,56.03,54.2625,46.03,-3.15,Failure,stale_trade_12m_loss
+2026-01-27,NIFTY 27 JAN 25200 PE,,PE,25200,79.0,13:54:00 IST,14:06:00 IST,52.15,45.8375,42.15,-12.1,Failure,stale_trade_12m_loss
+2026-01-27,NIFTY 27 JAN 25250 PE,,PE,25250,89.0,14:25:00 IST,14:37:00 IST,54.17,53.2125,44.17,-1.77,Failure,stale_trade_12m_loss

@@ -34,7 +34,7 @@ def copy_reports(phase_folder, chunk_name):
     files_to_copy = [
         "Aggregated_NORMAL_Report.csv",
         "Aggregated_HEIKIN_ASHI_Report.csv",
-        "Aggregated_VOLUME_Report.csv",
+        #    "Aggregated_VOLUME_Report.csv",
         "Candle_Comparison_Report.csv",
         "Console_Summary.txt",
     ]
@@ -120,7 +120,7 @@ def run_pipeline():
             success = run_chunk(start_dt, end_dt)
             if success:
                 # Saves output directly to our configured destination
-                copy_reports("Momentum_RSI_65_Exit_60", name)
+                copy_reports("Momentum_RSI_61_Normal", name)
             else:
                 print(f"[WARN] Chunk {name} failed or completed with errors.")
             time.sleep(2)

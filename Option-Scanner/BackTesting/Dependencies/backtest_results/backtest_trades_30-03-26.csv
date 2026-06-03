@@ -1,1 +1,4 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-03-30,NIFTY 30 MAR 22500 PE,,PE,22500,100.0,13:04:00 IST,13:16:00 IST,17.94,17.175,7.94,-4.26,Failure,stale_trade_12m_loss
+2026-03-30,NIFTY 30 MAR 22450 PE,,PE,22450,97.0,13:46:00 IST,14:00:00 IST,14.78,10.99,10.99,-25.64,Failure,stop_loss_hit
+2026-03-30,NIFTY 30 MAR 22400 PE,,PE,22400,75.0,14:22:00 IST,15:12:00 IST,11.56,19.875,10.06,71.93,Success,TIME_DECAY

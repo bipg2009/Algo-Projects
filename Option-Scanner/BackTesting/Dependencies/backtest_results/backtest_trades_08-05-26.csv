@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-05-08,NIFTY 8 MAY 24250 PE,,PE,24250,79.0,11:01:00 IST,11:13:00 IST,41.59,39.2375,31.59,-5.66,Failure,stale_trade_12m_loss
+2026-05-08,NIFTY 8 MAY 24200 PE,,PE,24200,100.0,12:10:00 IST,12:22:00 IST,39.73,38.7875,29.73,-2.37,Failure,stale_trade_12m_loss
+2026-05-08,NIFTY 8 MAY 24150 PE,,PE,24150,84.0,14:00:00 IST,14:12:00 IST,37.98,36.9375,27.98,-2.74,Failure,stale_trade_12m_loss

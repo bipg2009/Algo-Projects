@@ -1,1 +1,4 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-02-04,NIFTY 4 FEB 25650 PE,,PE,25650,76.0,11:26:00 IST,11:38:00 IST,33.48,33.1,27.29,-1.14,Failure,stale_trade_12m_loss
+2026-02-04,NIFTY 4 FEB 25600 CE,,CE,25600,96.0,12:28:00 IST,12:40:00 IST,40.88,40.65,36.12,-0.56,Failure,stale_trade_12m_loss
+2026-02-04,NIFTY 4 FEB 25650 CE,,CE,25650,100.0,13:22:00 IST,13:34:00 IST,37.32,32.35,27.32,-13.32,Failure,stale_trade_12m_loss

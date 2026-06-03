@@ -318,7 +318,8 @@ def build_score(opt_row, option_type, df_1m, pcr_value=1.0, gap_mode=False):
 
         # --- DASHBOARD EXPORT MOCK ---
         try:
-            import json, os, datetime
+            import json
+            import os
             last_bar = df_1m.iloc[-1] if not df_1m.empty else {}
             
             # Simple fallback variables
@@ -352,8 +353,10 @@ def build_score(opt_row, option_type, df_1m, pcr_value=1.0, gap_mode=False):
             }
             with open(os.path.join(os.path.dirname(__file__), "live_dashboard_state.json"), "w") as f:
                 json.dump(state, f)
-        except Exception:
-            pass
+        except Exception as e:
+            import traceback
+            print(f"DASHBOARD EXPORT ERROR: {e}")
+            traceback.print_exc()
         # ----------------------------
 
         return score

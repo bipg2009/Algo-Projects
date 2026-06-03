@@ -38,7 +38,7 @@ def health_check() -> bool:
 _TRAIL_START_PCT: float = 0.30   # Start trailing after 30% of target move
 _TRAIL_LOCK_PCT: float = 0.60   # Lock in 60% of profit as trailing SL
 _OI_UNWIND_PCT: float = 0.15    # Exit if OI drops >15% from entry
-_STALE_HOLD_MIN: int = 75       # Minutes before time-based exit check
+_STALE_HOLD_MIN: int = 12       # Minutes before time-based exit check
 _STALE_HOLD_PTS: float = 0.0    # Min profit required to hold past time limit
 
 
@@ -131,6 +131,20 @@ def _check_oi_unwinding(
         return ("EXIT", f"oi_unwinding_{pct_display}pct", 0.0)
     return None
 
+def _check_stale_hold(
+    position: 'TradePosition', current_time: datetime.datetime, current_ltp: float
+) -> tuple:
+    """Exit if the trade has been held for > _STALE_HOLD_MIN (12 mins) and is not in profit."""
+    entry_time = getattr(position, "entry_time", None)
+    if entry_time is None or current_time is None:
+        return None
+
+    elapsed_min = (pd.to_datetime(current_time) - pd.to_datetime(entry_time)).total_seconds() / 60.0
+    if elapsed_min >= _STALE_HOLD_MIN:
+        if current_ltp <= (position.entry_ltp + _STALE_HOLD_PTS):
+            return ("EXIT", f"stale_trade_{_STALE_HOLD_MIN}m_loss", 0.0)
+    return None
+
 
 def _check_time_decay(
     position: 'TradePosition', current_ltp: float, current_time: datetime.datetime = None
@@ -190,6 +204,11 @@ def execute_hypercare_monitoring(
             return result
 
         current_time = df_1m.iloc[-1]["start_Time"] if not df_1m.empty and "start_Time" in df_1m.columns else None
+        
+        result = _check_stale_hold(position, current_time, current_ltp)
+        if result:
+            return result
+
         result = _check_time_decay(position, current_ltp, current_time)
         if result:
             return result

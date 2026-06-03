@@ -1,1 +1,2 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-02-18,NIFTY 18 FEB 25800 PE,,PE,25800,100,09:50:00 IST,15:12:00 IST,27.67,88.8625,73.86,221.15,Success,TIME_DECAY

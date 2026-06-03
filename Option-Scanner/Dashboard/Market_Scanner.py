@@ -178,7 +178,7 @@ def build_and_evaluate_candidate(tsl, candidate, target_type, df_1m, pcr_val, ch
                 "strategy_suffix": candidate.get("strategy_suffix", "")
             }
             signal_queue.put(signal_data)
-            dashboard_queue.put({"type": "NEW_SIGNAL", "payload": {"symbol": candidate["symbol"], "type": target_type, "action": "BUY", "time": datetime.datetime.now().strftime("%H:%M:%S"), "strategy": strategy_name}})
+            dashboard_queue.put({"type": "NEW_SIGNAL", "payload": {"symbol": candidate["symbol"], "type": target_type, "action": "BUY", "time": datetime.datetime.now().strftime("%H:%M:%S"), "strategy": strategy_name, "vol": candidate.get("volume", 0), "oi_change": candidate.get("oi_change", 0)}})
             log_dashboard(f"[+] Signal passed to Main Engine for {candidate['symbol']} (score {score}) via signal_queue")
             print(f"[+] Signal passed to Main Engine for {candidate['symbol']} (score {score}) via signal_queue", flush=True)
             return True
@@ -196,7 +196,7 @@ def build_and_evaluate_candidate(tsl, candidate, target_type, df_1m, pcr_val, ch
         signal_data["symbol"] = str(candidate["symbol"])
         signal_data["score"] = int(score)
         signal_queue.put(signal_data)
-        dashboard_queue.put({"type": "NEW_SIGNAL", "payload": {"symbol": candidate["symbol"], "type": target_type, "action": "BUY (Dodge)", "time": datetime.datetime.now().strftime("%H:%M:%S"), "strategy": "Theta_Dodge"}})
+        dashboard_queue.put({"type": "NEW_SIGNAL", "payload": {"symbol": candidate["symbol"], "type": target_type, "action": "BUY (Dodge)", "time": datetime.datetime.now().strftime("%H:%M:%S"), "strategy": "Theta_Dodge", "vol": candidate.get("volume", 0), "oi_change": candidate.get("oi_change", 0)}})
         return True
 
     # 3. ORDER BOOK IMBALANCE (OBI) STRATEGY
@@ -212,7 +212,7 @@ def build_and_evaluate_candidate(tsl, candidate, target_type, df_1m, pcr_val, ch
         signal_data["symbol"] = str(candidate["symbol"])
         signal_data["score"] = int(score)
         signal_queue.put(signal_data)
-        dashboard_queue.put({"type": "NEW_SIGNAL", "payload": {"symbol": candidate["symbol"], "type": target_type, "action": "BUY (OBI)", "time": datetime.datetime.now().strftime("%H:%M:%S"), "strategy": "Order_Book_Imbalance"}})
+        dashboard_queue.put({"type": "NEW_SIGNAL", "payload": {"symbol": candidate["symbol"], "type": target_type, "action": "BUY (OBI)", "time": datetime.datetime.now().strftime("%H:%M:%S"), "strategy": "Order_Book_Imbalance", "vol": candidate.get("volume", 0), "oi_change": candidate.get("oi_change", 0)}})
         return True
 
     return False
@@ -306,6 +306,38 @@ def market_scan_iteration():
     
     dashboard_queue.put({"type": "MARKET_TREND", "payload": market_trend})
     push_atr_to_dashboard(tsl)
+
+    # --- CONTINUOUS DASHBOARD STATE DUMP ---
+    try:
+        last_bar = df_1m.iloc[-2] if not df_1m.empty and len(df_1m) > 1 else {}
+        vwap_val = float(last_bar.get("VWAP", 0)) if "VWAP" in last_bar else 0
+        ema20_val = float(last_bar.get("EMA20", 0)) if "EMA20" in last_bar else 0
+        ema50_val = float(last_bar.get("EMA50", 0)) if "EMA50" in last_bar else 0
+        
+        state = {
+            "timestamp": datetime.datetime.now().strftime("%H:%M:%S"),
+            "symbol": "NIFTY LIVE",
+            "nifty_ltp": nifty_spot,
+            "vwap": vwap_val,
+            "ema20": ema20_val,
+            "ema50": ema50_val,
+            "adx": current_adx,
+            "trend_direction": market_trend,
+            "pcr": float(pcr_val),
+            "oi_change_pct": 0.0,
+            "premium_change_pct": 0.0,
+            "atm_iv": 0.0,
+            "bull_score": 50,  # Neutral default when no trade triggered
+            "score_breakdown": {
+                "trend": 15 if market_trend == "UP" else -15,
+                "vwap": 15 if nifty_spot >= vwap_val else -15
+            }
+        }
+        with open(os.path.join(os.path.dirname(__file__), "live_dashboard_state.json"), "w") as f:
+            json.dump(state, f)
+    except Exception as e:
+        pass
+    # ---------------------------------------
 
     target_type = "CE" if st_color == "GREEN" else "PE"
     log_rsi_band_alerts(df_1m, target_type, st_color)

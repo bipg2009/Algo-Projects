@@ -1,1 +1,3 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-03-20,NIFTY 20 MAR 23250 CE,,CE,23250,97.0,10:34:00 IST,11:00:00 IST,64.77,63.5625,54.81,-1.86,Failure,stale_trade_12m_loss
+2026-03-20,NIFTY 20 MAR 23300 CE,,CE,23300,97.0,11:18:00 IST,11:35:00 IST,61.0,60.0875,51.0,-1.5,Failure,stale_trade_12m_loss

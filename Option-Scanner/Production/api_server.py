@@ -1,6 +1,7 @@
 import asyncio
 import json
 import logging
+import time
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, UploadFile, File, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
@@ -10,6 +11,25 @@ from pydantic import BaseModel
 import pandas as pd
 import glob
 import os
+import yfinance as yf
+
+# Sector and symbol mappings
+YF_SYMBOL_MAP = {
+    "HDFC_BANK": "HDFCBANK.NS", "ICICI_BANK": "ICICIBANK.NS", "STATE_BANK_INDIA": "SBIN.NS",
+    "AXIS_BANK": "AXISBANK.NS", "KOTAK_BANK": "KOTAKBANK.NS", "KOTAK_MAHINDRA_BANK": "KOTAKBANK.NS",
+    "BAJAJ_FINANCE": "BAJFINANCE.NS", "BAJAJ_FINSERV": "BAJAJFINSV.NS", "RELIANCE": "RELIANCE.NS",
+    "RELIANCE_IND": "RELIANCE.NS", "ONGC": "ONGC.NS", "BPCL": "BPCL.NS", "INFOSYS": "INFY.NS",
+    "TCS": "TCS.NS", "HCL_TECH": "HCLTECH.NS", "HCL_TECHNOLOGIES": "HCLTECH.NS",
+    "TECH_MAHINDRA": "TECHM.NS", "WIPRO": "WIPRO.NS", "ITC": "ITC.NS", 
+    "HINDUSTAN_UNILEVER": "HINDUNILVR.NS", "NESTLE": "NESTLEIND.NS", "MAHINDRA_MAHINDRA": "M&M.NS",
+    "MAHINDRA_&_MAHINDRA": "M&M.NS", "TATA_MOTORS": "TATAMOTORS.NS", "MARUTI": "MARUTI.NS",
+    "MARUTI_SUZUKI": "MARUTI.NS", "BHARTI_AIRTEL": "BHARTIARTL.NS", "LARSEN_&_TOUBRO": "LT.NS",
+    "TATA_STEEL": "TATASTEEL.NS", "JSW_STEEL": "JSWSTEEL.NS", "SUN_PHARMA": "SUNPHARMA.NS",
+    "NTPC": "NTPC.NS", "POWER_GRID": "POWERGRID.NS", "TITAN_COMPANY": "TITAN.NS",
+    "ULTRATECH_CEMENT": "ULTRACEMCO.NS", "ASIAN_PAINTS": "ASIANPAINT.NS"
+}
+
+from event_bus import dashboard_queue, signal_queue, manual_exits
 
 INSTRUMENTS_CACHE = []
 strategy_signal_counts = {
@@ -35,6 +55,140 @@ def load_instruments():
         logging.info(f"Loaded {len(INSTRUMENTS_CACHE)} FNO instruments into API cache.")
     except Exception as e:
         logging.error(f"Error loading instrument cache: {e}")
+
+# Sector Engine Data
+sector_engine_state = {
+    "nifty_sectors": {},
+    "sensex_sectors": {},
+    "nifty_total_bullish": 0.0,
+    "nifty_total_weight": 0.0,
+    "sensex_total_bullish": 0.0,
+    "sensex_total_weight": 0.0,
+    "last_updated": "Waiting..."
+}
+
+# Dhan Engine Data
+dhan_engine_state = {
+    "status": "Connecting...",
+    "balance": 0.0,
+    "pnl": 0.0,
+    "last_updated": "Waiting..."
+}
+
+def fetch_dhan_data_loop():
+    import sys
+    import time
+    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+    try:
+        from broker_client import get_live_client
+    except Exception as e:
+        print(f"Error loading broker_client: {e}")
+        return
+
+    tsl = None
+    while True:
+        try:
+            if tsl is None:
+                tsl = get_live_client()
+            if tsl:
+                bal = tsl.get_balance()
+                pnl = tsl.get_live_pnl()
+                global dhan_engine_state
+                dhan_engine_state = {
+                    "status": "Connected 🟢",
+                    "balance": bal,
+                    "pnl": pnl,
+                    "last_updated": time.strftime("%H:%M:%S")
+                }
+            else:
+                dhan_engine_state["status"] = "Disconnected 🔴"
+        except Exception as e:
+            print(f"Dhan polling error: {e}")
+            dhan_engine_state["status"] = "Error 🔴"
+            tsl = None
+        
+        # Poll every 10 seconds
+        time.sleep(10)
+
+def fetch_sector_data_loop():
+    import sys
+    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+    try:
+        from importlib.util import spec_from_file_location, module_from_spec
+        # Load maps dynamically from scripts
+        nifty_spec = spec_from_file_location("nifty_50", "../Nifty-50.py")
+        nifty_mod = module_from_spec(nifty_spec)
+        nifty_spec.loader.exec_module(nifty_mod)
+        SECTOR_MAP = nifty_mod.SECTOR_MAP
+        
+        sensex_spec = spec_from_file_location("sensex_30", "../Sensex.py")
+        sensex_mod = module_from_spec(sensex_spec)
+        sensex_spec.loader.exec_module(sensex_mod)
+        SENSEX_30_MAP = sensex_mod.SENSEX_30_MAP
+    except Exception as e:
+        print(f"Error loading sector maps: {e}")
+        return
+
+    all_symbols = set()
+    for s_map in [SECTOR_MAP, SENSEX_30_MAP]:
+        for sec, stocks in s_map.items():
+            for stock, w in stocks:
+                if stock in YF_SYMBOL_MAP:
+                    all_symbols.add(YF_SYMBOL_MAP[stock])
+    
+    while True:
+        try:
+            # Download recent data
+            df = yf.download(list(all_symbols), period="5d", interval="1d", progress=False)
+            if df.empty:
+                time.sleep(120); continue
+            
+            close_prices = df['Close'].iloc[-1]
+            prev_prices = df['Close'].iloc[-2] if len(df) > 1 else df['Open'].iloc[-1]
+            
+            signals = {}
+            for stock, yf_sym in YF_SYMBOL_MAP.items():
+                if yf_sym in close_prices and not pd.isna(close_prices[yf_sym]):
+                    cp = close_prices[yf_sym]
+                    pp = prev_prices[yf_sym] if not pd.isna(prev_prices[yf_sym]) else cp
+                    signals[stock] = "BULLISH" if cp >= pp else "BEARISH"
+                    
+            # Process NIFTY
+            n_sectors, n_bull_tot, n_tot = {}, 0.0, 0.0
+            for sec, stocks in SECTOR_MAP.items():
+                sec_bull, sec_tot, comp = 0.0, 0.0, []
+                for st, w in sorted(stocks, key=lambda x: x[1], reverse=True):
+                    sig = signals.get(st, "NEUTRAL")
+                    if sig == "BULLISH": sec_bull += w; n_bull_tot += w
+                    sec_tot += w; n_tot += w
+                    comp.append({"name": st, "weight": w, "status": sig})
+                pct = (sec_bull/sec_tot)*100 if sec_tot > 0 else 0
+                n_sectors[sec] = {"bullish_pct": pct, "components": comp}
+                
+            # Process SENSEX
+            s_sectors, s_bull_tot, s_tot = {}, 0.0, 0.0
+            for sec, stocks in SENSEX_30_MAP.items():
+                sec_bull, sec_tot, comp = 0.0, 0.0, []
+                for st, w in sorted(stocks, key=lambda x: x[1], reverse=True):
+                    sig = signals.get(st, "NEUTRAL")
+                    if sig == "BULLISH": sec_bull += w; s_bull_tot += w
+                    sec_tot += w; s_tot += w
+                    comp.append({"name": st, "weight": w, "status": sig})
+                pct = (sec_bull/sec_tot)*100 if sec_tot > 0 else 0
+                s_sectors[sec] = {"bullish_pct": pct, "components": comp}
+                
+            global sector_engine_state
+            sector_engine_state = {
+                "nifty_sectors": n_sectors, "sensex_sectors": s_sectors,
+                "nifty_total_bullish": n_bull_tot, "nifty_total_weight": n_tot,
+                "sensex_total_bullish": s_bull_tot, "sensex_total_weight": s_tot,
+                "last_updated": time.strftime("%H:%M:%S")
+            }
+        except Exception as e:
+            print(f"Sector polling error: {e}")
+        
+        # Sleep 2 minutes
+        time.sleep(120)
 
 app = FastAPI()
 
@@ -73,6 +227,14 @@ async def serve_strategies():
 @app.get("/api/strategy_stats")
 async def strategy_stats():
     return strategy_signal_counts
+
+@app.get("/api/sector_outlook")
+async def sector_outlook():
+    return sector_engine_state
+
+@app.get("/api/dhan_status")
+async def dhan_status():
+    return dhan_engine_state
 
 class ManualOrderRequest(BaseModel):
     exchange: str
@@ -288,6 +450,10 @@ async def startup_event():
     asyncio.create_task(broadcast_dashboard_events())
     # Load the instrument CSV into memory in background thread
     threading.Thread(target=load_instruments, daemon=True).start()
+    # Start sector engine
+    threading.Thread(target=fetch_sector_data_loop, daemon=True).start()
+    # Start Dhan engine
+    threading.Thread(target=fetch_dhan_data_loop, daemon=True).start()
 
 @app.get("/api/health")
 async def health():

@@ -1,1 +1,2 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-01-02,NIFTY 2 JAN 26250 CE,,CE,26250,100,11:21:00 IST,14:35:00 IST,23.65,23.425,21.91,-0.95,Failure,stale_trade_12m_loss

@@ -164,7 +164,8 @@ document.addEventListener("DOMContentLoaded", () => {
             // Format OI Change string: "Absolute (Percentage%)"
             const oiChangeSign = opt.oi_change > 0 ? "+" : "";
             const oiChangeClass = opt.oi_change > 0 ? "profit" : (opt.oi_change < 0 ? "loss" : "");
-            const oiText = `${oiChangeSign}${opt.oi_change} (${oiChangeSign}${opt.oi_change_pct.toFixed(1)}%)`;
+            const formattedOiChange = Number(opt.oi_change || 0).toLocaleString('en-IN');
+            const oiText = `${oiChangeSign}${formattedOiChange} (${oiChangeSign}${Number(opt.oi_change_pct || 0).toFixed(1)}%)`;
 
             tr.innerHTML = `
                 <td><strong>${opt.symbol}</strong></td>
@@ -214,10 +215,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const li = document.createElement("li");
         li.className = `signal-item ${signal.action}`;
+        const volFormatted = signal.vol ? Number(signal.vol).toLocaleString('en-IN') : '0';
+        const oiFormatted = signal.oi_change ? Number(signal.oi_change).toLocaleString('en-IN') : '0';
+
         li.innerHTML = `
             <div>
                 <span class="signal-symbol">${signal.symbol}</span>
                 <span style="margin-left:8px; font-size:0.75rem;">${signal.type}</span>
+                <div style="font-size: 0.75rem; color: #94A3B8; margin-top: 4px;">
+                    Vol: ${volFormatted} | OI: ${oiFormatted}
+                </div>
             </div>
             <div style="text-align:right">
                 <div style="font-weight:600">${signal.action}</div>

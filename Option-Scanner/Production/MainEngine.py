@@ -85,6 +85,22 @@ class AppEngine:
             )
             api_thread.start()
             print(f"[+] Dashboard API Server started on http://127.0.0.1:{port}")
+            
+        # Spawn Isolated Streamlit Dashboard Child Process
+        import subprocess
+        streamlit_path = r"C:\Users\bipla\AppData\Local\Programs\Python\Python314\Scripts\streamlit.exe"
+        dashboard_script = str(SCANNER_ROOT.parent / "StreamLit Dashboard" / "app.py")
+        dashboard_cwd = str(SCANNER_ROOT.parent / "StreamLit Dashboard")
+        try:
+            self.streamlit_proc = subprocess.Popen(
+                [streamlit_path, "run", dashboard_script, "--server.headless", "true"],
+                cwd=dashboard_cwd
+            )
+            print(f"[+] Isolated Streamlit Dashboard spawned as child process.")
+            import atexit
+            atexit.register(lambda: self.streamlit_proc.terminate())
+        except Exception as e:
+            print(f"[!] Failed to spawn Streamlit child process: {e}")
 
         monitor_thread = threading.Thread(target=self._monitor_signals, daemon=True)
         monitor_thread.start()

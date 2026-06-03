@@ -1,1 +1,2 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-03-16,NIFTY 16 MAR 23500 PE,,PE,23500,80.0,10:50:00 IST,11:02:00 IST,14.49,14.2375,4.49,-1.74,Failure,stale_trade_12m_loss

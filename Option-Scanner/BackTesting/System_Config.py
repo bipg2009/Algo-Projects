@@ -50,8 +50,8 @@ ADX_CHOP_THRESHOLD: float = 22.0  # Below this the market is classified as chop/
 # RSI TRIGGERS & BANDS
 # Conformed precisely to your strict 65 breakout setup.
 # ---------------------------------------------------------------------
-CE_RSI_TRIGGER: float = 65.0  # Synced to your strict breakout rule (was 63.0)
-PE_RSI_TRIGGER: float = 41.0
+CE_RSI_TRIGGER: float = 58.0  # Synced to your strict breakout rule (was 63.0)
+PE_RSI_TRIGGER: float = 42.0
 CE_RSI_MIN: float = CE_RSI_TRIGGER  # Lower boundary of CE RSI band
 CE_RSI_MAX: float = 90.0  # Overbought ceiling for CE band alerts
 PE_RSI_MIN: float = 10.0  # Oversold floor for PE band alerts
@@ -89,8 +89,8 @@ MUTE_RELEASE_SEC: int = 600
 # ---------------------------------------------------------------------
 # OPTION STRATEGY SCORING & FILTERS
 # ---------------------------------------------------------------------
-STRONG_BUY_THRESHOLD: int = 110
-BUY_THRESHOLD: int = 95
+STRONG_BUY_THRESHOLD: int = 75  # Strong buy signal score threshold (0-100 scale)
+BUY_THRESHOLD: int = 70
 WATCHLIST_THRESHOLD: int = 80
 MIN_PREMIUM_THRESHOLD: float = 10.0
 TACTICAL_LOOKBACK: int = 15

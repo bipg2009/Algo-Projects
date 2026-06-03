@@ -1,4 +1,4 @@
 Candle_Mode,Total_Days,Total_Trades,Wins,Losses,Win_Rate_Pct,Avg_Daily_PnL_Pct,BUY Total Trades,BUY Success %,PUT Total Trades,PUT Success %
-NORMAL,61,117,45,72,38.46,-0.74,50 (25 win 25 loss),50.0,67 (20 win 47 loss),29.85
-HEIKIN_ASHI,61,141,52,89,36.88,-2.07,59 (23 win 36 loss),38.98,82 (29 win 53 loss),35.37
-VOLUME,61,83,22,61,26.51,-0.22,37 (13 win 24 loss),35.14,46 (9 win 37 loss),19.57
+NORMAL,2,0,0,0,0,0,0 (0 win 0 loss),0.0,0 (0 win 0 loss),0.0
+HEIKIN_ASHI,2,0,0,0,0,0,0 (0 win 0 loss),0.0,0 (0 win 0 loss),0.0
+VOLUME,2,0,0,0,0,0,0 (0 win 0 loss),0.0,0 (0 win 0 loss),0.0

@@ -1,1 +1,2 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-03-17,NIFTY 17 MAR 23650 CE,,CE,23650,100,10:16:00 IST,15:12:00 IST,59.75,75.625,71.22,26.57,Success,TIME_DECAY

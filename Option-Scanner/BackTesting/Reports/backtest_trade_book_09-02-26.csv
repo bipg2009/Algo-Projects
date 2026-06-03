@@ -1,1 +1,3 @@
-date,trade id,time ist,event,symbol,option_type,price,trailing_sl,rsi,oi,outcome
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+09-02-26,2026-02-09_219,12:54:00 IST,BUY,NIFTY 9 FEB 26000 PE,,PE,10.1,0.1,28.81712997739993,20715110,
+09-02-26,2026-02-09_219,14:20:00 IST,SELL,NIFTY 9 FEB 26000 PE,,PE,18.23,18.23,54.15454768867486,9293505,Success

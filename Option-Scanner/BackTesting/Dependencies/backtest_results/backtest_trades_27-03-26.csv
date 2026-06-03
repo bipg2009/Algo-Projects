@@ -1,1 +1,4 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-03-27,NIFTY 27 MAR 23000 PE,,PE,23000,80.0,10:00:00 IST,10:20:00 IST,59.26,58.875,49.26,-0.65,Failure,stale_trade_12m_loss
+2026-03-27,NIFTY 27 MAR 22950 PE,,PE,22950,87.0,11:21:00 IST,11:35:00 IST,58.43,57.6,48.43,-1.42,Failure,stale_trade_12m_loss
+2026-03-27,NIFTY 27 MAR 22900 PE,,PE,22900,80.0,14:21:00 IST,15:12:00 IST,57.75,63.1875,56.92,9.42,Success,TIME_DECAY

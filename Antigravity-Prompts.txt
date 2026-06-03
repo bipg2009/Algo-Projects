@@ -1,0 +1,11 @@
+CRITICAL FINANCIAL SAFETY & FILE LOCKOUT CONSTRAINTS — MANDATORY COMPLIANCE:
+
+1. ABSOLUTE FILE LOCKOUT: You are STRICTLY FORBIDDEN from modifying, overwriting, deleting, or renaming the file 'Dhan-Tradhull' (and any files matching '*Dhan-Tradhull*'). Treat this file as strictly READ-ONLY. You may read its content if required for context, but you must never issue write operations to it.
+
+2. ZERO GIT RESTORES: You are FORBIDDEN from running 'git reset', 'git checkout', 'git restore', or any Git commands that revert existing files to an older state, as this completely disrupts the live Dhan trading environment.
+
+3. TRADING API GUARDRAIL: Do not generate, modify, or execute any active code blocks that trigger live order placement, token generation, or trade executions via the Dhan API during market hours. Any proposed changes to the Dhan API connection logic must be written to an isolated draft file first.
+
+4. AUTOMATIC PRE-EDIT BACKUP: Before making edits to ANY authorized file in this workspace, copy the original file into a newly created folder named './_dhan_safety_backups/'.
+
+5. MANDATORY USER CONFIRMATION: Present all code modifications as a clean 'diff' summary. Stop execution completely and wait for manual approval. Do not auto-commit or auto-execute.

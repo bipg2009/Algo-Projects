@@ -232,10 +232,14 @@ def simulate_trade(pick, entry_1m_idx, nifty_1m, legs, test_date):
     levels = bh.entry_levels(entry_ltp, current_atr)
     entry_spot = float(nifty_1m.iloc[entry_1m_idx]["close"])
     spot_sl = (entry_spot - 20.0) if pick["option_type"] == "CE" else (entry_spot + 20.0)
+    
+    entry_time = nifty_1m.iloc[entry_1m_idx]["start_Time"]
+    
     position = {
         "symbol": pick["display_symbol"],
         "option_type": pick["option_type"],
         "entry_ltp": entry_ltp,
+        "entry_time": entry_time,
         "target": levels["target"],
         "sl": round(entry_ltp - 10.0, 2), # Strict 10-point initial premium SL
         "initial_sl": round(entry_ltp - 10.0, 2),
@@ -522,8 +526,8 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
         if chain and df_slice is not None:
             spot = chain["spot"]
             atm = round(spot / 50) * 50
-            target_ce_strike = atm - 100
-            target_pe_strike = atm + 100
+            target_ce_strike = atm
+            target_pe_strike = atm
             
             for opt in chain["options"]:
                 ot = opt["option_type"]
@@ -536,6 +540,9 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
                     "strike": opt["strike"],
                     "volume": opt.get("volume", 0),
                     "oi_change": opt.get("oi_change", 0),
+                    "ltp": opt.get("ltp", 0.0),
+                    "ask": opt.get("ltp", 0.0),
+                    "bid": opt.get("ltp", 0.0),
                 }
                 ot = opt["option_type"]
                 fired = core.detect_trigger_1m(

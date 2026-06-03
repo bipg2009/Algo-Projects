@@ -1,3 +1,1 @@
-date,trade id,time ist,event,symbol,option_type,price,trailing_sl,rsi,oi,outcome
-13-04-26,2026-04-13_41,09:56:00 IST,BUY,NIFTY 13 APR 23150 CE,CE,502.0,467.0,67.7977920373589,57915,
-13-04-26,2026-04-13_41,15:12:00 IST,SELL,NIFTY 13 APR 23150 CE,CE,502.0,467.0,46.7440025047408,57915,Breakeven
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome

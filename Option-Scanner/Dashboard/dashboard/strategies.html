@@ -130,18 +130,62 @@
         <!-- Main Content Area -->
         <main class="main-content">
             <!-- Header -->
-            <header class="topbar">
+            <header class="topbar" style="margin-bottom: 10px;">
                 <div class="header-titles">
-                    <h2>Strategies Visualizer</h2>
-                    <p class="subtitle" id="last-update-time">Waiting for data...</p>
+                    <h2 style="font-size: 1.25rem;">Strategies Visualizer</h2>
+                    <p class="subtitle">Real-time SEDA-Algorithm Execution Signals</p>
                 </div>
                 <div class="scanner-controls">
+                    <!-- Dhan API Status -->
+                    <div class="state-card" style="border-left: 3px solid #8B5CF6;">
+                        <span class="label">DHAN API</span>
+                        <h3 class="state-text active" id="dhan-status">Connecting...</h3>
+                        <div style="display: flex; gap: 10px; font-size: 0.75rem; color: var(--text-secondary); margin-top: 5px;">
+                            <span>Bal: <span id="dhan-balance">--</span></span>
+                            <span>PnL: <span id="dhan-pnl">--</span></span>
+                        </div>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 2px;" id="dhan-update-time"></div>
+                    </div>
+                    <!-- Core Scanner State -->
                     <div class="state-card">
                         <span class="label">Market Trend</span>
                         <h3 id="market-trend" class="state-text inactive">WAITING</h3>
                     </div>
                 </div>
             </header>
+
+            <!-- Sector-Wise Weighted Outlook -->
+            <div class="panel" style="margin: 0 20px 15px; flex-shrink: 0;">
+                <div class="panel-header" style="background: rgba(0,0,0,0.2); padding: 12px 20px;">
+                    <h3>Sector-Wise Weighted Outlook</h3>
+                    <span class="badge" id="sector-update-time">Waiting for YFinance...</span>
+                </div>
+                <div class="panel-body" style="display: flex; gap: 20px; padding: 15px 20px;">
+                    
+                    <!-- SENSEX 30 (Left) -->
+                    <div style="flex: 1; border-right: 1px solid var(--border-color); padding-right: 20px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h4 style="color: var(--accent-primary);">SENSEX 30 Sectors</h4>
+                            <div style="font-weight: 600; font-size: 0.9rem;" id="sensex-total-score">...</div>
+                        </div>
+                        <div id="sensex-sectors-container" style="display: flex; flex-direction: column; gap: 12px; max-height: 600px; overflow-y: auto;">
+                            <!-- Sectors injected here -->
+                        </div>
+                    </div>
+
+                    <!-- NIFTY 50 (Right) -->
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h4 style="color: var(--accent-primary);">NIFTY 50 Sectors</h4>
+                            <div style="font-weight: 600; font-size: 0.9rem;" id="nifty-total-score">...</div>
+                        </div>
+                        <div id="nifty-sectors-container" style="display: flex; flex-direction: column; gap: 12px; max-height: 600px; overflow-y: auto;">
+                            <!-- Sectors injected here -->
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
 
             <div class="strategy-grid">
                 
@@ -271,9 +315,32 @@
                 </div>
 
             </div>
+
+            <!-- Live Strategy Events Panel -->
+            <div class="events-panel" style="margin: 20px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; height: 300px; min-height: 300px; flex-shrink: 0;">
+                <div class="panel-header" style="padding: 15px 20px; border-bottom: 1px solid var(--border-color); font-weight: 600; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2);">
+                    <span>Live Strategy Evaluation Logs</span>
+                    <span class="status-tag status-active" style="animation: pulse 2s infinite;">LIVE</span>
+                </div>
+                <div id="live-events-container" style="flex: 1; padding: 15px; overflow-y: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; display: flex; flex-direction: column; gap: 8px; scroll-behavior: smooth;">
+                    <!-- Logs will be injected here -->
+                    <div style="color: var(--text-secondary); text-align: center; margin-top: 20px;">Awaiting scanner signals...</div>
+                </div>
+            </div>
+            <style>
+                @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+                .log-entry { padding: 8px 12px; border-radius: 6px; background: rgba(255,255,255,0.03); border-left: 4px solid transparent; animation: slideIn 0.3s ease-out; word-break: break-all; }
+                .log-time { color: var(--text-secondary); margin-right: 10px; font-size: 0.8rem; }
+                .log-reject { border-left-color: #f59e0b; }
+                .log-watchlist { border-left-color: #3b82f6; }
+                .log-approve { border-left-color: #10b981; background: rgba(16, 185, 129, 0.1); }
+                .log-error { border-left-color: #ef4444; color: #ef4444; }
+                .log-info { border-left-color: #6366f1; }
+                @keyframes slideIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+            </style>
         </main>
     </div>
 
-    <script src="/assets/strategies.js"></script>
+    <script src="/assets/strategies.js?v=3"></script>
 </body>
 </html>

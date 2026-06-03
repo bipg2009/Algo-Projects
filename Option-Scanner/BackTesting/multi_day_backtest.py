@@ -38,7 +38,10 @@ def run_multiday(start_date, end_date, expiry_code=1, exchange="NSE"):
 
     # SYSTEM AUDIT FIX: Locked strictly to HEIKIN_ASHI mode to support your advanced exit structures
     # This completely eliminates redundant loops while keeping perfect date sync guards intact.
-    modes = ["HEIKIN_ASHI"]
+    modes = [
+        "NORMAL",
+        "HEIKIN_ASHI",
+    ]  # Removed "VOLUME" mode to focus on core strategies
 
     # Initialize structural data trackers
     mode_summaries = {m: [] for m in modes}
@@ -154,23 +157,26 @@ def run_multiday(start_date, end_date, expiry_code=1, exchange="NSE"):
         }
         comparative_results.append(mode_summary)
 
-        # Output reports directly into your Dependencies mapping structure
-        os.makedirs("Dependencies/backtest_results", exist_ok=True)
-        mode_path = f"Dependencies/backtest_results/Aggregated_{mode}_Report.csv"
+        # SYSTEM AUDIT FIX: Lock report directories strictly inside the local BackTesting folder tree
+        target_results_dir = r"C:\Biplab\ALGO-Projects\Option-Scanner\BackTesting\Dependencies\backtest_results"
+        os.makedirs(target_results_dir, exist_ok=True)
+
+        mode_path = os.path.join(target_results_dir, f"Aggregated_{mode}_Report.csv")
         df_results.to_csv(mode_path, index=False)
         print(f"\nFull day-by-day summary saved to: {mode_path}")
 
+        # Save aggregated detailed trades
         if all_trades:
             df_trades = pd.DataFrame(all_trades)
-            trades_agg_path = (
-                f"Dependencies/backtest_results/Aggregated_Trades_{mode}.csv"
+            trades_agg_path = os.path.join(
+                target_results_dir, f"Aggregated_Trades_{mode}.csv"
             )
             df_trades.to_csv(trades_agg_path, index=False)
             print(f"Aggregated detailed trades saved to: {trades_agg_path}")
 
     if comparative_results:
         df_compare = pd.DataFrame(comparative_results)
-        comp_path = "Dependencies/backtest_results/Candle_Comparison_Report.csv"
+        comp_path = os.path.join(target_results_dir, "Candle_Comparison_Report.csv")
         df_compare.to_csv(comp_path, index=False)
 
         print("\n" + "=" * 60)

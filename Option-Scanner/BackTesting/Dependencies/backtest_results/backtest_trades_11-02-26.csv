@@ -1,1 +1,2 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-02-11,NIFTY 11 FEB 25850 PE,,PE,25850,100,12:40:00 IST,12:52:00 IST,24.54,23.975,14.54,-2.3,Failure,stale_trade_12m_loss

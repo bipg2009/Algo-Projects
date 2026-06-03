@@ -1,2 +1,6 @@
-test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-03-23,NIFTY 23 MAR 22500 CE,CE,22500,General Buy / Sell,94.0,13:58:00 IST,15:13:00 IST,414.81,410.7,399.81,-0.99,Failure,TIME_DECAY
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-03-23,NIFTY 23 MAR 22700 PE,,PE,22700,90.0,10:14:00 IST,10:25:00 IST,27.77,17.77,17.77,-36.01,Failure,stop_loss_hit
+2026-03-23,NIFTY 23 MAR 22650 PE,,PE,22650,100.0,11:02:00 IST,11:14:00 IST,24.4,17.6625,14.4,-27.61,Failure,stale_trade_12m_loss
+2026-03-23,NIFTY 23 MAR 22900 PE,,PE,22900,90.0,12:26:00 IST,12:38:00 IST,21.77,16.7625,11.77,-23.0,Failure,stale_trade_12m_loss
+2026-03-23,NIFTY 23 MAR 22950 PE,,PE,22950,100.0,13:08:00 IST,13:20:00 IST,20.3,15.0125,10.3,-26.05,Failure,stale_trade_12m_loss
+2026-03-23,NIFTY 23 MAR 22950 CE,,CE,22950,77.0,13:56:00 IST,14:08:00 IST,17.61,16.7375,7.61,-4.95,Failure,stale_trade_12m_loss

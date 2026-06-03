@@ -315,6 +315,48 @@ def build_score(opt_row, option_type, df_1m, pcr_value=1.0, gap_mode=False):
                   score -= 40
 
         score = max(0, min(score, 100))
+
+        # --- ISOLATED DASHBOARD STATE EXPORT ---
+        try:
+            import json, os
+            import datetime as dt_dash
+            last_bar = df_1m.iloc[-1] if not df_1m.empty else {}
+            
+            ltp = float(last_bar.get("close", 0))
+            vwap = float(last_bar.get("VWAP", 0))
+            ema20 = float(last_bar.get("EMA20", 0))
+            ema50 = float(last_bar.get("EMA50", 0))
+            adx = float(last_bar.get("ADX", 0))
+            ema9 = float(last_bar.get("EMA9", 0))
+            
+            state = {
+                "timestamp": dt_dash.datetime.now().strftime("%H:%M:%S"),
+                "symbol": symbol,
+                "nifty_ltp": ltp,
+                "vwap": vwap,
+                "ema20": ema20,
+                "ema50": ema50,
+                "adx": adx,
+                "trend_direction": "UP" if ema9 > ema20 else "DOWN",
+                "pcr": float(pcr_value),
+                "oi_change_pct": float(opt_row.get("oi_change_pct", 0)),
+                "premium_change_pct": float(opt_row.get("premium_change_pct", 0)),
+                "atm_iv": float(opt_row.get("iv", 0)),
+                "bull_score": score,
+                "score_breakdown": {
+                    "trend": 15 if (ema9 > ema20) else -15,
+                    "oi": 15 if opt_row.get("oi_change_pct", 0) < -2 else (-15 if opt_row.get("oi_change_pct", 0) > 5 else 5),
+                    "vwap": 15 if ltp >= vwap else -15,
+                    "volume": 15
+                }
+            }
+            out_path = os.path.join(os.path.dirname(__file__), "..", "StreamLit Dashboard", "live_dashboard_state.json")
+            with open(out_path, "w") as f:
+                json.dump(state, f)
+        except Exception:
+            pass
+        # ---------------------------------------
+
         return score
     except Exception as e:
         SafetyLogger.log_error_with_context(

@@ -119,6 +119,8 @@ def print_heartbeat(df_1m: pd.DataFrame, chain: dict, target_type: str, valid_op
         confirmation = StateClassifier.classify_3m_confirmation(df_3m)
         execution = StateClassifier.classify_1m_execution(df_1m)
         state_str = f"   └── [SEDA] 10m:{regime.market_regime} | 5m:{structure.trend_structure} | 3m:{confirmation.vwap_state} | 1m:{execution.momentum_velocity}"
+    except ImportError:
+        state_str = ""
     except Exception as e:
         state_str = f"   └── [SEDA Error] {str(e)}"
 

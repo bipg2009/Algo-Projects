@@ -30,3 +30,7 @@ git log --oneline
 git diff
 
 
+Commit Small, Commit Often:
+Read the Status First:
+Branching is for Testing:
+

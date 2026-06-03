@@ -1,3 +1,1 @@
-date,trade id,time ist,event,symbol,option_type,price,trailing_sl,rsi,oi,outcome
-04-08-26,2026-04-08_90,10:45:00 IST,BUY,NIFTY 8 APR 23300 CE,CE,575.8,540.8,65.22328176066411,313105,
-04-08-26,2026-04-08_90,12:50:00 IST,SELL,NIFTY 8 APR 23300 CE,CE,569.2,540.8,58.253450381704624,305955,Failure
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
