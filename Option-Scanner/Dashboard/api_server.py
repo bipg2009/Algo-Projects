@@ -116,7 +116,7 @@ def fetch_sector_data_loop():
     try:
         from importlib.util import spec_from_file_location, module_from_spec
         # Load maps dynamically from scripts
-        nifty_spec = spec_from_file_location("nifty_50", "../Nifty-50.py")
+        nifty_spec = spec_from_file_location("nifty_50", "Nifty-50.py")
         nifty_mod = module_from_spec(nifty_spec)
         nifty_spec.loader.exec_module(nifty_mod)
         SECTOR_MAP = nifty_mod.SECTOR_MAP

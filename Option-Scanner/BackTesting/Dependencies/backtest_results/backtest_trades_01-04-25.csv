@@ -1,4 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-04-01,SENSEX 1 APR 77200 PE Downtrend,Downtrend,PE,77200,97.0,10:23:00 IST,10:30:00 IST,950.91,940.91,940.91,-1.05,Failure,stop_loss_hit
-2025-04-01,SENSEX 1 APR 76600 PE Downtrend,Downtrend,PE,76600,97.0,10:50:00 IST,11:45:00 IST,503.43,545.0,545.0,8.26,Success,stop_loss_hit
-2025-04-01,SENSEX 1 APR 76200 CE Uptrend,Uptrend,CE,76200,97.0,12:21:00 IST,12:30:00 IST,776.29,766.29,766.29,-1.29,Failure,stop_loss_hit

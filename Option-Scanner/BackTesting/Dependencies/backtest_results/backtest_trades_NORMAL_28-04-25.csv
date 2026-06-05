@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-28,NIFTY 28 APR 24350 CE,,CE,24350,100.0,10:16:00 IST,10:20:00 IST,76.36,66.36,66.36,-13.1,Failure,stop_loss_hit
+2025-04-28,NIFTY 28 APR 24350 PE,,PE,24350,80.0,11:18:00 IST,11:24:00 IST,76.91,76.25,68.0,-0.86,Failure,6_min_momentum_failed
+2025-04-28,NIFTY 28 APR 24300 CE,,CE,24300,100.0,12:02:00 IST,12:08:00 IST,78.83,74.25,72.0,-5.81,Failure,6_min_momentum_failed

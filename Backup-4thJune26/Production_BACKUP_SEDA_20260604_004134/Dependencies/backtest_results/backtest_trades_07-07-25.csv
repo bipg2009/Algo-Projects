@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-07-07,NIFTY 7 JUL 25600 PE,PE,25600,100,10:08:00 IST,11:40:00 IST,183.67,168.67,168.67,-8.17,Failure,stop_loss_hit

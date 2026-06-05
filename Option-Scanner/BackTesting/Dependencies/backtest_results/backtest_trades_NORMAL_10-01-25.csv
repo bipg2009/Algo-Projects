@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-10,NIFTY 10 JAN 23400 PE,,PE,23400,100.0,10:08:00 IST,10:09:00 IST,194.83,184.83,184.83,-5.13,-10.0,-750.0,Failure,stop_loss_hit
+2025-01-10,NIFTY 10 JAN 23550 CE,,CE,23550,75.0,11:15:00 IST,11:20:00 IST,221.39,211.39,211.39,-4.52,-10.0,-750.0,Failure,stop_loss_hit
+2025-01-10,NIFTY 10 JAN 23450 PE,,PE,23450,100.0,14:15:00 IST,14:21:00 IST,168.06,165.9,163.6,-1.29,-2.16,-162.0,Failure,6_min_momentum_failed

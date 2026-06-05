@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-19,NIFTY 19 MAR 23000 CE,,CE,23000,75.0,10:18:00 IST,11:35:00 IST,14.47,18.99,18.99,31.24,Success,stop_loss_hit

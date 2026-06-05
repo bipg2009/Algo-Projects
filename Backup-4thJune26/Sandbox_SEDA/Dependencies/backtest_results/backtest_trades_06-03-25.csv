@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-06,NIFTY 6 MAR 22400 CE,CE,22400,General Buy / Sell,85.0,12:04:00 IST,12:16:00 IST,251.49,254.9,245.0,1.36,Success,time_cutoff_12m

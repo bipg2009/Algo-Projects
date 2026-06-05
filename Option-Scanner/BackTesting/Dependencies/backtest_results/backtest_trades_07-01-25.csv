@@ -1,2 +1,5 @@
-test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-01-07,NIFTY 7 JAN 23800 PE General Buy / Sell,PE,23800,85.0,12:04:00 IST,12:30:00 IST,285.58,275.58,275.58,-3.5,Failure,stop_loss_hit
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-07,NIFTY 7 JAN 23700 PE,,PE,23700,92.0,09:56:00 IST,09:58:00 IST,25.59,25.3375,15.59,-0.99,Failure,2_min_profit_check_failed
+2025-01-07,NIFTY 7 JAN 23650 CE,,CE,23650,95.0,10:21:00 IST,10:23:00 IST,22.37,22.15,12.37,-0.98,Failure,2_min_profit_check_failed
+2025-01-07,NIFTY 7 JAN 23500 CE,,CE,23500,90.0,12:51:00 IST,12:53:00 IST,22.38,22.1625,12.38,-0.97,Failure,2_min_profit_check_failed
+2025-01-07,NIFTY 7 JAN 23650 PE,,PE,23650,87.0,13:51:00 IST,13:53:00 IST,20.64,20.4375,10.64,-0.98,Failure,2_min_profit_check_failed

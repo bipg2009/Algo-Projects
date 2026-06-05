@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-22,NIFTY 22 JAN 23250 PE,,PE,23250,100,11:37:00 IST,11:56:00 IST,27.98,38.35,38.35,37.06,10.37,777.75,Success,stop_loss_hit

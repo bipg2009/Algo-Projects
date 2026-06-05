@@ -1,0 +1,5 @@
+powershell -Command "Get-Content -Path 'Dependencies\backtest_results\backtest_scan_log_01-01-26.csv' -TotalCount 20"
+
+datetime_ist,best_ce_score,best_pe_score,trigger_1m_ce,trigger_1m_pe,entry_allowed
+
+ powershell -Command "Compare-Object (Get-Content System_Config.py) (Get-Content System_Config.py.bak)"

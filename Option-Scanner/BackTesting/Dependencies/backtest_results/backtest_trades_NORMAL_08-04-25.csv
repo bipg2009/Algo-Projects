@@ -1,0 +1,5 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-08,NIFTY 8 APR 22450 PE,,PE,22450,95.0,10:09:00 IST,10:10:00 IST,80.9,70.9,70.9,-12.36,Failure,stop_loss_hit
+2025-04-08,NIFTY 8 APR 22400 PE,,PE,22400,100.0,10:38:00 IST,10:41:00 IST,52.02,42.02,42.02,-19.22,Failure,stop_loss_hit
+2025-04-08,NIFTY 8 APR 22350 CE,,CE,22350,75.0,11:11:00 IST,11:26:00 IST,32.02,47.45,47.45,48.19,Success,stop_loss_hit
+2025-04-08,NIFTY 8 APR 22400 CE,,CE,22400,82.0,12:07:00 IST,12:13:00 IST,22.07,23.3,15.55,5.57,Success,6_min_momentum_failed

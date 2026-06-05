@@ -1,0 +1,6 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-23,NIFTY 23 JAN 23150 CE,,CE,23150,100.0,10:09:00 IST,10:15:00 IST,53.19,51.775,43.19,-2.66,-1.41,-105.75,Failure,6_min_momentum_failed
+2025-01-23,NIFTY 23 JAN 23200 PE,,PE,23200,75.0,10:53:00 IST,10:59:00 IST,41.6,40.85,32.24,-1.8,-0.75,-56.25,Failure,6_min_momentum_failed
+2025-01-23,NIFTY 23 JAN 23250 CE,,CE,23250,90.0,11:32:00 IST,11:38:00 IST,49.73,51.675,41.2,3.91,1.95,146.25,Success,6_min_momentum_failed
+2025-01-23,NIFTY 23 JAN 23350 PE,,PE,23350,75.0,11:56:00 IST,12:02:00 IST,41.07,41.15,31.25,0.19,0.08,6.0,Success,6_min_momentum_failed
+2025-01-23,NIFTY 23 JAN 23300 CE,,CE,23300,100.0,12:17:00 IST,12:23:00 IST,48.09,47.9875,38.1,-0.21,-0.1,-7.5,Failure,6_min_momentum_failed

@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-02-17,NIFTY 17 FEB 22800 CE,,CE,22800,100.0,10:36:00 IST,10:42:00 IST,41.86,42.475,32.92,1.47,0.62,46.5,Success,6_min_momentum_failed
+2025-02-17,NIFTY 17 FEB 22850 CE,,CE,22850,100.0,12:56:00 IST,13:02:00 IST,34.53,36.8375,26.21,6.68,2.31,173.25,Success,6_min_momentum_failed
+2025-02-17,NIFTY 17 FEB 22900 CE,,CE,22900,95.0,13:36:00 IST,13:42:00 IST,35.85,35.4,26.89,-1.26,-0.45,-33.75,Failure,6_min_momentum_failed

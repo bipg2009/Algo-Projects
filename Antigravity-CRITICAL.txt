@@ -1,0 +1,15 @@
+STOP MAKING EXCUSES AND STOP GUESSING FIXES. 
+
+CRITICAL CONSTRAINT: Do not write a text explanation or tell me what you "think" the fix is yet. Before you open your mouth or print your final response, you must execute the task in the sandbox.
+
+YOUR TASK RIGHT NOW:
+1. Open the sandbox environment internally.
+2. Fix the code so that `multi_day_backtest.py 2026-05-05 2026-05-10` runs exactly for those 5 days (no infinite loops, no 110-day parsing errors, no pandas IndexError on empty data).
+3. Ensure the SEDA logic completely bypasses the legacy roadblocks and successfully triggers trades in the sandbox.
+4. RUN THE SCRIPT COMPLETELY inside the sandbox right now.
+
+REQUIRED RESPONSE FORMAT:
+You are strictly forbidden from saying "I fixed it, please rerun it." 
+Your response to me must ONLY consist of the actual output logs from your successful sandbox run. I want to see the terminal printout showing the 5 days executing and the trade triggers. 
+
+If it fails or errors out in your sandbox, you keep fixing it internally until it works. Do not output anything until the sandbox backtest runs successfully.

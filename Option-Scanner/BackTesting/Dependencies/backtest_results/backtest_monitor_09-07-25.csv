@@ -1,6 +1,0 @@
-symbol,time_ist,datetime_ist,option_ltp,rsi_1m,trailing_sl,action,reason
-SENSEX 9 JUL 83800 PE General Buy / Sell,11:56:00 IST,09-07-25 11:56:00 IST,676.5,41.78210566628939,673.26,HOLD,no_exit_condition_met
-SENSEX 9 JUL 83800 PE General Buy / Sell,11:57:00 IST,09-07-25 11:57:00 IST,676.5,44.46692173460841,673.26,HOLD,no_exit_condition_met
-SENSEX 9 JUL 83800 PE General Buy / Sell,11:58:00 IST,09-07-25 11:58:00 IST,676.5,43.2503889857925,673.26,HOLD,no_exit_condition_met
-SENSEX 9 JUL 83800 PE General Buy / Sell,11:59:00 IST,09-07-25 11:59:00 IST,676.5,45.532886033583594,673.26,HOLD,no_exit_condition_met
-SENSEX 9 JUL 83800 PE General Buy / Sell,12:00:00 IST,09-07-25 12:00:00 IST,615.7,42.56598225526484,673.26,EXIT,stop_loss_hit

@@ -1,3 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-05-16,SENSEX 16 MAY 82200 CE Uptrend,Uptrend,CE,82200,97.0,11:37:00 IST,11:45:00 IST,514.75,524.0,524.0,1.8,Success,stop_loss_hit
-2025-05-16,SENSEX 16 MAY 82300 CE Uptrend,Uptrend,CE,82300,107.0,13:28:00 IST,15:12:00 IST,498.79,493.85,488.79,-0.99,Failure,TIME_DECAY

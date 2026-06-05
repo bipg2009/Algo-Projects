@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Scanner Dashboard</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo"></div>
+                <h2>Algo Engine</h2>
+            </div>
+            <div class="sidebar-scanner-status" style="padding: 0 24px 24px;">
+                <span class="label">Scanner Status: </span>
+                <span id="scanner-state" class="state-text inactive">INACTIVE</span>
+            </div>
+            <nav>
+                <a href="/" class="nav-item active">Live Dashboard</a>
+                <a href="/strategies" class="nav-item">Strategies</a>
+                <a href="#" class="nav-item">Trade History</a>
+                <a href="#" class="nav-item">System Logs</a>
+                <a href="/testing" class="nav-item">Testing</a>
+            </nav>
+
+            <!-- Manual Order Entry inside Sidebar -->
+            <div class="sidebar-manual-order" style="padding: 8px 16px;">
+                <h4 style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 6px; letter-spacing: 0.5px;">Manual Trade Entry</h4>
+                <div class="manual-order-form" style="gap: 6px;">
+                    <div class="form-group" style="gap: 2px;">
+                        <label for="manual-exchange" style="font-size: 0.65rem;">Exchange</label>
+                        <select id="manual-exchange" class="form-control" style="padding: 4px 8px; font-size: 0.8rem;">
+                            <option value="NSE">NSE</option>
+                            <option value="BSE">BSE</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="gap: 2px;">
+                        <label for="manual-symbol" style="font-size: 0.65rem;">Script Name</label>
+                        <input type="text" id="manual-symbol" class="form-control" placeholder="e.g. NIFTY 02 JUN 24500 CE" autocomplete="off" style="padding: 4px 8px; font-size: 0.8rem;" list="instrument-list" oninput="if(window.searchInstruments) window.searchInstruments(this.value); if(window.fetchLTP) window.fetchLTP(this.value);">
+                        <datalist id="instrument-list"></datalist>
+                        <div style="font-size: 0.7rem; color: #a1a1aa; margin-top: 3px; display: flex; justify-content: space-between;">
+                            <span>Current Price:</span>
+                            <span id="manual-ltp-display" style="color: #4ade80; font-weight: 600;">--</span>
+                        </div>
+                    </div>
+                    <div class="form-actions" style="margin-top: 6px; gap: 4px;">
+                        <button class="btn btn-buy" onclick="submitManualOrder('BUY')" style="flex: 1; padding: 4px; font-size: 0.8rem;">BUY</button>
+                        <button class="btn btn-sell" onclick="submitManualOrder('SELL')" style="flex: 1; padding: 4px; font-size: 0.8rem;">SELL</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="system-status">
+                <div class="status-indicator">
+                    <span id="ws-status-dot" class="dot disconnected"></span>
+                    <span id="ws-status-text">Disconnected</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="topbar">
+                <div class="header-titles">
+                    <h2>Live Dashboard</h2>
+                    <p class="subtitle" id="last-update-time">Waiting for data...</p>
+                </div>
+                <div class="scanner-controls">
+                    <div class="state-card">
+                        <span class="label">Market Trend</span>
+                        <h3 id="market-trend" class="state-text inactive">WAITING</h3>
+                    </div>
+                    <div class="state-card">
+                        <span class="label">Daily ATR</span>
+                        <h3 id="market-atr" class="state-text inactive">WAITING</h3>
+                    </div>
+                    <div class="state-card">
+                        <span class="label">Mute Timer</span>
+                        <h3 id="mute-timer" class="timer-text">00:00</h3>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Grid Layout -->
+            <div class="content-grid">
+                <!-- New Ticker Panel -->
+            <div class="panel grid-span-full">
+                <div class="panel-header">
+                    <h3>ATM Option Chain Ticker</h3>
+                    <div class="badge" id="ticker-spot">Spot: WAITING</div>
+                </div>
+                <div class="panel-body table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price (LTP)</th>
+                                <th id="sort-vol" style="cursor: pointer; user-select: none; color: #888;" title="Click to sort by Volume">Vol ↕</th>
+                                <th id="sort-oi" style="cursor: pointer; user-select: none; color: #fff;" title="Click to sort by OI Change">OI Change ↕</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ticker-body">
+                            <tr class="empty-row"><td colspan="5">Waiting for chain data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+                <!-- Left Column: Active Trades (75%) -->
+                <section class="panel active-trades-panel">
+                    <div class="panel-header">
+                        <h3>Active Trades</h3>
+                        <span class="badge" id="active-trades-count">0</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-wrapper">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Symbol</th>
+                                        <th>Type</th>
+                                        <th>Entry LTP</th>
+                                        <th>Target</th>
+                                        <th>Stop Loss</th>
+                                        <th>Current LTP</th>
+                                        <th>PnL Points</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="active-trades-body">
+                                    <!-- Dynamic rows go here -->
+                                    <tr class="empty-row"><td colspan="8">No active trades currently.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Right Column: Recent Signals (25%) -->
+                <section class="panel signals-panel">
+                    <div class="panel-header">
+                        <h3>Recent Signals</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="signal-list" id="signal-list">
+                            <!-- Dynamic signals go here -->
+                            <li class="empty-state">No recent signals.</li>
+                        </ul>
+                    </div>
+                </section>
+
+
+                <!-- Bottom: System Logs -->
+                <section class="panel logs-panel grid-span-full">
+                    <div class="panel-header">
+                        <h3>System Alerts</h3>
+                    </div>
+                    <div class="panel-body terminal-body" id="system-logs">
+                        <!-- Dynamic logs go here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Cache-bust so latest WS fixes load immediately -->
+    <script src="/assets/app.js?v=2026-06-02-1336"></script>
+</body>
+</html>

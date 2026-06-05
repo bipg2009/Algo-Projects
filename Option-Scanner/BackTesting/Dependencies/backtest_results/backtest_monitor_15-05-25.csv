@@ -1,3 +1,0 @@
-symbol,time_ist,datetime_ist,option_ltp,rsi_1m,trailing_sl,action,reason
-SENSEX 15 MAY 81500 CE Uptrend,10:44:00 IST,15-05-25 10:44:00 IST,999.85,85.48281411009168,999.85,EXIT,stop_loss_hit
-SENSEX 15 MAY 81400 CE Uptrend,11:03:00 IST,15-05-25 11:03:00 IST,1198.4,56.09797449498103,1200.38,EXIT,stop_loss_hit

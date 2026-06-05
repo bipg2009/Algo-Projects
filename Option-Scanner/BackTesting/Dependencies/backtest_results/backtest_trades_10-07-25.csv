@@ -1,3 +1,0 @@
-test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-07-10,SENSEX 10 JUL 83400 PE General Buy / Sell,PE,83400,95.0,10:14:00 IST,10:15:00 IST,629.89,619.89,619.89,-1.59,Failure,stop_loss_hit
-2025-07-10,SENSEX 10 JUL 83300 PE General Buy / Sell,PE,83300,95.0,11:05:00 IST,11:10:00 IST,799.67,789.67,789.67,-1.25,Failure,stop_loss_hit

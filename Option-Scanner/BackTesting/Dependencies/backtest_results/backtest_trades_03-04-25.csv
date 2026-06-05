@@ -1,3 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-04-03,SENSEX 3 APR 76500 PE Downtrend,Downtrend,PE,76500,97.0,11:05:00 IST,11:06:00 IST,1046.31,1036.31,1036.31,-0.96,Failure,stop_loss_hit
-2025-04-03,SENSEX 3 APR 76400 PE Downtrend,Downtrend,PE,76400,97.0,11:22:00 IST,11:23:00 IST,1027.42,1017.42,1017.42,-0.97,Failure,stop_loss_hit

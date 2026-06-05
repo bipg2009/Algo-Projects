@@ -1,3 +1,0 @@
-date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
-07-05-25,2025-05-07_126,11:21:00 IST,BUY,SENSEX 7 MAY 80600 CE,Uptrend,CE,590.6,580.6,72.24971830843742,128820,
-07-05-25,2025-05-07_126,11:25:00 IST,SELL,SENSEX 7 MAY 80600 CE,Uptrend,CE,580.6,580.6,69.99273398541851,185520,Failure

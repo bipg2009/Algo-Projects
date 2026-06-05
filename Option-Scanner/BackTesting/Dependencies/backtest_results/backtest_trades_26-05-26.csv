@@ -1,1 +1,2 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-05-26,NIFTY 26 MAY 23900 PE,,PE,23900,100,14:16:00 IST,14:18:00 IST,34.92,34.575,24.92,-0.99,Failure,2_min_profit_check_failed

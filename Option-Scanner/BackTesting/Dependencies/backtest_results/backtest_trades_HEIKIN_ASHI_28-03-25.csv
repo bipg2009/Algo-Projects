@@ -1,0 +1,5 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-28,NIFTY 28 MAR 23600 CE,,CE,23600,85.0,10:44:00 IST,10:50:00 IST,45.55,47.5875,39.2,4.47,Success,6_min_momentum_failed
+2025-03-28,NIFTY 28 MAR 23600 PE,,PE,23600,100.0,11:15:00 IST,11:21:00 IST,33.0,30.5625,23.0,-7.39,Failure,6_min_momentum_failed
+2025-03-28,NIFTY 28 MAR 23500 PE,,PE,23500,100.0,12:33:00 IST,12:39:00 IST,29.39,28.6875,22.58,-2.39,Failure,6_min_momentum_failed
+2025-03-28,NIFTY 28 MAR 23500 CE,,CE,23500,82.0,14:17:00 IST,14:23:00 IST,33.49,32.975,24.31,-1.54,Failure,6_min_momentum_failed

@@ -1,0 +1,71 @@
+timestamp,event,symbol,option_type,strike,ltp,score,required_score,rsi,trend,pcr,nifty_spot,gap_mode,scanner_state,reject_reason,notes
+2026-06-02 11:00:07,HOUR_START,,,,,,,,,,,,,,Hourly hypercare log active; waiting for signals/rejects.
+2026-06-02 11:06:33,RSI_BAND,,PE,,,,,43.4,RED,,,,,rose from 38.2 (left PE band),NIFTY 1m RSI 43.4 above PE band (10.0-41.0) — PE buy signals blocked [rose from 38.2 (left PE band)]
+2026-06-02 11:07:04,RSI_BAND,,PE,,,,,43.4,RED,,,,,outside_band,NIFTY 1m RSI 43.4 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:07:38,RSI_BAND,,PE,,,,,43.0,RED,,,,,outside_band,NIFTY 1m RSI 43.0 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:08:22,RSI_BAND,,PE,,,,,43.0,RED,,,,,outside_band,NIFTY 1m RSI 43.0 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:11:23,RSI_BAND,,PE,,,,,44.6,RED,,,,,rose from 36.1 (left PE band),NIFTY 1m RSI 44.6 above PE band (10.0-41.0) — PE buy signals blocked [rose from 36.1 (left PE band)]
+2026-06-02 11:12:08,RSI_BAND,,PE,,,,,44.6,RED,,,,,outside_band,NIFTY 1m RSI 44.6 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:12:39,RSI_BAND,,PE,,,,,44.6,RED,,,,,outside_band,NIFTY 1m RSI 44.6 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:13:11,RSI_BAND,,PE,,,,,41.1,RED,,,,,outside_band,NIFTY 1m RSI 41.1 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:13:42,RSI_BAND,,PE,,,,,51.6,RED,,,,,outside_band,NIFTY 1m RSI 51.6 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:14:16,RSI_BAND,,PE,,,,,51.6,RED,,,,,outside_band,NIFTY 1m RSI 51.6 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:14:47,RSI_BAND,,PE,,,,,48.9,RED,,,,,outside_band,NIFTY 1m RSI 48.9 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:15:20,RSI_BAND,,PE,,,,,51.7,RED,,,,,outside_band,NIFTY 1m RSI 51.7 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:15:59,RSI_BAND,,PE,,,,,51.7,RED,,,,,outside_band,NIFTY 1m RSI 51.7 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:16:32,RSI_BAND,,PE,,,,,48.2,RED,,,,,outside_band,NIFTY 1m RSI 48.2 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:17:16,RSI_BAND,,PE,,,,,48.2,RED,,,,,outside_band,NIFTY 1m RSI 48.2 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:17:46,RSI_BAND,,PE,,,,,48.2,RED,,,,,outside_band,NIFTY 1m RSI 48.2 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:18:18,RSI_BAND,,PE,,,,,45.2,RED,,,,,outside_band,NIFTY 1m RSI 45.2 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:19:04,RSI_BAND,,PE,,,,,44.9,RED,,,,,outside_band,NIFTY 1m RSI 44.9 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:19:39,RSI_BAND,,PE,,,,,43.9,RED,,,,,outside_band,NIFTY 1m RSI 43.9 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:20:10,RSI_BAND,,PE,,,,,43.9,RED,,,,,outside_band,NIFTY 1m RSI 43.9 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:20:42,RSI_BAND,,PE,,,,,52.7,RED,,,,,outside_band,NIFTY 1m RSI 52.7 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:21:21,RSI_BAND,,CE,,,,,61.6,GREEN,,,,,outside_band,NIFTY 1m RSI 61.6 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:21:54,RSI_BAND,,CE,,,,,61.6,GREEN,,,,,outside_band,NIFTY 1m RSI 61.6 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:22:25,RSI_BAND,,CE,,,,,61.6,GREEN,,,,,outside_band,NIFTY 1m RSI 61.6 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:22:58,RSI_BAND,,CE,,,,,61.8,GREEN,,,,,outside_band,NIFTY 1m RSI 61.8 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:23:29,RSI_BAND,,CE,,,,,61.8,GREEN,,,,,outside_band,NIFTY 1m RSI 61.8 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:27:18,RSI_BAND,,CE,,,,,61.1,GREEN,,,,,dropped from 66.1 (left CE band),NIFTY 1m RSI 61.1 below CE band (63.0-90.0) — CE buy signals blocked [dropped from 66.1 (left CE band)]
+2026-06-02 11:28:06,RSI_BAND,,CE,,,,,61.1,GREEN,,,,,outside_band,NIFTY 1m RSI 61.1 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:28:37,RSI_BAND,,CE,,,,,61.1,GREEN,,,,,outside_band,NIFTY 1m RSI 61.1 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:29:10,RSI_BAND,,CE,,,,,59.2,GREEN,,,,,outside_band,NIFTY 1m RSI 59.2 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:29:40,RSI_BAND,,CE,,,,,55.9,GREEN,,,,,outside_band,NIFTY 1m RSI 55.9 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:30:12,RSI_BAND,,CE,,,,,55.9,GREEN,,,,,outside_band,NIFTY 1m RSI 55.9 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:30:44,RSI_BAND,,CE,,,,,59.4,GREEN,,,,,outside_band,NIFTY 1m RSI 59.4 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:31:27,RSI_BAND,,CE,,,,,57.0,GREEN,,,,,outside_band,NIFTY 1m RSI 57.0 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:31:58,RSI_BAND,,CE,,,,,57.0,GREEN,,,,,outside_band,NIFTY 1m RSI 57.0 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:32:31,RSI_BAND,,CE,,,,,60.0,GREEN,,,,,outside_band,NIFTY 1m RSI 60.0 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:33:01,RSI_BAND,,CE,,,,,60.0,GREEN,,,,,outside_band,NIFTY 1m RSI 60.0 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:33:32,RSI_BAND,,CE,,,,,60.0,GREEN,,,,,outside_band,NIFTY 1m RSI 60.0 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:34:03,RSI_BAND,,CE,,,,,53.6,GREEN,,,,,outside_band,NIFTY 1m RSI 53.6 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:34:34,RSI_BAND,,CE,,,,,54.1,GREEN,,,,,outside_band,NIFTY 1m RSI 54.1 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:35:05,RSI_BAND,,CE,,,,,54.1,GREEN,,,,,outside_band,NIFTY 1m RSI 54.1 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:35:38,RSI_BAND,,CE,,,,,54.4,GREEN,,,,,outside_band,NIFTY 1m RSI 54.4 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:36:19,RSI_BAND,,CE,,,,,54.4,GREEN,,,,,outside_band,NIFTY 1m RSI 54.4 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:36:51,RSI_BAND,,CE,,,,,54.4,GREEN,,,,,outside_band,NIFTY 1m RSI 54.4 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:37:24,RSI_BAND,,CE,,,,,51.8,GREEN,,,,,outside_band,NIFTY 1m RSI 51.8 below CE band (63.0-90.0) — CE buy signals blocked
+2026-06-02 11:37:57,RSI_BAND,,PE,,,,,45.6,RED,,,,,outside_band,NIFTY 1m RSI 45.6 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:38:31,RSI_BAND,,PE,,,,,45.6,RED,,,,,outside_band,NIFTY 1m RSI 45.6 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:43:52,RSI_BAND,,PE,,,,,45.8,RED,,,,,rose from 39.6 (left PE band),NIFTY 1m RSI 45.8 above PE band (10.0-41.0) — PE buy signals blocked [rose from 39.6 (left PE band)]
+2026-06-02 11:44:22,RSI_BAND,,PE,,,,,45.8,RED,,,,,outside_band,NIFTY 1m RSI 45.8 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:44:55,RSI_BAND,,PE,,,,,47.1,RED,,,,,outside_band,NIFTY 1m RSI 47.1 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:46:16,RSI_BAND,,PE,,,,,44.3,RED,,,,,rose from 40.0 (left PE band),NIFTY 1m RSI 44.3 above PE band (10.0-41.0) — PE buy signals blocked [rose from 40.0 (left PE band)]
+2026-06-02 11:46:58,RSI_BAND,,PE,,,,,44.3,RED,,,,,outside_band,NIFTY 1m RSI 44.3 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:47:29,RSI_BAND,,PE,,,,,44.7,RED,,,,,outside_band,NIFTY 1m RSI 44.7 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:50:53,RSI_BAND,,PE,,,,,45.2,RED,,,,,outside_band,NIFTY 1m RSI 45.2 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:51:23,RSI_BAND,,PE,,,,,45.2,RED,,,,,outside_band,NIFTY 1m RSI 45.2 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:51:54,RSI_BAND,,PE,,,,,45.2,RED,,,,,outside_band,NIFTY 1m RSI 45.2 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:52:26,RSI_BAND,,PE,,,,,45.1,RED,,,,,outside_band,NIFTY 1m RSI 45.1 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:52:56,RSI_BAND,,PE,,,,,45.1,RED,,,,,outside_band,NIFTY 1m RSI 45.1 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:53:27,RSI_BAND,,PE,,,,,45.1,RED,,,,,outside_band,NIFTY 1m RSI 45.1 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:53:58,RSI_BAND,,PE,,,,,49.5,RED,,,,,outside_band,NIFTY 1m RSI 49.5 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:54:29,RSI_BAND,,PE,,,,,49.5,RED,,,,,outside_band,NIFTY 1m RSI 49.5 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:55:35,RSI_BAND,,PE,,,,,44.1,RED,,,,,outside_band,NIFTY 1m RSI 44.1 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:56:07,RSI_BAND,,PE,,,,,44.1,RED,,,,,outside_band,NIFTY 1m RSI 44.1 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:56:38,RSI_BAND,,PE,,,,,43.9,RED,,,,,outside_band,NIFTY 1m RSI 43.9 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:57:10,RSI_BAND,,PE,,,,,43.9,RED,,,,,outside_band,NIFTY 1m RSI 43.9 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:57:56,RSI_BAND,,PE,,,,,45.0,RED,,,,,outside_band,NIFTY 1m RSI 45.0 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:58:27,RSI_BAND,,PE,,,,,45.0,RED,,,,,outside_band,NIFTY 1m RSI 45.0 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 11:58:59,RSI_BAND,,PE,,,,,45.0,RED,,,,,outside_band,NIFTY 1m RSI 45.0 above PE band (10.0-41.0) — PE buy signals blocked
+2026-06-02 12:00:03,NO_UPDATE,,,,,,,,,,,,,,No signal verified and no score-85 reject this hour.

@@ -1,2 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-05-26,SENSEX 26 MAY 82200 PE Downtrend,Downtrend,PE,82200,97.0,11:32:00 IST,11:35:00 IST,718.77,708.77,708.77,-1.39,Failure,stop_loss_hit

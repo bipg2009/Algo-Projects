@@ -1,2 +1,2 @@
 test_date,total_trades,success,failure,breakeven,win_rate_pct,failure_rate_pct,avg_pnl_pct,setup_timeframe,trigger_timeframe,setup_filter,trigger_filter
-2025-03-05,1,1,0,0,100.0,0.0,75.99,1min,1min,1m EMA+RSI+Supertrend,1m Supertrend
+2025-03-05,5,1,4,0,20.0,80.0,-19.59,1min,1min,1m EMA+RSI+Supertrend,1m Supertrend

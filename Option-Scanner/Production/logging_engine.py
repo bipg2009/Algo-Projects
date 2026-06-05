@@ -101,24 +101,36 @@ def print_heartbeat(df_1m: pd.DataFrame, chain: dict, target_type: str, valid_op
     
     state_str = ""
     try:
-        from analytics.timeframe_manager import CandleAggregator
-        from analytics.state_engine import StateClassifier
+        from STRATEGies.analytics.timeframe_manager import CandleAggregator
+        from STRATEGies.analytics.state_engine import StateClassifier
         import indicator_engine as Indicators
+        
         multi_dfs = CandleAggregator.resample_1m_to_multi(df_1m)
-        df_3m, df_5m, df_10m = multi_dfs.get("3m", pd.DataFrame()), multi_dfs.get("5m", pd.DataFrame()), multi_dfs.get("10m", pd.DataFrame())
-        if not df_10m.empty: df_10m = Indicators.add_ema(df_10m) 
+        df_3m = multi_dfs.get("3m", pd.DataFrame())
+        df_5m = multi_dfs.get("5m", pd.DataFrame())
+        df_10m = multi_dfs.get("10m", pd.DataFrame())
+        
+        if not df_10m.empty: df_10m = Indicators.add_ema(df_10m); df_10m = Indicators.add_adx(df_10m); df_10m = Indicators.add_supertrend(df_10m)
         if not df_5m.empty: df_5m = Indicators.add_ema(df_5m)
         if not df_3m.empty: df_3m = Indicators.add_vwap(df_3m)
+        
         if "EMA9" in df_10m.columns: df_10m["ema_9"] = df_10m["EMA9"]
         if "EMA9" in df_5m.columns: df_5m["ema_9"] = df_5m["EMA9"]
         if "EMA20" in df_5m.columns: df_5m["ema_21"] = df_5m["EMA20"]
         if "VWAP" in df_3m.columns: df_3m["vwap"] = df_3m["VWAP"]
         
-        regime = StateClassifier.classify_10m_regime(df_10m)
-        structure = StateClassifier.classify_5m_structure(df_5m)
-        confirmation = StateClassifier.classify_3m_confirmation(df_3m)
-        execution = StateClassifier.classify_1m_execution(df_1m)
-        state_str = f"   └── [SEDA] 10m:{regime.market_regime} | 5m:{structure.trend_structure} | 3m:{confirmation.vwap_state} | 1m:{execution.momentum_velocity}"
+        ctx = StateClassifier.build_market_context(df_1m, df_3m, df_5m, df_10m, chain)
+        
+        total_score = ctx.regime_10m.score + ctx.structure_5m.score + ctx.confirmation_3m.score + ctx.execution_1m.score + ctx.derivatives.score
+        
+        state_str = (
+            f"   └── [SEDA SCORE: {total_score}]\n"
+            f"       10m REGIME: {ctx.regime_10m.state} ({ctx.regime_10m.score} pts)\n"
+            f"        5m STRUCT: {ctx.structure_5m.state} ({ctx.structure_5m.score} pts)\n"
+            f"        3m PARTIC: {ctx.confirmation_3m.state} ({ctx.confirmation_3m.score} pts)\n"
+            f"       DERIVATIVE: {ctx.derivatives.pcr_bias} ({ctx.derivatives.score} pts)\n"
+            f"        1m EXECUT: {ctx.execution_1m.state} ({ctx.execution_1m.score} pts)"
+        )
     except ImportError:
         state_str = ""
     except Exception as e:

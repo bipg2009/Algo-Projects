@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+05-01-26,2026-01-05_223,12:58:00 IST,BUY,NIFTY 5 JAN 26150 CE,,CE,10.44,0.44,62.39756715140539,21010600,
+05-01-26,2026-01-05_223,13:04:00 IST,SELL,NIFTY 5 JAN 26150 CE,,CE,11.875,10.94,40.82842271897903,17601480,Success

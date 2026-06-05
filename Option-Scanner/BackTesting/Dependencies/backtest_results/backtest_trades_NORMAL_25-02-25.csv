@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-02-25,NIFTY 25 FEB 22550 CE,,CE,22550,100,11:42:00 IST,11:48:00 IST,86.36,83.95,78.8,-2.79,-2.41,-180.75,Failure,6_min_momentum_failed

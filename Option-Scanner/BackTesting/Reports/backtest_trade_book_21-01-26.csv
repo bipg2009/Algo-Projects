@@ -1,3 +1,0 @@
-date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
-21-01-26,2026-01-21_86,10:41:00 IST,BUY,NIFTY 21 JAN 25300 PE,,PE,32.51,22.51,23.522461414657585,8062275,
-21-01-26,2026-01-21_86,14:35:00 IST,SELL,NIFTY 21 JAN 25300 PE,,PE,33.1,33.1,56.543668108842375,5683600,Success

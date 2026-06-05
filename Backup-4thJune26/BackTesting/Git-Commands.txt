@@ -1,0 +1,5 @@
+git git status (to verify everything is perfectly saved and synchronized by typing)
+git add . (to commit current branch changes)
+git add ../(to commit target the files outside your current folder up folder):
+git commit -m "Saved all root and subfolder updates"
+git push origin React ( This sends all your newly committed code straight to your React branch on GitHub.)c

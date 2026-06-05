@@ -1,0 +1,3 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-07-31,NIFTY 31 JUL 24550 CE,CE,24550,87.0,10:51:00 IST,10:55:00 IST,295.27,280.27,280.27,-5.08,Failure,stop_loss_hit
+2025-07-31,NIFTY 31 JUL 24450 CE,CE,24450,100.0,12:16:00 IST,12:20:00 IST,303.0,288.0,288.0,-4.95,Failure,stop_loss_hit

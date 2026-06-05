@@ -1,1 +1,5 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-11,NIFTY 11 MAR 22500 CE SEDA,SEDA,CE,22500,80,09:45:00 IST,09:55:00 IST,17.84,18.55,7.84,3.98,Success,stale_trade_6m_loss
+2025-03-11,NIFTY 11 MAR 22450 CE SEDA,SEDA,CE,22450,80,10:06:00 IST,10:12:00 IST,17.7,16.75,7.7,-5.37,Failure,stale_trade_6m_loss
+2025-03-11,NIFTY 11 MAR 22400 CE SEDA,SEDA,CE,22400,80,10:26:00 IST,10:32:00 IST,21.98,21.7,11.98,-1.27,Failure,stale_trade_6m_loss
+2025-03-11,NIFTY 11 MAR 22350 CE SEDA,SEDA,CE,22350,80,11:51:00 IST,11:57:00 IST,19.3,18.2125,9.3,-5.63,Failure,stale_trade_6m_loss

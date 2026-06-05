@@ -1,0 +1,3 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-23,NIFTY 23 APR 24300 PE,,PE,24300,100.0,10:21:00 IST,10:25:00 IST,53.53,43.53,43.53,-18.68,Failure,stop_loss_hit
+2025-04-23,NIFTY 23 APR 24250 CE,,CE,24250,75.0,12:56:00 IST,13:02:00 IST,13.03,10.35,5.21,-20.57,Failure,6_min_momentum_failed

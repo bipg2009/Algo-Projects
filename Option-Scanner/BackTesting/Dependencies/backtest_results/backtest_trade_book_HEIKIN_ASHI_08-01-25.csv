@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+08-01-25,2025-01-08_69,10:24:00 IST,BUY,NIFTY 8 JAN 23650 PE,,PE,13.27,3.27,27.63964873441435,8363625,
+08-01-25,2025-01-08_69,10:30:00 IST,SELL,NIFTY 8 JAN 23650 PE,,PE,13.425,9.95,34.26136689225034,8991000,Success

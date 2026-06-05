@@ -1,2 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-03-02,NIFTY 2 MAR 24700 PE,,PE,24700,75.0,13:30:00 IST,14:05:00 IST,17.28,13.88,13.88,-19.68,Failure,stop_loss_hit

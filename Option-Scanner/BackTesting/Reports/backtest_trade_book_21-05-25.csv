@@ -1,3 +1,0 @@
-date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
-21-05-25,2025-05-21_155,11:50:00 IST,BUY,SENSEX 21 MAY 81700 PE,Downtrend,PE,1077.57,1067.57,28.09270176313298,24020,
-21-05-25,2025-05-21_155,11:51:00 IST,SELL,SENSEX 21 MAY 81700 PE,Downtrend,PE,1067.57,1067.57,25.548907694519926,24020,Failure

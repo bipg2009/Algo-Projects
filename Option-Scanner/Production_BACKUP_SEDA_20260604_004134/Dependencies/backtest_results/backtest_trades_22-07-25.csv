@@ -1,0 +1,3 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-07-22,NIFTY 22 JUL 25300 PE,PE,25300,100,09:59:00 IST,10:20:00 IST,188.97,193.0,193.0,2.13,Success,stop_loss_hit
+2025-07-22,NIFTY 22 JUL 25100 CE,CE,25100,100,11:57:00 IST,15:12:00 IST,130.9,129.6,126.95,-0.99,Failure,TIME_DECAY

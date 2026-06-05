@@ -1,3 +1,0 @@
-date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
-04-06-25,2025-06-04_178,12:13:00 IST,BUY,SENSEX 4 JUN 80800 CE,Uptrend,CE,925.77,915.77,63.73852064291529,49680,
-04-06-25,2025-06-04_178,12:30:00 IST,SELL,SENSEX 4 JUN 80800 CE,Uptrend,CE,957.3,957.3,45.03325068612609,50060,Success

@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-03,NIFTY 3 APR 22950 CE,,CE,22950,100,11:54:00 IST,12:03:00 IST,127.16,129.66,129.66,1.97,Success,stop_loss_hit

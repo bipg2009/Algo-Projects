@@ -1,4 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-03-12,NIFTY 12 MAR 23350 CE,,CE,23350,100.0,10:59:00 IST,11:11:00 IST,64.74,60.55,54.74,-6.47,Failure,stale_trade_12m_loss
-2026-03-12,NIFTY 12 MAR 23300 CE,,CE,23300,87.0,12:24:00 IST,12:36:00 IST,63.53,55.75,53.53,-12.25,Failure,stale_trade_12m_loss
-2026-03-12,NIFTY 12 MAR 23150 CE,,CE,23150,75.0,13:25:00 IST,13:55:00 IST,64.45,63.5,54.51,-1.47,Failure,stale_trade_12m_loss

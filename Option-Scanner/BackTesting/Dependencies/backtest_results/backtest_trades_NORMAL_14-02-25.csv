@@ -1,0 +1,8 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-02-14,NIFTY 14 FEB 23050 PE,,PE,23050,95.0,09:56:00 IST,09:59:00 IST,171.04,161.6,161.6,-5.52,-9.44,-708.0,Failure,stop_loss_hit
+2025-02-14,NIFTY 14 FEB 22900 PE,,PE,22900,100.0,11:21:00 IST,11:27:00 IST,172.15,171.7,167.6,-0.26,-0.45,-33.75,Failure,6_min_momentum_failed
+2025-02-14,NIFTY 14 FEB 22900 CE,,CE,22900,82.0,11:58:00 IST,12:01:00 IST,200.38,194.75,194.75,-2.81,-5.63,-422.25,Failure,stop_loss_hit
+2025-02-14,NIFTY 14 FEB 22850 PE,,PE,22850,100.0,12:12:00 IST,12:20:00 IST,170.89,173.39,173.39,1.46,2.5,187.5,Success,stop_loss_hit
+2025-02-14,NIFTY 14 FEB 22800 PE,,PE,22800,100.0,13:03:00 IST,13:06:00 IST,172.31,162.31,162.31,-5.8,-10.0,-750.0,Failure,stop_loss_hit
+2025-02-14,NIFTY 14 FEB 22800 CE,,CE,22800,87.0,13:19:00 IST,13:24:00 IST,223.41,222.1,222.1,-0.59,-1.31,-98.25,Failure,stop_loss_hit
+2025-02-14,NIFTY 14 FEB 22850 CE,,CE,22850,75.0,14:21:00 IST,14:27:00 IST,197.35,198.25,193.95,0.46,0.9,67.5,Success,6_min_momentum_failed

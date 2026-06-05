@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-27,NIFTY 27 JAN 22900 PE,PE,22900,General Buy / Sell,95.0,12:15:00 IST,12:21:00 IST,100.44,101.1,86.1,0.66,Success,time_cutoff_6m

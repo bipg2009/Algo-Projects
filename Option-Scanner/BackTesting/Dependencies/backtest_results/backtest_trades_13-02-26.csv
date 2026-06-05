@@ -1,2 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-02-13,NIFTY 13 FEB 25550 PE,,PE,25550,100,09:58:00 IST,10:10:00 IST,24.45,24.4375,17.18,-0.05,Failure,stale_trade_12m_loss

@@ -1,0 +1,6 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-17,NIFTY 17 APR 23450 CE,,CE,23450,95.0,11:16:00 IST,11:20:00 IST,100.19,92.15,92.15,-8.02,Failure,stop_loss_hit
+2025-04-17,NIFTY 17 APR 23550 CE,,CE,23550,100.0,11:37:00 IST,11:44:00 IST,98.27,132.85,132.85,35.19,Success,stop_loss_hit
+2025-04-17,NIFTY 17 APR 23650 CE,,CE,23650,100.0,12:28:00 IST,12:36:00 IST,67.37,87.45,87.45,29.81,Success,stop_loss_hit
+2025-04-17,NIFTY 17 APR 23750 CE,,CE,23750,100.0,13:07:00 IST,13:19:00 IST,47.62,58.65,54.15,23.16,Success,dynamic_trail_hit
+2025-04-17,NIFTY 17 APR 23800 CE,,CE,23800,100.0,13:43:00 IST,13:58:00 IST,28.13,40.3,40.3,43.26,Success,stop_loss_hit

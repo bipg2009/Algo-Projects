@@ -1,0 +1,16 @@
+How to run your new Dashboard setup: Open two separate command prompts.
+
+In the first prompt, start your scanner from the Dashboard folder:
+
+powershell
+
+
+cd C:\Biplab\ALGO-Projects\Option-Scanner\Dashboard
+python Market_Scanner.py
+In the second prompt, launch the Web UI:
+
+powershell
+
+
+cd C:\Biplab\ALGO-Projects\Option-Scanner\Dashboard
+streamlit run app.py

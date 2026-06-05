@@ -1,0 +1,3 @@
+test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-14,NIFTY 14 JAN 23200 CE,CE,23200,General Buy / Sell,85.0,10:58:00 IST,11:04:00 IST,101.66,100.3,86.66,-1.34,Failure,time_cutoff_6m
+2025-01-14,NIFTY 14 JAN 23200 PE,PE,23200,General Buy / Sell,85.0,11:46:00 IST,11:52:00 IST,43.43,42.45,28.43,-2.26,Failure,time_cutoff_6m

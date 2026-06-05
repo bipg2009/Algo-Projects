@@ -1,3 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-06-27,SENSEX 27 JUN 83800 CE Uptrend,Uptrend,CE,83800,95.0,11:07:00 IST,11:10:00 IST,478.49,468.49,468.49,-2.09,Failure,stop_loss_hit
-2025-06-27,SENSEX 27 JUN 83900 CE Uptrend,Uptrend,CE,83900,95.0,12:47:00 IST,15:12:00 IST,409.81,405.75,399.81,-0.99,Failure,TIME_DECAY

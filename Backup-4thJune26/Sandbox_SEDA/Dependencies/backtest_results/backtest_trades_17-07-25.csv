@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-07-17,NIFTY 17 JUL 24850 CE,CE,24850,87.0,11:13:00 IST,12:25:00 IST,214.52,216.1,216.1,0.74,Success,stop_loss_hit

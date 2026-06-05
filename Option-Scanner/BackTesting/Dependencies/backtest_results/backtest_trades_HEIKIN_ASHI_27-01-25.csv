@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-27,NIFTY 27 JAN 22900 PE,,PE,22900,82.0,10:27:00 IST,10:33:00 IST,39.1,37.0625,29.77,-5.21,-2.04,-153.0,Failure,6_min_momentum_failed
+2025-01-27,NIFTY 27 JAN 22950 CE,,CE,22950,75.0,11:22:00 IST,11:28:00 IST,45.05,46.825,36.94,3.94,1.78,133.5,Success,6_min_momentum_failed
+2025-01-27,NIFTY 27 JAN 23050 PE,,PE,23050,100.0,12:17:00 IST,12:23:00 IST,36.51,37.2375,27.38,1.99,0.73,54.75,Success,6_min_momentum_failed

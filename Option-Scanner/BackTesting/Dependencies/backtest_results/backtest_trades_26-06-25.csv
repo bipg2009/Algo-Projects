@@ -1,4 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-06-26,SENSEX 26 JUN 83000 CE Uptrend,Uptrend,CE,83000,95.0,09:47:00 IST,09:55:00 IST,921.47,1092.0,1092.0,18.51,Success,stop_loss_hit
-2025-06-26,SENSEX 26 JUN 83100 CE Uptrend,Uptrend,CE,83100,95.0,12:12:00 IST,12:13:00 IST,1025.15,1015.15,1015.15,-0.98,Failure,stop_loss_hit
-2025-06-26,SENSEX 26 JUN 83200 CE Uptrend,Uptrend,CE,83200,105.0,12:29:00 IST,12:30:00 IST,955.46,945.46,945.46,-1.05,Failure,stop_loss_hit

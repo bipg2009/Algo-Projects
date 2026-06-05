@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-02-06,NIFTY 6 FEB 23600 PE,,PE,23600,100,10:14:00 IST,10:31:00 IST,40.94,44.48,44.48,8.65,3.54,265.5,Success,stop_loss_hit

@@ -1,2 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-01-21,NIFTY 21 JAN 25300 PE,,PE,25300,79.0,10:41:00 IST,14:35:00 IST,32.51,33.1,33.1,1.81,Success,stop_loss_hit

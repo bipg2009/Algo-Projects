@@ -1,3 +1,0 @@
-test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-07-04,SENSEX 4 JUL 83300 PE General Buy / Sell,PE,83300,95.0,10:48:00 IST,10:55:00 IST,346.23,380.55,380.55,9.91,Success,stop_loss_hit
-2025-07-04,SENSEX 4 JUL 83200 PE General Buy / Sell,PE,83200,85.0,11:43:00 IST,11:55:00 IST,378.09,368.09,368.09,-2.64,Failure,stop_loss_hit

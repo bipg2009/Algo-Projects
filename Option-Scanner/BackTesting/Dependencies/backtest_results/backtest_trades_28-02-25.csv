@@ -1,3 +1,4 @@
-test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-02-28,NIFTY 28 FEB 22250 PE,PE,22250,General Buy / Sell,85.0,11:00:00 IST,11:12:00 IST,111.0,111.4,99.1,0.36,Success,time_cutoff_12m
-2025-02-28,NIFTY 28 FEB 22200 PE,PE,22200,General Buy / Sell,95.0,12:41:00 IST,12:47:00 IST,173.06,171.35,158.06,-0.99,Failure,time_cutoff_6m
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-02-28,NIFTY 28 FEB 22250 PE SEDA,SEDA,PE,22250,90,09:45:00 IST,09:51:00 IST,29.08,27.175,19.08,-6.55,Failure,stale_trade_6m_loss
+2025-02-28,NIFTY 28 FEB 22200 PE SEDA,SEDA,PE,22200,90,12:06:00 IST,12:12:00 IST,25.15,24.225,15.15,-3.68,Failure,stale_trade_6m_loss
+2025-02-28,NIFTY 28 FEB 22150 PE SEDA,SEDA,PE,22150,100,12:46:00 IST,15:12:00 IST,26.36,32.8125,22.83,24.48,Success,TIME_DECAY

@@ -1,1 +1,2 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-05-20,NIFTY 20 MAY 23650 CE,,CE,23650,100,14:01:00 IST,14:03:00 IST,43.78,43.35,33.78,-0.98,Failure,2_min_profit_check_failed

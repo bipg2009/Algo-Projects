@@ -1,5 +1,6 @@
-test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-01-31,SENSEX 31 JAN 77000 CE General Buy / Sell,CE,77000,85.0,09:49:00 IST,09:50:00 IST,1136.5,1126.5,1126.5,-0.88,Failure,stop_loss_hit
-2025-01-31,SENSEX 31 JAN 77100 CE General Buy / Sell,CE,77100,85.0,11:06:00 IST,11:10:00 IST,767.35,757.35,757.35,-1.3,Failure,stop_loss_hit
-2025-01-31,SENSEX 31 JAN 77200 CE General Buy / Sell,CE,77200,85.0,12:14:00 IST,12:15:00 IST,593.43,583.43,583.43,-1.69,Failure,stop_loss_hit
-2025-01-31,SENSEX 31 JAN 77300 CE General Buy / Sell,CE,77300,85.0,12:50:00 IST,13:05:00 IST,493.23,506.1,506.1,2.61,Success,stop_loss_hit
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-31,NIFTY 31 JAN 23550 CE SEDA,SEDA,CE,23550,80,09:51:00 IST,09:57:00 IST,66.8,65.35,56.8,-2.17,Failure,stale_trade_6m_loss
+2025-01-31,NIFTY 31 JAN 23600 CE SEDA,SEDA,CE,23600,80,10:46:00 IST,10:52:00 IST,59.63,59.7,49.63,0.12,Success,stale_trade_6m_loss
+2025-01-31,NIFTY 31 JAN 23400 CE SEDA,SEDA,CE,23400,100,11:56:00 IST,12:10:00 IST,61.27,59.975,52.79,-2.11,Failure,stale_trade_6m_loss
+2025-01-31,NIFTY 31 JAN 23350 CE SEDA,SEDA,CE,23350,80,13:16:00 IST,13:22:00 IST,52.13,50.5,42.13,-3.13,Failure,stale_trade_6m_loss
+2025-01-31,NIFTY 31 JAN 23450 CE SEDA,SEDA,CE,23450,80,13:36:00 IST,13:42:00 IST,43.19,44.4375,33.19,2.89,Success,stale_trade_6m_loss

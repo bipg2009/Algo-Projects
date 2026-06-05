@@ -14,8 +14,8 @@ ENABLE_PDB_PAUSE_AFTER_SIGNAL: bool = False
 # ---------------------------------------------------------------------
 # TRADE PARAMETERS
 # ---------------------------------------------------------------------
-TARGET_POINTS: float = 60.0
-INITIAL_SL_POINTS: float = 15.0
+TARGET_POINTS: float = 200.0
+INITIAL_SL_POINTS: float = 10.0
 DEPLOYED_CAPITAL: float = 300000.0
 MARGIN_REQUIREMENT_PCT: float = 0.12
 BACKTEST_SLIPPAGE_PCT: float = 0.01  # 1% premium penalty to model entry latency/jumps
@@ -48,10 +48,10 @@ ADX_CHOP_THRESHOLD: float = 22.0  # Below this the market is classified as chop/
 
 # ---------------------------------------------------------------------
 # RSI TRIGGERS & BANDS
-# Conformed precisely to your strict 65 breakout setup.
+# Conformed precisely to your strict 55 breakout setup.
 # ---------------------------------------------------------------------
-CE_RSI_TRIGGER: float = 58.0  # Synced to your strict breakout rule (was 63.0)
-PE_RSI_TRIGGER: float = 42.0
+CE_RSI_TRIGGER: float = 53.0  # Synced to your strict breakout rule (was 63.0)
+PE_RSI_TRIGGER: float = 45.0
 CE_RSI_MIN: float = CE_RSI_TRIGGER  # Lower boundary of CE RSI band
 CE_RSI_MAX: float = 90.0  # Overbought ceiling for CE band alerts
 PE_RSI_MIN: float = 10.0  # Oversold floor for PE band alerts
@@ -61,7 +61,7 @@ BASE_RSI_POINTS: int = 10  # Points awarded per RSI alignment in scoring
 # ---------------------------------------------------------------------
 # RISK ENGINE
 # ---------------------------------------------------------------------
-GAP_RISK_THRESHOLD: int = 100  # Index pts gap between prev close and open to flag gap
+GAP_RISK_THRESHOLD: int = 250  # Index pts gap between prev close and open to flag gap
 RISK_CONFIDENCE_BASE: int = 65  # Minimum score when PnL >= 0
 RISK_CONFIDENCE_RED: int = 75  # Minimum score when PnL < 0 (tighter filter)
 PANIC_LOT_MULTIPLIER: float = 0.5  # Size reduction in panic / high VIX regime

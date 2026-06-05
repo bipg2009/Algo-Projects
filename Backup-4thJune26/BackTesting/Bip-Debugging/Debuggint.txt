@@ -1,0 +1,30 @@
+Corrected 
+
+NSE-Option-Scanner-Backtest.py to properly inject the 
+original "entry_time": entry_time 
+
+_STALE_HOLD_MIN: int = 12 
+update _STALE_HOLD_MIN to 6 in your 
+Monitor_Engine.py 
+
+multi_day_backtest.py relation to NSE-Option-Scanner-Backtest.py
+
+multi_day_backtest.py is essentially just a wrapper or "runner" script that automates running your backtests over a long date range.
+
+When you run multi_day_backtest.py 2025-01-01 2025-03-31
+
+It takes your date range and generates a list of all business days between those dates.
+It dynamically imports NSE-Option-Scanner-Backtest.py as a module (it literally loads the file and names it backtest_engine in the code).
+The culprit is the Trailing Stop-Loss logic in Monitor_Engine.py.
+
+The culprit is the Trailing Stop-Loss logic in Monitor_Engine.py.
+
+I want you to change the 
+
+Trailing Stop-Loss logic in Monitor_Engine.py
+
+Once a trade is executed and the Stop Loss is placed it waits for 2 mins to elapse. 
+After exactly 2 mins the Stop Loss is updated to LTP +Rs0.50 i.e. 50 paise + Buying Price. 
+After that it waits for 6 mins cutoff 
+Change the Trailing Stop Loss pls. As the price moves it is Rs 15 points that the Trailing stop loss is followed. 
+Pls ensure that this is followed. This rule does not apply when we change the Stop Loss after 2 mins. 

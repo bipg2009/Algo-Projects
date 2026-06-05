@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-16,NIFTY 16 JAN 23200 CE,,CE,23200,80.0,12:35:00 IST,12:41:00 IST,60.6,61.675,53.09,1.77,1.07,80.25,Success,6_min_momentum_failed

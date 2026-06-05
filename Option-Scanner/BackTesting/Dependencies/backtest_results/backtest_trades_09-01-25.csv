@@ -1,4 +1,2 @@
-test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-01-09,NIFTY 9 JAN 23600 PE General Buy / Sell,PE,23600,85.0,11:02:00 IST,11:20:00 IST,179.78,190.0,190.0,5.68,Success,stop_loss_hit
-2025-01-09,NIFTY 9 JAN 23350 CE General Buy / Sell,CE,23350,85.0,12:21:00 IST,12:45:00 IST,265.53,292.15,292.15,10.03,Success,stop_loss_hit
-2025-01-09,NIFTY 9 JAN 23500 PE General Buy / Sell,PE,23500,95.0,12:56:00 IST,13:25:00 IST,158.22,158.6,158.6,0.24,Success,stop_loss_hit
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-09,NIFTY 9 JAN 23550 PE,,PE,23550,90.0,11:51:00 IST,11:53:00 IST,43.22,42.7875,33.22,-1.0,Failure,2_min_profit_check_failed

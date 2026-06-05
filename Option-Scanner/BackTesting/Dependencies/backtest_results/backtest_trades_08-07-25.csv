@@ -1,3 +1,0 @@
-test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-07-08,SENSEX 8 JUL 83500 PE General Buy / Sell,PE,83500,85.0,10:50:00 IST,11:02:00 IST,271.08,274.85,261.08,1.39,Success,time_cutoff_12m
-2025-07-08,SENSEX 8 JUL 83400 CE General Buy / Sell,CE,83400,85.0,12:07:00 IST,12:10:00 IST,671.65,661.65,661.65,-1.49,Failure,stop_loss_hit

@@ -1,3 +1,2 @@
-test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-01-17,SENSEX 17 JAN 76700 PE General Buy / Sell,PE,76700,95.0,10:39:00 IST,10:50:00 IST,531.21,652.0,652.0,22.74,Success,stop_loss_hit
-2025-01-17,SENSEX 17 JAN 76500 CE General Buy / Sell,CE,76500,95.0,12:12:00 IST,12:30:00 IST,525.6,560.0,560.0,6.54,Success,stop_loss_hit
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-17,NIFTY 17 JAN 23150 PE,,PE,23150,95.0,10:46:00 IST,10:48:00 IST,41.97,41.55,31.97,-1.0,Failure,2_min_profit_check_failed

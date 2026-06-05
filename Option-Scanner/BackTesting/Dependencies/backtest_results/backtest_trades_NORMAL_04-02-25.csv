@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-02-04,NIFTY 4 FEB 23750 PE,,PE,23750,85.0,10:18:00 IST,10:24:00 IST,93.37,86.85,86.85,-6.98,-6.52,-489.0,Failure,stop_loss_hit
+2025-02-04,NIFTY 4 FEB 23750 CE,,CE,23750,100.0,11:39:00 IST,11:45:00 IST,63.93,63.2,53.93,-1.14,-0.73,-54.75,Failure,6_min_momentum_failed
+2025-02-04,NIFTY 4 FEB 23700 CE,,CE,23700,100.0,12:52:00 IST,12:58:00 IST,79.03,79.6,69.4,0.72,0.57,42.75,Success,6_min_momentum_failed

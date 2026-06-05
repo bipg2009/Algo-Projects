@@ -1,0 +1,3 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-18,NIFTY 18 MAR 22850 CE,,CE,22850,100,10:08:00 IST,10:14:00 IST,26.23,24.35,16.23,-7.17,Failure,6_min_momentum_failed
+2025-03-18,NIFTY 18 MAR 22900 CE,,CE,22900,100,10:44:00 IST,10:50:00 IST,23.82,20.975,14.51,-11.94,Failure,6_min_momentum_failed

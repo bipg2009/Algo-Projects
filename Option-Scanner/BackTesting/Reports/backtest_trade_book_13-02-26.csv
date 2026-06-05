@@ -1,3 +1,0 @@
-date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
-13-02-26,2026-02-13_43,09:58:00 IST,BUY,NIFTY 13 FEB 25550 PE,,PE,24.45,14.45,35.92302001671048,6986785,
-13-02-26,2026-02-13_43,10:10:00 IST,SELL,NIFTY 13 FEB 25550 PE,,PE,24.4375,17.18,38.20945373282511,7286565,Failure

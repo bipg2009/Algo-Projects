@@ -1,1 +1,3 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-05-07,NIFTY 7 MAY 24200 CE,,CE,24200,82.0,12:06:00 IST,12:08:00 IST,42.77,42.35,32.77,-0.98,Failure,2_min_profit_check_failed
+2026-05-07,NIFTY 7 MAY 24150 CE,,CE,24150,82.0,12:51:00 IST,12:53:00 IST,44.52,44.075,34.52,-1.0,Failure,2_min_profit_check_failed

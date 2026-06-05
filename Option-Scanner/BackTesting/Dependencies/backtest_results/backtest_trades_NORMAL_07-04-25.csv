@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-07,NIFTY 7 APR 22500 PE,,PE,22500,100,12:11:00 IST,12:14:00 IST,171.65,161.65,161.65,-5.83,Failure,stop_loss_hit

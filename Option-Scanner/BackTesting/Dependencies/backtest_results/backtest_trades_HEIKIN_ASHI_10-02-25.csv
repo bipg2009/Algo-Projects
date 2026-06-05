@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-02-10,NIFTY 10 FEB 23050 CE,,CE,23050,85.0,13:56:00 IST,14:02:00 IST,33.84,30.5,25.38,-9.87,-3.34,-250.5,Failure,6_min_momentum_failed

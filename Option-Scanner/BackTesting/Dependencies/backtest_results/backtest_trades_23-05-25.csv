@@ -1,4 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-05-23,SENSEX 23 MAY 81700 CE Uptrend,Uptrend,CE,81700,97.0,10:52:00 IST,11:00:00 IST,652.26,672.95,672.95,3.17,Success,stop_loss_hit
-2025-05-23,SENSEX 23 MAY 81600 CE Uptrend,Uptrend,CE,81600,97.0,12:26:00 IST,12:35:00 IST,657.91,666.4,666.4,1.29,Success,stop_loss_hit
-2025-05-23,SENSEX 23 MAY 81900 PE Downtrend,Downtrend,PE,81900,107.0,13:18:00 IST,15:12:00 IST,587.77,581.95,577.77,-0.99,Failure,TIME_DECAY

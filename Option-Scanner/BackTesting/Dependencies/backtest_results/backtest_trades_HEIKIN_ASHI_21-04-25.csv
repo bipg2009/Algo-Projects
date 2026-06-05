@@ -1,0 +1,3 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-21,NIFTY 21 APR 24200 CE,,CE,24200,95.0,10:53:00 IST,10:59:00 IST,27.69,28.2875,17.82,2.16,Success,6_min_momentum_failed
+2025-04-21,NIFTY 21 APR 24200 PE,,PE,24200,85.0,13:22:00 IST,13:28:00 IST,23.57,24.2125,14.21,2.73,Success,6_min_momentum_failed

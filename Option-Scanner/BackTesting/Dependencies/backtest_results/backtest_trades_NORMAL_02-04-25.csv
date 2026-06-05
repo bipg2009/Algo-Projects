@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-02,NIFTY 2 APR 23250 CE,,CE,23250,100,13:22:00 IST,13:28:00 IST,12.32,12.85,4.93,4.3,Success,6_min_momentum_failed

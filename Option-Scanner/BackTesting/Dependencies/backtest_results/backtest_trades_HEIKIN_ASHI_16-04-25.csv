@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-16,NIFTY 16 APR 23400 PE,,PE,23400,85.0,10:27:00 IST,10:33:00 IST,17.41,16.0,7.41,-8.1,Failure,6_min_momentum_failed
+2025-04-16,NIFTY 16 APR 23550 CE,,CE,23550,100.0,11:38:00 IST,11:55:00 IST,24.57,30.71,30.71,24.99,Success,stop_loss_hit
+2025-04-16,NIFTY 16 APR 23800 PE,,PE,23800,75.0,13:23:00 IST,13:29:00 IST,12.62,10.25,5.05,-18.78,Failure,6_min_momentum_failed

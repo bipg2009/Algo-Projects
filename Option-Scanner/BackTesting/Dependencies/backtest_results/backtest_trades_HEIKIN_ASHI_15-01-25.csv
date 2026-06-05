@@ -1,0 +1,3 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-15,NIFTY 15 JAN 23300 PE,,PE,23300,100,11:10:00 IST,11:16:00 IST,10.64,10.0,7.98,-6.02,-0.64,-48.0,Failure,6_min_momentum_failed
+2025-01-15,NIFTY 15 JAN 23350 PE,,PE,23350,100,13:37:00 IST,13:43:00 IST,12.57,12.1125,9.43,-3.64,-0.46,-34.5,Failure,6_min_momentum_failed

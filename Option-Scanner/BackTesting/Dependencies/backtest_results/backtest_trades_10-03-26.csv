@@ -1,2 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-03-10,NIFTY 10 MAR 24150 PE,,PE,24150,80.0,09:59:00 IST,15:12:00 IST,62.83,106.9625,95.15,70.24,Success,TIME_DECAY

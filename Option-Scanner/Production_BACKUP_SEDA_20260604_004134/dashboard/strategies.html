@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Scanner - Strategies Visualizer</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <style>
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .strategy-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .strategy-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .strategy-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .strategy-stats {
+            background: rgba(74, 222, 128, 0.1);
+            color: #4ade80;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .strategy-rules {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .rule-icon {
+            color: #a1a1aa;
+            margin-top: 2px;
+        }
+
+        .highlight-param {
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        /* Status Tags */
+        .status-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-active { background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); }
+        .status-standby { background: rgba(250, 204, 21, 0.15); color: #facc15; border: 1px solid rgba(250, 204, 21, 0.3); }
+        .status-inactive { background: rgba(161, 161, 170, 0.15); color: #a1a1aa; border: 1px solid rgba(161, 161, 170, 0.3); }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo"></div>
+                <h2>Algo Engine</h2>
+            </div>
+            <div class="sidebar-scanner-status" style="padding: 0 24px 24px;">
+                <span class="label">Scanner Status: </span>
+                <span id="scanner-state" class="state-text inactive">INACTIVE</span>
+            </div>
+            <nav>
+                <a href="/" class="nav-item">Live Dashboard</a>
+                <a href="/strategies" class="nav-item active">Strategies</a>
+                <a href="#" class="nav-item">Trade History</a>
+                <a href="#" class="nav-item">System Logs</a>
+                <a href="/testing" class="nav-item">Testing</a>
+            </nav>
+
+            <div class="system-status">
+                <div class="status-indicator">
+                    <span id="ws-status-dot" class="dot disconnected"></span>
+                    <span id="ws-status-text">Disconnected</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="topbar" style="margin-bottom: 10px;">
+                <div class="header-titles">
+                    <h2 style="font-size: 1.25rem;">Strategies Visualizer</h2>
+                    <p class="subtitle">Real-time SEDA-Algorithm Execution Signals</p>
+                </div>
+                <div class="scanner-controls">
+                    <!-- Dhan API Status -->
+                    <div class="state-card" style="border-left: 3px solid #8B5CF6;">
+                        <span class="label">DHAN API</span>
+                        <h3 class="state-text active" id="dhan-status">Connecting...</h3>
+                        <div style="display: flex; gap: 10px; font-size: 0.75rem; color: var(--text-secondary); margin-top: 5px;">
+                            <span>Bal: <span id="dhan-balance">--</span></span>
+                            <span>PnL: <span id="dhan-pnl">--</span></span>
+                        </div>
+                        <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 2px;" id="dhan-update-time"></div>
+                    </div>
+                    <!-- Core Scanner State -->
+                    <div class="state-card">
+                        <span class="label">Market Trend</span>
+                        <h3 id="market-trend" class="state-text inactive">WAITING</h3>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Sector-Wise Weighted Outlook -->
+            <div class="panel" style="margin: 0 20px 15px; flex-shrink: 0;">
+                <div class="panel-header" style="background: rgba(0,0,0,0.2); padding: 12px 20px;">
+                    <h3>Sector-Wise Weighted Outlook</h3>
+                    <span class="badge" id="sector-update-time">Waiting for YFinance...</span>
+                </div>
+                <div class="panel-body" style="display: flex; gap: 20px; padding: 15px 20px;">
+                    
+                    <!-- SENSEX 30 (Left) -->
+                    <div style="flex: 1; border-right: 1px solid var(--border-color); padding-right: 20px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h4 style="color: var(--accent-primary);">SENSEX 30 Sectors</h4>
+                            <div style="font-weight: 600; font-size: 0.9rem;" id="sensex-total-score">...</div>
+                        </div>
+                        <div id="sensex-sectors-container" style="display: flex; flex-direction: column; gap: 12px; max-height: 600px; overflow-y: auto;">
+                            <!-- Sectors injected here -->
+                        </div>
+                    </div>
+
+                    <!-- NIFTY 50 (Right) -->
+                    <div style="flex: 1;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h4 style="color: var(--accent-primary);">NIFTY 50 Sectors</h4>
+                            <div style="font-weight: 600; font-size: 0.9rem;" id="nifty-total-score">...</div>
+                        </div>
+                        <div id="nifty-sectors-container" style="display: flex; flex-direction: column; gap: 12px; max-height: 600px; overflow-y: auto;">
+                            <!-- Sectors injected here -->
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="strategy-grid">
+                
+                <!-- Core Breakout (Uptrend) -->
+                <div class="strategy-card" id="card-uptrend">
+                    <div class="strategy-header">
+                        <div class="strategy-title">Momentum Breakout (Uptrend)</div>
+                        <div class="strategy-stats" id="stats-uptrend">0 Signals</div>
+                    </div>
+                    <div>
+                        <span class="status-tag status-standby" id="status-uptrend">STANDBY</span>
+                    </div>
+                    <div class="strategy-rules">
+                        <div class="rule-item">
+                            <span class="rule-icon">⚡</span>
+                            <span>Triggers on strong momentum breakouts following a minor pullback in an overarching uptrend.</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-icon">⚙️</span>
+                            <span><strong>Rules:</strong> Requires Supertrend to be <span class="highlight-param">GREEN</span>.</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-icon">📊</span>
+                            <span><strong>Logic:</strong> Looks for RSI exhaustion <span class="highlight-param">< 40</span> followed by an aggressive reversal <span class="highlight-param">RSI > 50</span>.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Breakout (Downtrend) -->
+                <div class="strategy-card" id="card-downtrend">
+                    <div class="strategy-header">
+                        <div class="strategy-title">Momentum Breakout (Downtrend)</div>
+                        <div class="strategy-stats" id="stats-downtrend">0 Signals</div>
+                    </div>
+                    <div>
+                        <span class="status-tag status-standby" id="status-downtrend">STANDBY</span>
+                    </div>
+                    <div class="strategy-rules">
+                        <div class="rule-item">
+                            <span class="rule-icon">⚡</span>
+                            <span>Triggers on aggressive market dumps following brief dead-cat bounces in a downtrend.</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-icon">⚙️</span>
+                            <span><strong>Rules:</strong> Requires Supertrend to be <span class="highlight-param">RED</span>.</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-icon">📊</span>
+                            <span><strong>Logic:</strong> Looks for PE RSI exhaustion <span class="highlight-param">< 40</span> followed by an aggressive reversal <span class="highlight-param">RSI > 50</span>.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chop Mode -->
+                <div class="strategy-card" id="card-chop">
+                    <div class="strategy-header">
+                        <div class="strategy-title">Chop Mode Reversion</div>
+                        <div class="strategy-stats" id="stats-chop">0 Signals</div>
+                    </div>
+                    <div>
+                        <span class="status-tag status-standby" id="status-chop">STANDBY</span>
+                    </div>
+                    <div class="strategy-rules">
+                        <div class="rule-item">
+                            <span class="rule-icon">⚡</span>
+                            <span>Operates strictly in sideways markets to catch mean-reversion bounces off the lower boundaries.</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-icon">⚙️</span>
+                            <span><strong>Rules:</strong> Requires ADX <span class="highlight-param">< 20</span> to confirm low directional volatility.</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-icon">📊</span>
+                            <span><strong>Logic:</strong> Detects RSI oversold conditions <span class="highlight-param">< 30</span> and buys the reversal at the VWAP band.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Theta Dodge -->
+                <div class="strategy-card" id="card-theta">
+                    <div class="strategy-header">
+                        <div class="strategy-title">Theta Dodge Scalper</div>
+                        <div class="strategy-stats" id="stats-theta">0 Signals</div>
+                    </div>
+                    <div>
+                        <span class="status-tag status-standby" id="status-theta">STANDBY</span>
+                    </div>
+                    <div class="strategy-rules">
+                        <div class="rule-item">
+                            <span class="rule-icon">⚡</span>
+                            <span>Ultra-fast scalping logic designed to dodge time-decay (Theta) during high-velocity spikes.</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-icon">⚙️</span>
+                            <span><strong>Rules:</strong> Valid only on Expiry days (0 DTE) or 1 DTE where premium velocity is highest.</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-icon">📊</span>
+                            <span><strong>Logic:</strong> Relies on micro-structure volume bursts <span class="highlight-param">> 3x EMA</span> in under 1 minute.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Book Imbalance -->
+                <div class="strategy-card" id="card-obi">
+                    <div class="strategy-header">
+                        <div class="strategy-title">Order Book Imbalance</div>
+                        <div class="strategy-stats" id="stats-obi">0 Signals</div>
+                    </div>
+                    <div>
+                        <span class="status-tag status-standby" id="status-obi">STANDBY</span>
+                    </div>
+                    <div class="strategy-rules">
+                        <div class="rule-item">
+                            <span class="rule-icon">⚡</span>
+                            <span>Identifies hidden institutional buying pressure by analyzing Bid/Ask spreads and limits.</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-icon">⚙️</span>
+                            <span><strong>Rules:</strong> Evaluates Level-2 depth limits directly from the Exchange broker feed.</span>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-icon">📊</span>
+                            <span><strong>Logic:</strong> Buy orders > Sell orders by <span class="highlight-param">300%</span> with simultaneous price markup.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Live Strategy Events Panel -->
+            <div class="events-panel" style="margin: 20px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; height: 300px; min-height: 300px; flex-shrink: 0;">
+                <div class="panel-header" style="padding: 15px 20px; border-bottom: 1px solid var(--border-color); font-weight: 600; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2);">
+                    <span>Live Strategy Evaluation Logs</span>
+                    <span class="status-tag status-active" style="animation: pulse 2s infinite;">LIVE</span>
+                </div>
+                <div id="live-events-container" style="flex: 1; padding: 15px; overflow-y: auto; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; display: flex; flex-direction: column; gap: 8px; scroll-behavior: smooth;">
+                    <!-- Logs will be injected here -->
+                    <div style="color: var(--text-secondary); text-align: center; margin-top: 20px;">Awaiting scanner signals...</div>
+                </div>
+            </div>
+            <style>
+                @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+                .log-entry { padding: 8px 12px; border-radius: 6px; background: rgba(255,255,255,0.03); border-left: 4px solid transparent; animation: slideIn 0.3s ease-out; word-break: break-all; }
+                .log-time { color: var(--text-secondary); margin-right: 10px; font-size: 0.8rem; }
+                .log-reject { border-left-color: #f59e0b; }
+                .log-watchlist { border-left-color: #3b82f6; }
+                .log-approve { border-left-color: #10b981; background: rgba(16, 185, 129, 0.1); }
+                .log-error { border-left-color: #ef4444; color: #ef4444; }
+                .log-info { border-left-color: #6366f1; }
+                @keyframes slideIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+            </style>
+        </main>
+    </div>
+
+    <script src="/assets/strategies.js?v=3"></script>
+</body>
+</html>

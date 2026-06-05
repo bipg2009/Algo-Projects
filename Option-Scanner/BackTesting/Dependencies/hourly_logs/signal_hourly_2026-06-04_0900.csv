@@ -1,0 +1,2 @@
+timestamp,event,symbol,option_type,strike,ltp,score,required_score,rsi,trend,pcr,nifty_spot,gap_mode,scanner_state,reject_reason,notes
+2026-06-04 09:58:45,HOUR_START,,,,,,,,,,,,,,Hourly hypercare log active; waiting for signals/rejects.

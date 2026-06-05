@@ -1,0 +1,21 @@
+ROLE & CONTEXT:
+You are an expert quantitative developer. We are deploying the new SEDA model in production for paper trading. 
+
+TASK:
+Create a real-time logging utility or update the current production engine to generate an hourly trading summary file. 
+
+TECHNICAL SPECIFICATIONS:
+1. FILE NAMING: The script must generate a CSV file named exactly `seda_hourly_paper_trades_[YYYY-MM-DD].csv`.
+2. TRIGGER MECHANISM: The system must append data to this file every hour on the hour (e.g., 10:00, 11:00, 12:00, etc.) during market hours, capturing all paper trades executed within that specific 60-minute window.
+3. DATA COLUMNS REQUIRED:
+   * Timestamp_Hour (e.g., 10:00-11:00)
+   * Symbol (Option Contract details)
+   * Total_Trades_Executed
+   * SEDA_Average_Score (The average 165-point SEDA score of trades taken in that hour)
+   * Hourly_Buy_Signals_Generated vs. Hourly_Buy_Signals_Executed
+   * Net_Paper_PnL_Pct (Realised/unrealised performance of those specific trades)
+
+CRITICAL EXECUTION & SAFETY PROTOCOL:
+* ASYNCHRONOUS EXECUTION: The hourly file generation must run as an independent thread or an asynchronous background task. It must NOT block the main SEDA scoring engine or delay live market data ingestion.
+* SANDBOX DEPLOYMENT FIRST: Implement and test this file-writing logic strictly in the sandbox environment using mock data or a quick 1-day historical run first. 
+* VERIFICATION: Show me the code structure for this hourly logger and the terminal output proving it can write to a CSV file successfully before deployment.

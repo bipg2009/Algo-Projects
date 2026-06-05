@@ -1,2 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-02-05,NIFTY 5 FEB 25650 PE,,PE,25650,79.0,11:52:00 IST,12:04:00 IST,29.42,29.2875,19.42,-0.45,Failure,stale_trade_12m_loss

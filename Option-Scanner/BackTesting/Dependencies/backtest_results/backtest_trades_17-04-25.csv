@@ -1,9 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-04-17,SENSEX 17 APR 76900 CE Uptrend,Uptrend,CE,76900,97.0,09:47:00 IST,09:50:00 IST,576.61,566.61,566.61,-1.73,Failure,stop_loss_hit
-2025-04-17,SENSEX 17 APR 77000 CE Uptrend,Uptrend,CE,77000,107.0,10:52:00 IST,11:00:00 IST,480.25,796.1,796.1,65.77,Success,stop_loss_hit
-2025-04-17,SENSEX 17 APR 77500 CE Uptrend,Uptrend,CE,77500,97.0,11:51:00 IST,11:52:00 IST,1138.27,1128.27,1128.27,-0.88,Failure,stop_loss_hit
-2025-04-17,SENSEX 17 APR 77700 CE Uptrend,Uptrend,CE,77700,97.0,12:13:00 IST,12:14:00 IST,1022.93,1012.93,1012.93,-0.98,Failure,stop_loss_hit
-2025-04-17,SENSEX 17 APR 77800 CE Uptrend,Uptrend,CE,77800,97.0,12:28:00 IST,12:35:00 IST,684.68,927.8,927.8,35.51,Success,stop_loss_hit
-2025-04-17,SENSEX 17 APR 78000 CE Uptrend,Uptrend,CE,78000,97.0,12:50:00 IST,12:55:00 IST,798.25,788.25,788.25,-1.25,Failure,stop_loss_hit
-2025-04-17,SENSEX 17 APR 78200 CE Uptrend,Uptrend,CE,78200,97.0,13:10:00 IST,13:20:00 IST,681.25,674.7,674.7,-0.96,Failure,stop_loss_hit
-2025-04-17,SENSEX 17 APR 78400 CE Uptrend,Uptrend,CE,78400,97.0,13:48:00 IST,13:50:00 IST,550.4,540.4,540.4,-1.82,Failure,stop_loss_hit

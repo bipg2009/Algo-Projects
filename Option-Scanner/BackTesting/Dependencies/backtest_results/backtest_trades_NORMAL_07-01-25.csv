@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-07,NIFTY 7 JAN 23650 CE,,CE,23650,85.0,10:16:00 IST,10:20:00 IST,91.76,88.65,88.65,-3.39,-3.11,-233.25,Failure,stop_loss_hit

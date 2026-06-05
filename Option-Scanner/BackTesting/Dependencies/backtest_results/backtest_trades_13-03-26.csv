@@ -1,3 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-03-13,NIFTY 13 MAR 23400 PE,,PE,23400,97.0,09:47:00 IST,10:50:00 IST,58.09,62.26,62.26,7.18,Success,stop_loss_hit
-2026-03-13,NIFTY 13 MAR 23350 PE,,PE,23350,80.0,12:01:00 IST,14:10:00 IST,58.28,84.4,84.4,44.82,Success,stop_loss_hit

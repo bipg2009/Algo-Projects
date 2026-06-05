@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-12,NIFTY 12 MAR 22500 PE,,PE,22500,100.0,10:54:00 IST,11:00:00 IST,42.02,41.95,32.55,-0.17,Failure,6_min_momentum_failed
+2025-03-12,NIFTY 12 MAR 22450 PE,,PE,22450,100.0,11:40:00 IST,11:41:00 IST,58.38,48.38,48.38,-17.13,Failure,stop_loss_hit
+2025-03-12,NIFTY 12 MAR 22400 CE,,CE,22400,82.0,13:17:00 IST,13:27:00 IST,30.3,32.8,32.8,8.25,Success,stop_loss_hit

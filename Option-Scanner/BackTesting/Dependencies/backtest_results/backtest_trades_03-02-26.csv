@@ -1,3 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-02-03,NIFTY 3 FEB 25800 PE,,PE,25800,100.0,10:09:00 IST,11:55:00 IST,45.42,48.1,48.1,5.9,Success,stop_loss_hit
-2026-02-03,NIFTY 3 FEB 25750 PE,,PE,25750,89.0,12:31:00 IST,12:43:00 IST,37.71,37.4875,27.71,-0.59,Failure,stale_trade_12m_loss

@@ -1,4 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-01-22,NIFTY 22 JAN 25300 PE,,PE,25300,76.0,10:33:00 IST,10:45:00 IST,25.0,24.375,15.0,-2.5,Failure,stale_trade_12m_loss
-2026-01-22,NIFTY 22 JAN 25250 PE,,PE,25250,100.0,11:43:00 IST,12:20:00 IST,26.46,26.1875,17.9,-1.03,Failure,stale_trade_12m_loss
-2026-01-22,NIFTY 22 JAN 25200 PE,,PE,25200,89.0,13:16:00 IST,15:12:00 IST,21.88,48.9625,33.96,123.78,Success,TIME_DECAY

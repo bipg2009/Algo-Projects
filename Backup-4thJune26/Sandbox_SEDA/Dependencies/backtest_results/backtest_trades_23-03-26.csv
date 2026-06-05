@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-03-23,NIFTY 23 MAR 22500 CE,CE,22500,General Buy / Sell,94.0,13:58:00 IST,15:13:00 IST,414.81,410.7,399.81,-0.99,Failure,TIME_DECAY

@@ -1,0 +1,3 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-10,NIFTY 10 MAR 22450 CE,,CE,22450,100.0,12:38:00 IST,12:44:00 IST,30.63,31.375,22.1,2.43,Success,6_min_momentum_failed
+2025-03-10,NIFTY 10 MAR 22500 PE,,PE,22500,75.0,13:55:00 IST,14:01:00 IST,27.96,26.6875,18.0,-4.55,Failure,6_min_momentum_failed

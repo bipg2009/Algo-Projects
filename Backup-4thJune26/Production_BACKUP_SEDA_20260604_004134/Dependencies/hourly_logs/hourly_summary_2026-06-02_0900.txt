@@ -1,0 +1,6 @@
+Hour bucket: 2026-06-02_0900 (IST wall-clock hour)
+Detail CSV: C:\Biplab\ALGO-Projects\Option-Scanner\Production\Dependencies\hourly_logs\signal_hourly_2026-06-02_0900.csv
+Total events: 45
+  HOUR_START: 1
+  NO_UPDATE: 1
+  RSI_BAND: 43

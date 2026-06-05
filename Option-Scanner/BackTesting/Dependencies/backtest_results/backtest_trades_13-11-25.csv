@@ -1,0 +1,5 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-11-13,NIFTY 13 NOV 25800 CE SEDA,SEDA,CE,25800,75,10:16:00 IST,10:18:00 IST,34.45,34.1125,24.45,-0.98,Failure,2_min_cold_protection_failed
+2025-11-13,NIFTY 13 NOV 25750 CE SEDA,SEDA,CE,25750,85,10:41:00 IST,10:43:00 IST,40.83,40.425,30.83,-0.99,Failure,2_min_cold_protection_failed
+2025-11-13,NIFTY 13 NOV 25850 CE SEDA,SEDA,CE,25850,85,11:11:00 IST,11:13:00 IST,37.32,36.95,27.32,-0.99,Failure,2_min_cold_protection_failed
+2025-11-13,NIFTY 13 NOV 25750 PE SEDA,SEDA,PE,25750,85,14:11:00 IST,14:13:00 IST,21.42,21.2125,11.42,-0.97,Failure,2_min_cold_protection_failed

@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-15,NIFTY 15 APR 23350 CE,,CE,23350,100,12:26:00 IST,12:32:00 IST,16.16,14.35,6.46,-11.2,Failure,6_min_momentum_failed

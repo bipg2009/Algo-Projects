@@ -1,0 +1,6 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-02-12,NIFTY 12 FEB 23150 PE,,PE,23150,100.0,09:53:00 IST,09:55:00 IST,60.6,50.6,50.6,-16.5,-10.0,-750.0,Failure,stop_loss_hit
+2025-02-12,NIFTY 12 FEB 23200 PE,,PE,23200,100.0,10:17:00 IST,10:31:00 IST,63.98,81.3,81.3,27.07,17.32,1299.0,Success,stop_loss_hit
+2025-02-12,NIFTY 12 FEB 23200 CE,,CE,23200,82.0,11:54:00 IST,12:00:00 IST,63.93,62.5,53.93,-2.24,-1.43,-107.25,Failure,6_min_momentum_failed
+2025-02-12,NIFTY 12 FEB 23100 CE,,CE,23100,100.0,13:35:00 IST,13:38:00 IST,45.9,35.9,35.9,-21.79,-10.0,-750.0,Failure,stop_loss_hit
+2025-02-12,NIFTY 12 FEB 23100 PE,,PE,23100,85.0,13:59:00 IST,14:02:00 IST,42.72,39.7,39.7,-7.07,-3.02,-226.5,Failure,stop_loss_hit

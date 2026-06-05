@@ -1,0 +1,7 @@
+date,timeframe,trade id,time ist,event,symbol,option_type,price,trailing_sl,pnl_rs,pnl_pct,outcome,rsi_1m,supertrend_1m
+2026-05-22,5,,,BUY CALL,NIFTY,CE,100.0,90.0,0,0,OPEN,60,BULL
+2026-05-22,5,,,SELL (Target),NIFTY,CE,110.0,90.0,10.0,10.0,SUCCESS,65,BULL
+2026-05-22,1,,,BUY CALL,NIFTY,CE,100.0,90.0,0,0,OPEN,60,BULL
+2026-05-22,1,,,SELL (Target),NIFTY,CE,110.0,90.0,10.0,10.0,SUCCESS,65,BULL
+2026-05-22,5,,,BUY CALL,NIFTY,CE,100.0,90.0,0,0,OPEN,60,BULL
+2026-05-22,5,,,SELL (Target),NIFTY,CE,110.0,90.0,10.0,10.0,SUCCESS,65,BULL

@@ -1,0 +1,10 @@
+Command to check public IP address. 
+115.99.137.228
+
+BACKTESTING Command
+
+python multi_day_backtest.py 01-07-2025 31-07-2025
+
+React Dashboard 
+
+http://127.0.0.1:5173

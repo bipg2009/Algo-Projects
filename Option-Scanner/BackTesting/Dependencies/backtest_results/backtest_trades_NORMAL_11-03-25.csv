@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-11,NIFTY 11 MAR 22400 CE,,CE,22400,95.0,10:54:00 IST,11:00:00 IST,81.2,80.0,71.2,-1.48,Failure,6_min_momentum_failed

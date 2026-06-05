@@ -1,2 +1,0 @@
-test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-07-01,SENSEX 1 JUL 83800 PE General Buy / Sell,PE,83800,85.0,10:07:00 IST,10:15:00 IST,516.41,515.95,515.95,-0.09,Failure,stop_loss_hit

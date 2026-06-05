@@ -1,3 +1,0 @@
-date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
-17-03-26,2026-03-17_61,10:16:00 IST,BUY,NIFTY 17 MAR 23650 CE,,CE,59.75,49.75,70.13331442550873,2219880,
-17-03-26,2026-03-17_61,15:12:00 IST,SELL,NIFTY 17 MAR 23650 CE,,CE,75.625,71.22,38.0929588525747,692380,Success

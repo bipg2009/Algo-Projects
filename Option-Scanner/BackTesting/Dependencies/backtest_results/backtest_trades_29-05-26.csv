@@ -1,1 +1,4 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-05-29,NIFTY 29 MAY 23900 PE,,PE,23900,80.0,10:46:00 IST,10:48:00 IST,27.22,26.95,17.22,-0.99,Failure,2_min_profit_check_failed
+2026-05-29,NIFTY 29 MAY 23800 PE,,PE,23800,100.0,13:06:00 IST,13:08:00 IST,27.88,27.6,17.88,-1.0,Failure,2_min_profit_check_failed
+2026-05-29,NIFTY 29 MAY 23750 PE,,PE,23750,100.0,13:51:00 IST,13:53:00 IST,30.87,30.5625,20.87,-1.0,Failure,2_min_profit_check_failed

@@ -1,3 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-05-27,SENSEX 27 MAY 81500 PE Downtrend,Downtrend,PE,81500,95.0,09:59:00 IST,10:00:00 IST,892.39,882.39,882.39,-1.12,Failure,stop_loss_hit
-2025-05-27,SENSEX 27 MAY 82000 PE Downtrend,Downtrend,PE,82000,105.0,12:20:00 IST,12:21:00 IST,1123.52,1113.52,1113.52,-0.89,Failure,stop_loss_hit

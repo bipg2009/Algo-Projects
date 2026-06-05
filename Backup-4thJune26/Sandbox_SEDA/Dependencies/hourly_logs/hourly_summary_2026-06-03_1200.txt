@@ -1,0 +1,31 @@
+Hour bucket: 2026-06-03_1200 (IST wall-clock hour)
+Detail CSV: C:\Biplab\ALGO-Projects\Option-Scanner\Production\Dependencies\hourly_logs\signal_hourly_2026-06-03_1200.csv
+Total events: 79
+  HOUR_START: 1
+  REJECT: 22
+  RSI_BAND: 55
+  SIGNAL_VERIFIED: 1
+Signals:
+  2026-06-03 12:05:44 NIFTY 09 JUN 23300 PUT score=100 RSI=35.0 trend=RED
+Top rejects (score>=85):
+  2026-06-03 12:02:53 NIFTY 09 JUN 23300 PUT score=96.0 — score_91.0_below_92
+  2026-06-03 12:03:05 NIFTY 09 JUN 23250 PUT score=96.0 — not_deep_itm_need_100pt
+  2026-06-03 12:03:15 NIFTY 09 JUN 23250 PUT score=96.0 — not_deep_itm_need_100pt
+  2026-06-03 12:03:25 NIFTY 09 JUN 23250 PUT score=96.0 — not_deep_itm_need_100pt
+  2026-06-03 12:03:35 NIFTY 09 JUN 23250 PUT score=96.0 — not_deep_itm_need_100pt
+  2026-06-03 12:03:45 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:03:55 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:04:18 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:04:28 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:04:38 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:04:58 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:05:12 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:05:24 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:05:54 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:06:04 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:06:14 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:06:26 NIFTY 09 JUN 23250 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 12:06:39 NIFTY 09 JUN 23300 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 12:06:56 NIFTY 09 JUN 23300 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 12:10:02 NIFTY 09 JUN 23300 PUT score=100 — option_volume_spike_not_active
+  ... +2 more in CSV

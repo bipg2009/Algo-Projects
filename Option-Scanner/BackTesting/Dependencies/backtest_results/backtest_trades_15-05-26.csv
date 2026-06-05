@@ -1,1 +1,2 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-05-15,NIFTY 15 MAY 23700 PE,,PE,23700,82.0,14:01:00 IST,14:03:00 IST,43.23,42.8,33.23,-0.99,Failure,2_min_profit_check_failed

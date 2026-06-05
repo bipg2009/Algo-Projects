@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-24,NIFTY 24 APR 24000 CE,,CE,24000,77.0,10:26:00 IST,10:28:00 IST,205.64,198.5,195.64,-3.47,Failure,dynamic_trail_hit

@@ -1,0 +1,3 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-03,NIFTY 3 MAR 22100 PE,,PE,22100,100.0,11:04:00 IST,11:10:00 IST,99.74,97.5,89.74,-2.25,Failure,6_min_momentum_failed
+2025-03-03,NIFTY 3 MAR 22050 CE,,CE,22050,77.0,12:14:00 IST,12:20:00 IST,101.0,102.2,92.0,1.19,Success,6_min_momentum_failed

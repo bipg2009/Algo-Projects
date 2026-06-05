@@ -1,5 +1,0 @@
-symbol,time_ist,datetime_ist,option_ltp,rsi_1m,trailing_sl,action,reason
-SENSEX 7 MAY 80600 CE Uptrend,11:22:00 IST,07-05-25 11:22:00 IST,584.75,73.37093466930338,580.6,HOLD,no_exit_condition_met
-SENSEX 7 MAY 80600 CE Uptrend,11:23:00 IST,07-05-25 11:23:00 IST,584.75,73.51749919198511,580.6,HOLD,no_exit_condition_met
-SENSEX 7 MAY 80600 CE Uptrend,11:24:00 IST,07-05-25 11:24:00 IST,584.75,66.48216279259549,580.6,HOLD,no_exit_condition_met
-SENSEX 7 MAY 80600 CE Uptrend,11:25:00 IST,07-05-25 11:25:00 IST,485.85,69.99273398541851,580.6,EXIT,stop_loss_hit

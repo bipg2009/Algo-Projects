@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-06,NIFTY 6 JAN 23750 PE,,PE,23750,100,11:47:00 IST,11:53:00 IST,132.81,126.0,124.0,-5.13,-6.81,-510.75,Failure,6_min_momentum_failed

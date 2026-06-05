@@ -1,1 +1,3 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-05-12,NIFTY 12 MAY 23550 PE,,PE,23550,100.0,13:11:00 IST,13:13:00 IST,54.54,54.0,44.54,-0.99,Failure,2_min_profit_check_failed
+2026-05-12,NIFTY 12 MAY 23500 PE,,PE,23500,95.0,14:01:00 IST,14:03:00 IST,53.59,53.0625,43.59,-0.98,Failure,2_min_profit_check_failed

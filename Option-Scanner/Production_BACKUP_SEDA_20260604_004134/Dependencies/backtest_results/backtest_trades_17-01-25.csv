@@ -1,0 +1,5 @@
+test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-17,NIFTY 17 JAN 23150 PE,PE,23150,General Buy / Sell,85.0,11:50:00 IST,11:56:00 IST,151.2,151.05,136.2,-0.1,Failure,time_cutoff_6m
+2025-01-17,NIFTY 17 JAN 23200 CE,CE,23200,General Buy / Sell,85.0,12:03:00 IST,12:09:00 IST,230.28,228.0,215.28,-0.99,Failure,time_cutoff_6m
+2025-01-17,NIFTY 17 JAN 23250 CE,CE,23250,General Buy / Sell,85.0,12:22:00 IST,12:28:00 IST,212.86,210.75,197.86,-0.99,Failure,time_cutoff_6m
+2025-01-17,NIFTY 17 JAN 23200 PE,PE,23200,General Buy / Sell,95.0,13:22:00 IST,13:28:00 IST,141.65,141.3,126.65,-0.25,Failure,time_cutoff_6m

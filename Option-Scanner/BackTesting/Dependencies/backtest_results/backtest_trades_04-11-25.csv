@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-11-04,NIFTY 4 NOV 25700 PE SEDA,SEDA,PE,25700,90,09:45:00 IST,09:47:00 IST,15.01,14.8625,5.01,-0.98,Failure,2_min_cold_protection_failed
+2025-11-04,NIFTY 4 NOV 25650 PE SEDA,SEDA,PE,25650,80,11:23:00 IST,11:25:00 IST,8.86,8.1,-1.14,-8.58,Failure,2_min_cold_protection_failed
+2025-11-04,NIFTY 4 NOV 25600 PE SEDA,SEDA,PE,25600,95,14:11:00 IST,14:13:00 IST,4.44,4.4,-5.56,-0.9,Failure,2_min_cold_protection_failed

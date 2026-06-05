@@ -1,4 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-04-21,SENSEX 21 APR 79200 CE Uptrend,Uptrend,CE,79200,97.0,11:02:00 IST,11:10:00 IST,551.66,543.25,543.25,-1.52,Failure,stop_loss_hit
-2025-04-21,SENSEX 21 APR 79400 CE Uptrend,Uptrend,CE,79400,97.0,11:59:00 IST,12:00:00 IST,288.61,278.61,278.61,-3.46,Failure,stop_loss_hit
-2025-04-21,SENSEX 21 APR 79500 CE Uptrend,Uptrend,CE,79500,97.0,12:37:00 IST,15:12:00 IST,92.57,91.65,89.8,-0.99,Failure,TIME_DECAY

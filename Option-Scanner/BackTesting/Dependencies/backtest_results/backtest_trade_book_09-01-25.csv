@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+09-01-25,2025-01-09_183,12:18:00 IST,BUY,NIFTY 9 JAN 23550 CE,,CE,45.41,35.41,83.35397492486969,2130600,
+09-01-25,2025-01-09_183,12:24:00 IST,SELL,NIFTY 9 JAN 23550 CE,,CE,42.5875,37.96,59.89467205690491,2103600,Failure

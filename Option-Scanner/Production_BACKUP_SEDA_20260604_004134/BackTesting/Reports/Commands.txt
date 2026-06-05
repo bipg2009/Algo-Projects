@@ -1,0 +1,12 @@
+Way to run code
+
+py "NSE-Option-Scanner-Backtest.py" 2026-05-1 to 262-05-24
+
+~~2026-05-1 to 262-05-24
+py "NSE-Option-Scanner-Backtest.py" 2026-05-1 to 262-05-24~~
+trade_id	time_ist	event	symbol	option_type	price	trailing_sl	pnl_rs	pnl_pct	outcome	rsi_1m	supertrend_1m
+
+
+cd BackTesting
+py Backtest.py 2026-05-21
+py NSE_Option_Scanner_Backtest.py 2026-05-21

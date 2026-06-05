@@ -1,4 +1,0 @@
-symbol,time_ist,datetime_ist,option_ltp,rsi_1m,trailing_sl,action,reason
-SENSEX 26 MAY 82200 PE Downtrend,11:33:00 IST,26-05-25 11:33:00 IST,711.65,43.590449483155815,708.77,HOLD,no_exit_condition_met
-SENSEX 26 MAY 82200 PE Downtrend,11:34:00 IST,26-05-25 11:34:00 IST,711.65,39.753044856594364,708.77,HOLD,no_exit_condition_met
-SENSEX 26 MAY 82200 PE Downtrend,11:35:00 IST,26-05-25 11:35:00 IST,703.15,43.70448716574275,708.77,EXIT,stop_loss_hit

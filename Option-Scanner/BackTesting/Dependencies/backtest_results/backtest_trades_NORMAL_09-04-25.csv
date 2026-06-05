@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-09,NIFTY 9 APR 22400 CE,,CE,22400,75.0,11:30:00 IST,11:36:00 IST,24.19,19.95,18.45,-17.53,Failure,6_min_momentum_failed

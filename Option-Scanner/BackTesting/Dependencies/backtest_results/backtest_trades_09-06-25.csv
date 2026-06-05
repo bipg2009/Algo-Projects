@@ -1,3 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-06-09,SENSEX 9 JUN 82700 PE Downtrend,Downtrend,PE,82700,95.0,11:16:00 IST,11:30:00 IST,269.72,259.72,259.72,-3.71,Failure,stop_loss_hit
-2025-06-09,SENSEX 9 JUN 82600 PE Downtrend,Downtrend,PE,82600,95.0,11:57:00 IST,12:10:00 IST,245.33,235.33,235.33,-4.08,Failure,stop_loss_hit

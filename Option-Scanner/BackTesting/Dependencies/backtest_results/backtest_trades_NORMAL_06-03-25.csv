@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-06,NIFTY 6 MAR 22500 PE,,PE,22500,100.0,09:49:00 IST,09:51:00 IST,144.99,134.99,134.99,-6.9,Failure,stop_loss_hit
+2025-03-06,NIFTY 6 MAR 22600 CE,,CE,22600,75.0,11:12:00 IST,11:20:00 IST,164.63,169.35,169.35,2.87,Success,stop_loss_hit
+2025-03-06,NIFTY 6 MAR 22550 CE,,CE,22550,82.0,12:32:00 IST,12:40:00 IST,163.67,166.17,166.17,1.53,Success,stop_loss_hit

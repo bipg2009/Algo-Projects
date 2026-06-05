@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+15-04-25,2025-04-15_191,12:26:00 IST,BUY,NIFTY 15 APR 23350 CE,,CE,64.64,54.64,64.78189754415013,8111925,
+15-04-25,2025-04-15_191,12:32:00 IST,SELL,NIFTY 15 APR 23350 CE,,CE,57.4,54.64,70.03793131063875,8274225,Failure

@@ -1,3 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-03-25,NIFTY 25 MAR 23250 CE,,CE,23250,80.0,09:47:00 IST,11:35:00 IST,77.34,89.09,89.09,15.19,Success,stop_loss_hit
-2026-03-25,NIFTY 25 MAR 23400 CE,,CE,23400,77.0,11:51:00 IST,12:03:00 IST,74.58,74.025,64.58,-0.74,Failure,stale_trade_12m_loss

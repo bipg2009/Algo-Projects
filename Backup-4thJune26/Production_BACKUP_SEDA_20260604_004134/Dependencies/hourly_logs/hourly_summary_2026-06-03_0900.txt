@@ -1,0 +1,31 @@
+Hour bucket: 2026-06-03_0900 (IST wall-clock hour)
+Detail CSV: C:\Biplab\ALGO-Projects\Option-Scanner\Production\Dependencies\hourly_logs\signal_hourly_2026-06-03_0900.csv
+Total events: 105
+  HOUR_START: 1
+  REJECT: 92
+  RSI_BAND: 11
+  SIGNAL_VERIFIED: 1
+Signals:
+  2026-06-03 09:56:15 NIFTY 09 JUN 23350 PUT score=100 RSI=34.4 trend=RED
+Top rejects (score>=85):
+  2026-06-03 09:30:12 NIFTY 09 JUN 23400 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 09:30:29 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 09:30:40 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 09:30:49 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 09:30:57 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 09:31:10 NIFTY 09 JUN 23400 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 09:31:26 NIFTY 09 JUN 23400 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 09:31:40 NIFTY 09 JUN 23400 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 09:31:58 NIFTY 09 JUN 23400 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 09:32:11 NIFTY 09 JUN 23400 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 09:32:23 NIFTY 09 JUN 23400 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 09:32:46 NIFTY 09 JUN 23400 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 09:33:00 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 09:33:08 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 09:33:18 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 09:33:28 NIFTY 09 JUN 23400 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 09:33:39 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 09:33:48 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-03 09:34:00 NIFTY 09 JUN 23400 PUT score=100 — option_volume_spike_not_active
+  2026-06-03 09:34:11 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  ... +72 more in CSV

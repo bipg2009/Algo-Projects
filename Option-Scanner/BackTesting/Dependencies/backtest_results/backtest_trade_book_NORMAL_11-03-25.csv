@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+11-03-25,2025-03-11_99,10:54:00 IST,BUY,NIFTY 11 MAR 22400 CE,,CE,81.2,71.2,60.38278251691825,7967400,
+11-03-25,2025-03-11_99,11:00:00 IST,SELL,NIFTY 11 MAR 22400 CE,,CE,80.0,71.2,59.642456911763475,9036600,Failure

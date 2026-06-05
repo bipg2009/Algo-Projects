@@ -1,4 +1,2 @@
-test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-01-14,NIFTY 14 JAN 23150 CE General Buy / Sell,CE,23150,85.0,10:58:00 IST,11:05:00 IST,139.78,129.78,129.78,-7.15,Failure,stop_loss_hit
-2025-01-14,NIFTY 14 JAN 23300 PE General Buy / Sell,PE,23300,95.0,11:42:00 IST,12:40:00 IST,88.83,134.15,134.15,51.02,Success,stop_loss_hit
-2025-01-14,NIFTY 14 JAN 23250 PE General Buy / Sell,PE,23250,85.0,13:07:00 IST,15:12:00 IST,78.63,77.85,68.63,-0.99,Failure,TIME_DECAY
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-14,NIFTY 14 JAN 23250 CE,,CE,23250,100,11:16:00 IST,11:18:00 IST,17.32,17.15,7.32,-0.98,Failure,2_min_profit_check_failed

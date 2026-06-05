@@ -1,2 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-02-09,NIFTY 9 FEB 26000 PE,,PE,26000,79.0,12:54:00 IST,14:20:00 IST,10.1,18.23,18.23,80.5,Success,stop_loss_hit

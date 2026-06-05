@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-08,NIFTY 8 JAN 23650 PE,,PE,23650,100,10:24:00 IST,10:30:00 IST,53.08,53.7,43.08,1.17,0.62,46.5,Success,6_min_momentum_failed
+2025-01-08,NIFTY 8 JAN 23600 PE,,PE,23600,100,10:48:00 IST,10:49:00 IST,93.63,83.63,83.63,-10.68,-10.0,-750.0,Failure,stop_loss_hit
+2025-01-08,NIFTY 8 JAN 23550 PE,,PE,23550,100,12:02:00 IST,12:08:00 IST,32.22,30.35,24.16,-5.8,-1.87,-140.25,Failure,6_min_momentum_failed

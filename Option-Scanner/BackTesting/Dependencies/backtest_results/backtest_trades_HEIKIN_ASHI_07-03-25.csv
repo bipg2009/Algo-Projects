@@ -1,0 +1,5 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-07,NIFTY 7 MAR 22600 PE,,PE,22600,82.0,11:02:00 IST,11:08:00 IST,35.6,34.7125,25.6,-2.49,Failure,6_min_momentum_failed
+2025-03-07,NIFTY 7 MAR 22600 CE,,CE,22600,95.0,11:19:00 IST,11:25:00 IST,41.88,40.0625,31.88,-4.34,Failure,6_min_momentum_failed
+2025-03-07,NIFTY 7 MAR 22550 PE,,PE,22550,75.0,11:50:00 IST,11:56:00 IST,33.23,32.7,24.19,-1.59,Failure,6_min_momentum_failed
+2025-03-07,NIFTY 7 MAR 22550 CE,,CE,22550,100.0,12:32:00 IST,12:38:00 IST,40.87,41.7125,33.52,2.06,Success,6_min_momentum_failed

@@ -1,0 +1,38 @@
+=================================================================================
+
+My Recommendation
+
+Implement:
+
+rolling_iv_mean_20
+
+inside the scanner.
+
+Example:
+
+iv_ma20 = iv_series.rolling(20).mean()
+
+Then:
+
+iv_ratio = current_iv / iv_ma20
+
+Score:
+
+Condition	Score
+IV > 1.20 × Avg	10
+IV > 1.10 × Avg	5
+IV > Avg	2
+Otherwise	0
+
+This is measuring:
+
+Is volatility expanding?
+
+rather than:
+
+Is volatility high?
+
+Those are completely different questions.
+
+====================================================================
+

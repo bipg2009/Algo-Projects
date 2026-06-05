@@ -1,2 +1,1 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-05-04,NIFTY 4 MAY 24050 PE,,PE,24050,100,13:22:00 IST,13:40:00 IST,38.63,35.35,28.63,-8.49,Failure,stale_trade_12m_loss
+

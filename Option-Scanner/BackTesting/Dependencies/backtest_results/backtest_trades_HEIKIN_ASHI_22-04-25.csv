@@ -1,0 +1,5 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-22,NIFTY 22 APR 24350 PE,,PE,24350,100.0,09:56:00 IST,10:02:00 IST,26.16,28.4,17.04,8.56,Success,6_min_momentum_failed
+2025-04-22,NIFTY 22 APR 24150 CE,,CE,24150,100.0,10:50:00 IST,10:56:00 IST,22.08,17.4875,12.93,-20.8,Failure,6_min_momentum_failed
+2025-04-22,NIFTY 22 APR 24200 PE,,PE,24200,85.0,11:31:00 IST,11:37:00 IST,19.19,16.275,9.19,-15.19,Failure,6_min_momentum_failed
+2025-04-22,NIFTY 22 APR 24250 CE,,CE,24250,100.0,13:26:00 IST,13:32:00 IST,16.74,18.6,8.49,11.11,Success,6_min_momentum_failed

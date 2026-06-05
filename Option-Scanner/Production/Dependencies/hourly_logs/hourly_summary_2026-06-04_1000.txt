@@ -1,0 +1,28 @@
+Hour bucket: 2026-06-04_1000 (IST wall-clock hour)
+Detail CSV: C:\Biplab\ALGO-Projects\Option-Scanner\Production\Dependencies\hourly_logs\signal_hourly_2026-06-04_1000.csv
+Total events: 88
+  HOUR_START: 1
+  REJECT: 49
+  RSI_BAND: 38
+Top rejects (score>=85):
+  2026-06-04 10:32:24 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:32:34 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:32:45 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:32:55 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:33:05 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:33:15 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:33:25 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:33:34 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:33:46 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:33:56 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:34:16 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:34:26 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:34:37 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:34:49 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:34:59 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:35:09 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:35:18 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:35:28 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:35:38 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 10:35:50 NIFTY 09 JUN 23400 PUT score=100 — not_deep_itm_need_100pt
+  ... +29 more in CSV

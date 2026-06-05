@@ -1,3 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-04-30,SENSEX 30 APR 80200 CE Uptrend,Uptrend,CE,80200,107.0,11:02:00 IST,11:30:00 IST,694.58,725.2,725.2,4.41,Success,stop_loss_hit
-2025-04-30,SENSEX 30 APR 80300 PE Downtrend,Downtrend,PE,80300,97.0,11:48:00 IST,11:50:00 IST,638.02,628.02,628.02,-1.57,Failure,stop_loss_hit

@@ -1,0 +1,36 @@
+git status (to verify everything is perfectly saved and synchronized by typing)
+git add . (to commit current branch changes)
+git add ../(to commit target the files outside your current folder up folder):
+git commit -m "Saved all root and subfolder updates"
+git push origin React ( This sends all your newly committed code straight to your React branch on GitHub.)
+
+git log --oneline (To confirm that your work is securely locked in, run this command to view your recent commit history:)
+git status ( to check the list read by GIT)
+cmd //c "rmdir /s /q ALGO-29May26\.git" (Use Windows tool to force delete the hidden sub-git folder)
+git rm -rf --cached (Clear the confused cache)
+
+
+git remote add origin <paste-your-copied-github-url-here> (To save on the cloud)
+git push -u origin main ( This sends all your newly committed code straight to your React branch on GitHub.)
+
+
+
+====================================================================
+
+The Daily Git Workflow (3 Commands)
+
+git add .
+git commit -m "Update strategy entry logic and fix websocket bug"
+git push
+
+================
+
+git status
+git log --oneline
+git diff
+
+
+Commit Small, Commit Often:
+Read the Status First:
+Branching is for Testing:
+

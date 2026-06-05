@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+24-04-25,2025-04-24_71,10:26:00 IST,BUY,NIFTY 24 APR 24000 CE,,CE,205.64,195.64,66.05263983226735,3621975,
+24-04-25,2025-04-24_71,10:28:00 IST,SELL,NIFTY 24 APR 24000 CE,,CE,198.5,195.64,55.63759934326096,3721950,Failure

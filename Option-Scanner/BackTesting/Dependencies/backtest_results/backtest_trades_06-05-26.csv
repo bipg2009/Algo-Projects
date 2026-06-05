@@ -1,4 +1,3 @@
 test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2026-05-06,NIFTY 6 MAY 24350 PE,,PE,24350,100,10:02:00 IST,10:05:00 IST,177.2,167.2,167.2,-5.64,Failure,stop_loss_hit
-2026-05-06,NIFTY 6 MAY 24400 PE,,PE,24400,100,12:26:00 IST,12:40:00 IST,179.78,183.3,183.3,1.96,Success,stop_loss_hit
-2026-05-06,NIFTY 6 MAY 24450 PE,,PE,24450,100,12:54:00 IST,13:55:00 IST,175.08,219.3,219.3,25.26,Success,stop_loss_hit
+2026-05-06,NIFTY 6 MAY 24450 PE,,PE,24450,100.0,12:41:00 IST,12:43:00 IST,43.47,43.0375,33.47,-0.99,Failure,2_min_profit_check_failed
+2026-05-06,NIFTY 6 MAY 24350 CE,,CE,24350,82.0,14:06:00 IST,14:08:00 IST,47.26,46.7875,37.26,-1.0,Failure,2_min_profit_check_failed

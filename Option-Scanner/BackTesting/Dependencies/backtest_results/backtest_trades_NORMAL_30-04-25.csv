@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-30,NIFTY 30 APR 24350 CE,,CE,24350,95.0,12:26:00 IST,12:32:00 IST,24.59,21.75,15.4,-11.55,Failure,6_min_momentum_failed

@@ -1,4 +1,4 @@
 test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-01-02,NIFTY 2 JAN 23950 CE General Buy / Sell,General Buy / Sell,CE,23950,97.0,10:57:00 IST,11:00:00 IST,264.17,254.17,254.17,-3.79,Failure,stop_loss_hit
-2025-01-02,NIFTY 2 JAN 23900 CE General Buy / Sell,General Buy / Sell,CE,23900,97.0,11:11:00 IST,11:30:00 IST,300.17,290.17,290.17,-3.33,Failure,stop_loss_hit
-2025-01-02,NIFTY 2 JAN 24150 PE General Buy / Sell,General Buy / Sell,PE,24150,107.0,11:51:00 IST,12:05:00 IST,210.33,200.33,200.33,-4.75,Failure,stop_loss_hit
+2025-01-02,NIFTY 2 JAN 24050 CE,,CE,24050,95.0,10:11:00 IST,10:13:00 IST,44.54,44.1,34.54,-0.99,Failure,2_min_profit_check_failed
+2025-01-02,NIFTY 2 JAN 24000 CE,,CE,24000,100.0,10:56:00 IST,10:58:00 IST,41.61,41.2,31.61,-0.99,Failure,2_min_profit_check_failed
+2025-01-02,NIFTY 2 JAN 24100 CE,,CE,24100,100.0,11:31:00 IST,11:33:00 IST,42.02,41.6,32.02,-1.0,Failure,2_min_profit_check_failed

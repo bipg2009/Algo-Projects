@@ -1,0 +1,5 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-02-21,NIFTY 21 FEB 22850 PE,,PE,22850,75.0,09:45:00 IST,09:51:00 IST,37.88,39.6875,28.83,4.77,1.81,135.75,Success,6_min_momentum_failed
+2025-02-21,NIFTY 21 FEB 22800 PE,,PE,22800,100.0,10:13:00 IST,10:19:00 IST,42.75,41.1375,34.5,-3.77,-1.61,-120.75,Failure,6_min_momentum_failed
+2025-02-21,NIFTY 21 FEB 22800 CE,,CE,22800,75.0,11:39:00 IST,11:45:00 IST,47.31,46.2875,37.92,-2.16,-1.02,-76.5,Failure,6_min_momentum_failed
+2025-02-21,NIFTY 21 FEB 22750 PE,,PE,22750,100.0,13:38:00 IST,13:44:00 IST,33.44,34.2625,26.62,2.46,0.82,61.5,Success,6_min_momentum_failed

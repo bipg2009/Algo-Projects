@@ -1,3 +1,6 @@
-test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-03-13,NIFTY 13 MAR 22500 PE,PE,22500,General Buy / Sell,95.0,10:56:00 IST,11:02:00 IST,95.34,92.35,80.34,-3.14,Failure,time_cutoff_6m
-2025-03-13,NIFTY 13 MAR 22450 CE,CE,22450,General Buy / Sell,85.0,12:48:00 IST,12:54:00 IST,1.36,1.4,-13.6,2.94,Success,time_cutoff_6m
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-13,NIFTY 13 MAR 22500 CE SEDA,SEDA,CE,22500,80,09:46:00 IST,09:52:00 IST,7.99,8.675,-2.01,8.57,Success,stale_trade_6m_loss
+2025-03-13,NIFTY 13 MAR 22550 CE SEDA,SEDA,CE,22550,90,10:06:00 IST,10:12:00 IST,7.17,7.9375,-2.83,10.7,Success,stale_trade_6m_loss
+2025-03-13,NIFTY 13 MAR 22500 PE SEDA,SEDA,PE,22500,90,11:31:00 IST,12:50:00 IST,14.43,16.425,14.12,13.83,Success,stale_trade_6m_loss
+2025-03-13,NIFTY 13 MAR 22450 PE SEDA,SEDA,PE,22450,80,13:16:00 IST,13:22:00 IST,7.84,7.2375,-2.16,-7.68,Failure,stale_trade_6m_loss
+2025-03-13,NIFTY 13 MAR 22400 PE SEDA,SEDA,PE,22400,100,14:16:00 IST,14:22:00 IST,2.15,1.875,-7.85,-12.79,Failure,stale_trade_6m_loss

@@ -1,0 +1,12 @@
+Hour bucket: 2026-06-04_0900 (IST wall-clock hour)
+Detail CSV: C:\Biplab\ALGO-Projects\Option-Scanner\Production\Dependencies\hourly_logs\signal_hourly_2026-06-04_0900.csv
+Total events: 18
+  HOUR_START: 1
+  REJECT: 5
+  RSI_BAND: 12
+Top rejects (score>=85):
+  2026-06-04 09:44:28 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 09:44:38 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 09:44:49 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 09:44:58 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt
+  2026-06-04 09:45:08 NIFTY 09 JUN 23350 PUT score=100 — not_deep_itm_need_100pt

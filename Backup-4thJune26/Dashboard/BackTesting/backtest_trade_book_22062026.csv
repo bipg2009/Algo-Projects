@@ -1,0 +1,3 @@
+date,timeframe,trade id,time ist,event,symbol,option_type,price,trailing_sl,pnl_rs,pnl_pct,outcome,rsi_1m,supertrend_1m
+22-06-2026,5,22-06-2026_5_001,09:15,BUY CALL,NIFTY,CE,100.0,90.0,0,0,OPEN,60,GREEN
+22-06-2026,5,22-06-2026_5_001,10:00,SELL (Target),NIFTY,CE,170.0,90.0,70.0,70.0,SUCCESS,65,GREEN

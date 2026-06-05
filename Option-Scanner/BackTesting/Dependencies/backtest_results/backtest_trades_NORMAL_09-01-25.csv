@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-09,NIFTY 9 JAN 23550 CE,,CE,23550,85.0,12:18:00 IST,12:21:00 IST,181.65,181.85,181.85,0.11,0.2,15.0,Success,stop_loss_hit

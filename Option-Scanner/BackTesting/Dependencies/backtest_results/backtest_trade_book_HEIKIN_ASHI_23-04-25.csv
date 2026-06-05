@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+23-04-25,2025-04-23_57,10:12:00 IST,BUY,NIFTY 23 APR 24300 PE,,PE,13.6,3.6,20.36889642013243,9937725,
+23-04-25,2025-04-23_57,10:18:00 IST,SELL,NIFTY 23 APR 24300 PE,,PE,12.3625,5.44,30.70372387076938,10570725,Failure

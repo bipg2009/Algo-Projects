@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-08,NIFTY 8 JAN 23650 PE,,PE,23650,100,10:24:00 IST,10:30:00 IST,13.27,13.425,9.95,1.17,0.16,12.0,Success,6_min_momentum_failed

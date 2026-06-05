@@ -1,0 +1,2 @@
+test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-02-25,NIFTY 25 FEB 22550 CE,CE,22550,General Buy / Sell,85.0,12:15:00 IST,12:21:00 IST,90.45,89.55,75.45,-1.0,Failure,time_cutoff_6m

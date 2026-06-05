@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+06-01-25,2025-01-06_152,11:47:00 IST,BUY,NIFTY 6 JAN 23750 PE,,PE,132.81,122.81,25.98655172132989,3809700,
+06-01-25,2025-01-06_152,11:53:00 IST,SELL,NIFTY 6 JAN 23750 PE,,PE,126.0,124.0,19.48742652901528,3810900,Failure

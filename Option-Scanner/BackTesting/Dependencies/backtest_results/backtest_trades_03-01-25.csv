@@ -1,3 +1,3 @@
 test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-01-03,SENSEX 3 JAN 79300 CE General Buy / Sell,General Buy / Sell,CE,79300,97.0,11:09:00 IST,11:15:00 IST,276.64,465.9,465.9,68.41,Success,stop_loss_hit
-2025-01-03,SENSEX 3 JAN 79600 PE General Buy / Sell,General Buy / Sell,PE,79600,107.0,12:18:00 IST,12:25:00 IST,352.69,362.05,362.05,2.65,Success,stop_loss_hit
+2025-01-03,NIFTY 3 JAN 24050 PE,,PE,24050,100.0,10:11:00 IST,10:13:00 IST,47.13,46.6625,37.13,-0.99,Failure,2_min_profit_check_failed
+2025-01-03,NIFTY 3 JAN 24100 CE,,CE,24100,82.0,11:26:00 IST,11:28:00 IST,42.02,41.6,32.02,-1.0,Failure,2_min_profit_check_failed

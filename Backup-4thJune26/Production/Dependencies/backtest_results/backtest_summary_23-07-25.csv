@@ -1,0 +1,2 @@
+test_date,total_trades,success,failure,breakeven,win_rate_pct,failure_rate_pct,avg_pnl_pct,setup_timeframe,trigger_timeframe,setup_filter,trigger_filter
+2025-07-23,2,2,0,0,100.0,0.0,24.36,1min,1min,1m EMA+RSI+Supertrend,1m Supertrend

@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+26-05-26,2026-05-26_301,14:16:00 IST,BUY,NIFTY 26 MAY 23900 PE,,PE,34.92,24.92,39.83785754398435,7546955,
+26-05-26,2026-05-26_301,14:18:00 IST,SELL,NIFTY 26 MAY 23900 PE,,PE,34.575,24.92,36.04555577619407,7546955,Failure

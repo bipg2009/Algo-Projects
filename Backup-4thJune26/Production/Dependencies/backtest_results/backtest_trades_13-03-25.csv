@@ -1,0 +1,3 @@
+test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-03-13,NIFTY 13 MAR 22500 PE,PE,22500,General Buy / Sell,95.0,10:56:00 IST,11:02:00 IST,95.34,92.35,80.34,-3.14,Failure,time_cutoff_6m
+2025-03-13,NIFTY 13 MAR 22450 CE,CE,22450,General Buy / Sell,85.0,12:48:00 IST,12:54:00 IST,1.36,1.4,-13.6,2.94,Success,time_cutoff_6m

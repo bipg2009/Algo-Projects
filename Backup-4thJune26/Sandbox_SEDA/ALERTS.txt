@@ -1,0 +1,8 @@
+Option_strategy_core
+and 
+Risk_Engine are very very imp files 
+
+Do not change them ever without confirming with me
+I see you have made some changes to Option strategy core earlier
+
+tell me what you did 

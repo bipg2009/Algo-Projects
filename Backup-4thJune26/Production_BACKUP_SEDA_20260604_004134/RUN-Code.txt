@@ -1,0 +1,15 @@
+For your notes
+Added: Tradehull.check_rsi_report(stock, timeframe, exchange, rsi_period=14)
+Updated: check_full_day.py - shows RUN INFO + RSI table (default both)
+Hourly RSI:  py check_full_day.py RELIANCE 60
+RSI only:    py check_full_day.py RELIANCE 60 rsi
+Day only:    py check_full_day.py RELIANCE 15 day
+Run py check_full_day.py RELIANCE 60 and use the RSI REPORT block — that is the hourly RSI detail you wanted.
+
+
+ABOVE	1m volume 47060 crossed ABOVE 20 EMA (32675)
+BELOW	1m volume 74750 crossed BELOW 20 EMA (129898)
+OI change 233.3% (oi=2,266,810, prev=680,095, delta=+1,586,715)
+OI change 1719.5% (oi=3,176,680, prev=174,590, delta=+3,002,090)
+
+py Price_Check.py "NIFTY 26 MAY 23950 PUT"

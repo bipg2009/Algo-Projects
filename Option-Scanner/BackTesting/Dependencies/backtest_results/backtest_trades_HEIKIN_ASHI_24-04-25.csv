@@ -1,0 +1,2 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-04-24,NIFTY 24 APR 23950 CE,,CE,23950,75.0,12:51:00 IST,13:29:00 IST,47.29,60.19,60.19,27.28,Success,stop_loss_hit

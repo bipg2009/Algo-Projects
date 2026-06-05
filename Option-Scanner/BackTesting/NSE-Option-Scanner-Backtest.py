@@ -27,10 +27,10 @@ TEST_DATE = "2026-05-22"
 EXPIRY_CODE = 1
 API_PAUSE_SEC = 1.2
 NIFTY_SECURITY_ID = 13
-OPTION_BAR_TF = 5  # Dhan option history bars (LTP only; NIFTY setup/trigger use 1m)
+OPTION_BAR_TF = 1  # Dhan option history bars (LTP only; NIFTY setup/trigger use 1m)
 CACHE_DIR = os.path.join("Dependencies", "backtest_cache")
 RESULTS_DIR = os.path.join("Dependencies", "backtest_results")
-STRIKE_RANGE = 10
+STRIKE_RANGE = 3  # Fetch options from ATM±STRIKE_RANGE strikes (e.g. 3 = 7 strikes total: ATM, ±50, ±100)
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 BACKTEST_DIR = os.path.join(SCRIPT_DIR, "BackTesting")
@@ -51,7 +51,9 @@ def load_scanner_module():
 
 def format_option_label(underlying, strike, option_type, ref_date):
     dt = pd.to_datetime(ref_date)
-    return f"{underlying} {dt.day} {dt.strftime('%b').upper()} {int(strike)} {option_type}"
+    return (
+        f"{underlying} {dt.day} {dt.strftime('%b').upper()} {int(strike)} {option_type}"
+    )
 
 
 def cache_path(name):
@@ -84,8 +86,17 @@ def fetch_one_option_leg(tsl, strike_offset, opt_type, test_date, expiry_code):
     next_day = (pd.to_datetime(test_date) + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
     fields = ["close", "iv", "volume", "oi", "spot", "strike"]
     resp = tsl.Dhan.expired_options_data(
-        str(NIFTY_SECURITY_ID), "NSE_FNO", "OPTIDX", "WEEK", expiry_code,
-        strike_offset, opt_type, fields, test_date, next_day, OPTION_BAR_TF,
+        str(NIFTY_SECURITY_ID),
+        "NSE_FNO",
+        "OPTIDX",
+        "WEEK",
+        expiry_code,
+        strike_offset,
+        opt_type,
+        fields,
+        test_date,
+        next_day,
+        OPTION_BAR_TF,
     )
     if resp.get("status") != "success":
         raise RuntimeError(f"{strike_offset} {opt_type}: {resp.get('remarks')}")
@@ -110,7 +121,9 @@ def fetch_option_legs(tsl, test_date, expiry_code):
         strike_key = "ATM" if offset == 0 else f"ATM{offset:+d}"
         for opt_type, option_type in (("CALL", "CE"), ("PUT", "PE")):
             time.sleep(API_PAUSE_SEC)
-            leg = fetch_one_option_leg(tsl, strike_key, opt_type, test_date, expiry_code)
+            leg = fetch_one_option_leg(
+                tsl, strike_key, opt_type, test_date, expiry_code
+            )
             legs.append({"offset": offset, "option_type": option_type, "series": leg})
             print(f"  fetched {strike_key} {option_type} ({len(leg['close'])} bars)")
     with open(cache, "w", encoding="utf-8") as f:
@@ -125,7 +138,9 @@ def align_legs(legs, session_len):
         n = len(s.get("close", []))
         if n > session_len:
             start = n - session_len
-            trimmed = {k: (v[start:] if isinstance(v, list) else v) for k, v in s.items()}
+            trimmed = {
+                k: (v[start:] if isinstance(v, list) else v) for k, v in s.items()
+            }
             aligned.append({**item, "series": trimmed})
         else:
             aligned.append(item)
@@ -153,13 +168,20 @@ def build_chain_at_bar(legs, bar_opt_idx, ref_date, underlying):
         if volume <= 0 and ltp <= 0:
             continue
         label = format_option_label(underlying, strike, item["option_type"], ref_date)
-        options.append({
-            "strike": strike, "option_type": item["option_type"],
-            "symbol": label, "display_symbol": label,
-            "ltp": ltp, "iv": iv, "oi": oi,
-            "oi_change": oi - prev_oi, "volume": volume,
-            "spot": spot,
-        })
+        options.append(
+            {
+                "strike": strike,
+                "option_type": item["option_type"],
+                "symbol": label,
+                "display_symbol": label,
+                "ltp": ltp,
+                "iv": iv,
+                "oi": oi,
+                "oi_change": oi - prev_oi,
+                "volume": volume,
+                "spot": spot,
+            }
+        )
     if not options:
         return None
     spot = options[0]["spot"]
@@ -195,7 +217,18 @@ def get_option_snapshot(legs, pick, bar_opt_idx):
     }
 
 
-def _book_row(test_date, bar_time, trade_id, event, pick, price, sl, rsi="", oi="", entry_price=None):
+def _book_row(
+    test_date,
+    bar_time,
+    trade_id,
+    event,
+    pick,
+    price,
+    sl,
+    rsi="",
+    oi="",
+    entry_price=None,
+):
     is_sell = "SELL" in (event or "").upper()
     comp_price = entry_price if (is_sell and entry_price is not None) else sl
     return {
@@ -216,32 +249,34 @@ def _book_row(test_date, bar_time, trade_id, event, pick, price, sl, rsi="", oi=
 
 def simulate_trade(pick, entry_1m_idx, nifty_1m, legs, test_date):
     import System_Config
-    
+
     # N+1 Execution: Force entry on the NEXT candle to simulate realistic latency/open fill
     if entry_1m_idx + 1 < len(nifty_1m):
         entry_1m_idx += 1
     bar_opt_entry = option_bar_idx(entry_1m_idx)
     opt = get_option_snapshot(legs, pick, bar_opt_entry)
-    
+
     # Apply realistic live execution latency/slippage penalty
-    slippage = getattr(System_Config, 'BACKTEST_SLIPPAGE_PCT', 0.01)
+    slippage = getattr(System_Config, "BACKTEST_SLIPPAGE_PCT", 0.01)
     entry_ltp = round(opt["ltp"] * (1.0 + slippage), 2)
-    
+
     # Extract Spot ATR dynamically from current bar (fallback to 15.0 if missing)
     current_atr = nifty_1m.iloc[entry_1m_idx].get("ATR", 15.0)
     levels = bh.entry_levels(entry_ltp, current_atr)
     entry_spot = float(nifty_1m.iloc[entry_1m_idx]["close"])
-    spot_sl = (entry_spot - 20.0) if pick["option_type"] == "CE" else (entry_spot + 20.0)
-    
+    spot_sl = (
+        (entry_spot - 20.0) if pick["option_type"] == "CE" else (entry_spot + 20.0)
+    )
+
     entry_time = nifty_1m.iloc[entry_1m_idx]["start_Time"]
-    
+
     position = {
         "symbol": pick["display_symbol"],
         "option_type": pick["option_type"],
         "entry_ltp": entry_ltp,
         "entry_time": entry_time,
         "target": levels["target"],
-        "sl": round(entry_ltp - 10.0, 2), # Strict 10-point initial premium SL
+        "sl": round(entry_ltp - 10.0, 2),  # Strict 10-point initial premium SL
         "initial_sl": round(entry_ltp - 10.0, 2),
         "max_ltp": entry_ltp,
         "prev_volume": opt["prev_volume"],
@@ -256,12 +291,23 @@ def simulate_trade(pick, entry_1m_idx, nifty_1m, legs, test_date):
     trade_id = f"{test_date}_{entry_1m_idx}"
 
     entry_time = nifty_1m.iloc[entry_1m_idx]["start_Time"]
-    entry_rsi = core.calculate_rsi(bh.prepare_nifty_1m(nifty_1m.iloc[: entry_1m_idx + 1]))
+    entry_rsi = core.calculate_rsi(
+        bh.prepare_nifty_1m(nifty_1m.iloc[: entry_1m_idx + 1])
+    )
     entry_oi = opt.get("oi", pick.get("oi", ""))
-    trade_book.append(_book_row(
-        test_date, entry_time, trade_id, f"BUY {pick['option_type']}",
-        pick, entry_ltp, position["sl"], entry_rsi, entry_oi,
-    ))
+    trade_book.append(
+        _book_row(
+            test_date,
+            entry_time,
+            trade_id,
+            f"BUY {pick['option_type']}",
+            pick,
+            entry_ltp,
+            position["sl"],
+            entry_rsi,
+            entry_oi,
+        )
+    )
 
     for i in range(entry_1m_idx + 1, len(nifty_1m)):
         row_1m = nifty_1m.iloc[i]
@@ -272,11 +318,20 @@ def simulate_trade(pick, entry_1m_idx, nifty_1m, legs, test_date):
             exit_1m_idx = i
             exit_rsi = core.calculate_rsi(bh.prepare_nifty_1m(nifty_1m.iloc[: i + 1]))
             exit_oi = get_option_snapshot(legs, pick, option_bar_idx(i)).get("oi", "")
-            trade_book.append(_book_row(
-                test_date, bar_time, trade_id, "SELL",
-                pick, exit_ltp, position["sl"], exit_rsi, exit_oi,
-                entry_price=position["entry_ltp"]
-            ))
+            trade_book.append(
+                _book_row(
+                    test_date,
+                    bar_time,
+                    trade_id,
+                    "SELL",
+                    pick,
+                    exit_ltp,
+                    position["sl"],
+                    exit_rsi,
+                    exit_oi,
+                    entry_price=position["entry_ltp"],
+                )
+            )
             break
 
         df_slice = bh.prepare_nifty_1m(nifty_1m.iloc[: i + 1])
@@ -294,8 +349,11 @@ def simulate_trade(pick, entry_1m_idx, nifty_1m, legs, test_date):
         position["max_ltp"] = max(position.get("max_ltp", snap["ltp"]), snap["ltp"])
         from models import TradePosition
         import datetime
+
         pos_obj = TradePosition(
-            symbol="NIFTY", option_type=position["option_type"], qty=75,
+            symbol="NIFTY",
+            option_type=position["option_type"],
+            qty=75,
             entry_ltp=position["entry_ltp"],
             target=position.get("target", position["entry_ltp"] + 60),
             sl=position["sl"],
@@ -305,7 +363,7 @@ def simulate_trade(pick, entry_1m_idx, nifty_1m, legs, test_date):
             entry_oi=position.get("entry_oi", opt.get("oi", 0)),
             peak_price=position.get("max_ltp", snap["ltp"]),
             entry_spot=position.get("entry_spot", 0.0),
-            spot_sl=position.get("spot_sl", 0.0)
+            spot_sl=position.get("spot_sl", 0.0),
         )
         opt_row = {"oi": opt.get("oi", 0)}
         action, reason, new_sl = mon_engine.execute_hypercare_monitoring(
@@ -313,15 +371,17 @@ def simulate_trade(pick, entry_1m_idx, nifty_1m, legs, test_date):
         )
         position["prev_volume"] = opt["volume"]
 
-        monitor_log.append({
-            "time_ist": bh.format_ist_time(bar_time),
-            "datetime_ist": bh.format_ist(bar_time),
-            "option_ltp": snap["ltp"],
-            "rsi_1m": core.calculate_rsi(df_slice),
-            "trailing_sl": position["sl"],
-            "action": action,
-            "reason": reason,
-        })
+        monitor_log.append(
+            {
+                "time_ist": bh.format_ist_time(bar_time),
+                "datetime_ist": bh.format_ist(bar_time),
+                "option_ltp": snap["ltp"],
+                "rsi_1m": core.calculate_rsi(df_slice),
+                "trailing_sl": position["sl"],
+                "action": action,
+                "reason": reason,
+            }
+        )
 
         if action == "TRAIL":
             position["sl"] = new_sl
@@ -338,34 +398,56 @@ def simulate_trade(pick, entry_1m_idx, nifty_1m, legs, test_date):
                 exit_ltp = position["target"]
             exit_reason = reason
             exit_1m_idx = i
-            trade_book.append(_book_row(
-                test_date, bar_time, trade_id, "SELL",
-                pick, exit_ltp, position["sl"],
-                core.calculate_rsi(df_slice), opt.get("oi", ""),
-                entry_price=position["entry_ltp"]
-            ))
+            trade_book.append(
+                _book_row(
+                    test_date,
+                    bar_time,
+                    trade_id,
+                    "SELL",
+                    pick,
+                    exit_ltp,
+                    position["sl"],
+                    core.calculate_rsi(df_slice),
+                    opt.get("oi", ""),
+                    entry_price=position["entry_ltp"],
+                )
+            )
             break
         exit_ltp = snap["ltp"]
         exit_1m_idx = i
- 
+
     if exit_reason == "EOD":
         row_1m = nifty_1m.iloc[exit_1m_idx]
-        trade_book.append(_book_row(
-            test_date, row_1m["start_Time"], trade_id, "SELL",
-            pick, exit_ltp, position["sl"],
-            core.calculate_rsi(bh.prepare_nifty_1m(nifty_1m.iloc[: exit_1m_idx + 1])),
-            get_option_snapshot(legs, pick, option_bar_idx(exit_1m_idx)).get("oi", ""),
-            entry_price=position["entry_ltp"]
-        ))
+        trade_book.append(
+            _book_row(
+                test_date,
+                row_1m["start_Time"],
+                trade_id,
+                "SELL",
+                pick,
+                exit_ltp,
+                position["sl"],
+                core.calculate_rsi(
+                    bh.prepare_nifty_1m(nifty_1m.iloc[: exit_1m_idx + 1])
+                ),
+                get_option_snapshot(legs, pick, option_bar_idx(exit_1m_idx)).get(
+                    "oi", ""
+                ),
+                entry_price=position["entry_ltp"],
+            )
+        )
 
     exit_time = nifty_1m.iloc[exit_1m_idx]["start_Time"]
     pnl_pct = round(((exit_ltp - entry_ltp) / entry_ltp) * 100, 2) if entry_ltp else 0
+    pnl_pts = round(exit_ltp - entry_ltp, 2)
+    pnl_rs = round(pnl_pts * 75, 2)  # Assuming fixed qty of 75 for NIFTY
+    
     last_outcome = "Success" if pnl_pct > 0 else "Failure"
 
     return {
         "test_date": test_date,
         "symbol": f"{pick['display_symbol']} {pick.get('strategy_suffix', '')}".strip(),
-        "strategy": pick.get('strategy_suffix', 'General'),
+        "strategy": pick.get("strategy_suffix", "General"),
         "option_type": pick["option_type"],
         "strike": int(pick["strike"]),
         "score_pct": pick.get("score_pct", 0),
@@ -375,6 +457,8 @@ def simulate_trade(pick, entry_1m_idx, nifty_1m, legs, test_date):
         "exit_ltp": exit_ltp,
         "trailing_sl": position["sl"],
         "pnl_pct": pnl_pct,
+        "pnl_pts": pnl_pts,
+        "pnl_rs": pnl_rs,
         "outcome": last_outcome,
         "exit_reason": exit_reason,
         "monitor_log": monitor_log,
@@ -382,29 +466,51 @@ def simulate_trade(pick, entry_1m_idx, nifty_1m, legs, test_date):
     }
 
 
-def export_results(test_date, trades, monitor_rows, scan_log, trade_book, results_dir=None):
+def export_results(
+    test_date, trades, monitor_rows, scan_log, trade_book, results_dir=None, candle_mode="NORMAL"
+):
     out_dir = results_dir or RESULTS_DIR
     os.makedirs(out_dir, exist_ok=True)
     slug = bh.report_date_slug(test_date)
 
-    trades_path = os.path.join(out_dir, f"backtest_trades_{slug}.csv")
-    monitor_path = os.path.join(out_dir, f"backtest_monitor_{slug}.csv")
-    scan_path = os.path.join(out_dir, f"backtest_scan_log_{slug}.csv")
-    summary_path = os.path.join(out_dir, f"backtest_summary_{slug}.csv")
+    trades_path = os.path.join(out_dir, f"backtest_trades_{candle_mode}_{slug}.csv")
+    monitor_path = os.path.join(out_dir, f"backtest_monitor_{candle_mode}_{slug}.csv")
+    scan_path = os.path.join(out_dir, f"backtest_scan_log_{candle_mode}_{slug}.csv")
+    summary_path = os.path.join(out_dir, f"backtest_summary_{candle_mode}_{slug}.csv")
 
     pd.DataFrame(trades).to_csv(trades_path, index=False)
     pd.DataFrame(monitor_rows).to_csv(monitor_path, index=False)
     pd.DataFrame(scan_log).to_csv(scan_path, index=False)
 
+
+
+    print("\nCSV files (IST):")
+    print(f"  Trades      -> {trades_path}")
+
+    if trade_book:
+        book_path = os.path.join(out_dir, f"backtest_trade_book_{candle_mode}_{slug}.csv")
+        pd.DataFrame(trade_book).to_csv(book_path, index=False)
+        print(f"  Trade Book  -> {book_path}  (BUY + SELL rows for P&L)")
+    else:
+        book_path = os.path.join(out_dir, f"backtest_trade_book_{candle_mode}_{slug}.csv")
+        print("  Trade Book  -> (No trades executed)")
+
+    print(f"  Monitor     -> {monitor_path}")
+    print(f"  Scan log    -> {scan_path}")
+    print(f"  Summary     -> {summary_path}")
     total = len(trades)
     success = sum(1 for t in trades if str(t.get("outcome", "")).lower() == "success")
     failure = sum(1 for t in trades if str(t.get("outcome", "")).lower() == "failure")
     breakeven = total - success - failure
     win_rate = round((success / total) * 100, 2) if total else 0
     failure_rate = round((failure / total) * 100, 2) if total else 0
-    avg_pnl = round(sum(t["pnl_pct"] for t in trades) / total, 2) if total else 0
+    avg_pnl = round(sum(t.get("pnl_pct", 0) for t in trades) / total, 2) if total else 0
+    total_pnl = round(sum(t.get("pnl_pct", 0) for t in trades), 2)
+    total_pnl_pts = round(sum(t.get("pnl_pts", 0) for t in trades), 2)
+    total_pnl_rs = round(sum(t.get("pnl_rs", 0) for t in trades), 2)
 
-    book_path = excel_gen.write_trade_book_rows(test_date, trade_book, overwrite=True)
+    book_path = os.path.join(out_dir, f"backtest_trade_book_{slug}.csv")
+    pd.DataFrame(trade_book).to_csv(book_path, index=False)
 
     summary = {
         "test_date": test_date,
@@ -414,6 +520,9 @@ def export_results(test_date, trades, monitor_rows, scan_log, trade_book, result
         "breakeven": breakeven,
         "win_rate_pct": win_rate,
         "failure_rate_pct": failure_rate,
+        "total_pnl_pct": total_pnl,
+        "total_pnl_pts": total_pnl_pts,
+        "total_pnl_rs": total_pnl_rs,
         "avg_pnl_pct": avg_pnl,
         "setup_timeframe": "1min",
         "trigger_timeframe": "1min",
@@ -426,16 +535,21 @@ def export_results(test_date, trades, monitor_rows, scan_log, trade_book, result
 
 def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL"):
     sc = load_scanner_module()
-    print(f"\nBACKTEST | {test_date} | 1m SETUP + 1m TRIGGER | expiry_code={expiry_code} | mode={candle_mode}\n")
+    print(
+        f"\nBACKTEST | {test_date} | 1m SETUP + 1m TRIGGER | expiry_code={expiry_code} | mode={candle_mode}\n"
+    )
 
     print("Loading NIFTY 1m...")
     nifty_1m = fetch_nifty_bars(sc.tsl, test_date, 1)
 
     test_day = pd.to_datetime(test_date).date()
-    nifty_1m = nifty_1m[pd.to_datetime(nifty_1m["start_Time"]).dt.date == test_day].reset_index(drop=True)
+    nifty_1m = nifty_1m[
+        pd.to_datetime(nifty_1m["start_Time"]).dt.date == test_day
+    ].reset_index(drop=True)
 
     # Apply Candle Transformations
     import candle_transformer
+
     if candle_mode == "HEIKIN_ASHI":
         print("  Applying Heikin-Ashi candle transformation to NIFTY spot...")
         nifty_1m = candle_transformer.to_heikin_ashi(nifty_1m)
@@ -446,15 +560,22 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
     print(f"  {len(nifty_1m)} x 1m candles")
 
     print(f"Loading options ({OPTION_BAR_TF}m LTP bars)...")
-    legs = align_legs(fetch_option_legs(sc.tsl, test_date, expiry_code), len(nifty_1m) // OPTION_BAR_TF + 1)
-    
-    if candle_mode in ["HEIKIN_ASHI", "VOLUME"]:
+    legs = align_legs(
+        fetch_option_legs(sc.tsl, test_date, expiry_code),
+        len(nifty_1m) // OPTION_BAR_TF + 1,
+    )
+
+    if candle_mode in ["NORMAL", "HEIKIN_ASHI", "VOLUME"]:
         print(f"  Applying {candle_mode} candle transformation to options...")
         transformed_legs = []
         for leg in legs:
             series_dict = leg["series"]
             # Align array lengths (handles lists, numpy arrays, etc.) to prevent ValueError in DataFrame construction
-            list_lengths = {k: len(v) for k, v in series_dict.items() if hasattr(v, "__len__") and not isinstance(v, (str, bytes, dict))}
+            list_lengths = {
+                k: len(v)
+                for k, v in series_dict.items()
+                if hasattr(v, "__len__") and not isinstance(v, (str, bytes, dict))
+            }
             if list_lengths:
                 common_len = max(list_lengths.values())
                 cleaned_series = {}
@@ -464,7 +585,9 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
                         if len(v_list) == common_len:
                             cleaned_series[k] = v_list
                         elif len(v_list) < common_len:
-                            cleaned_series[k] = v_list + [v_list[-1] if v_list else 0.0] * (common_len - len(v_list))
+                            cleaned_series[k] = v_list + [
+                                v_list[-1] if v_list else 0.0
+                            ] * (common_len - len(v_list))
                         else:
                             cleaned_series[k] = v_list[:common_len]
                     else:
@@ -498,24 +621,35 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
     print(
         f"  Session scan: 09:15–15:30 IST | {len(session_indices)} x 1m bars "
         f"(hard exit {bh.MARKET_EXIT_TIME.strftime('%H:%M')})",
-        flush=True
+        flush=True,
     )
 
     prev_close = float(nifty_1m.iloc[0]["close"])
-    today_open = float(nifty_1m.iloc[session_indices[0]]["open"]) if session_indices else prev_close
+    today_open = (
+        float(nifty_1m.iloc[session_indices[0]]["open"])
+        if session_indices
+        else prev_close
+    )
 
     print("--- TRADES (1m trigger via Option_strategy_core) ---", flush=True)
 
     for i in session_indices:
         if i % 100 == 0:
-            print(f"    [Scanning] bar {i}/{len(session_indices)} completed...", flush=True)
+            print(
+                f"    [Scanning] bar {i}/{len(session_indices)} completed...",
+                flush=True,
+            )
 
         if i <= in_trade_until:
             continue
 
         bar_time = nifty_1m.iloc[i]["start_Time"]
         chain = build_chain_at_bar(legs, option_bar_idx(i), test_date, "NIFTY")
-        df_slice = bh.prepare_nifty_1m(nifty_1m.iloc[: i + 1]) if len(nifty_1m.iloc[: i + 1]) >= 30 else None
+        df_slice = (
+            bh.prepare_nifty_1m(nifty_1m.iloc[: i + 1])
+            if len(nifty_1m.iloc[: i + 1]) >= 30
+            else None
+        )
         pcr = bh.pcr_from_chain(chain) if chain else 1.0
         gap_mode = risk_engine.detect_gap_risk(prev_close, today_open)
 
@@ -528,7 +662,7 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
             atm = round(spot / 50) * 50
             target_ce_strike = atm
             target_pe_strike = atm
-            
+
             for opt in chain["options"]:
                 ot = opt["option_type"]
                 if ot == "CE" and int(opt["strike"]) != int(target_ce_strike):
@@ -546,28 +680,43 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
                 }
                 ot = opt["option_type"]
                 fired = core.detect_trigger_1m(
-                    df_slice, ot, opt_row, chain["spot"],
-                    prev_close, today_open, pcr,
+                    df_slice,
+                    ot,
+                    opt_row,
+                    chain["spot"],
+                    prev_close,
+                    today_open,
+                    pcr,
                 )
                 score = core.build_score(opt_row, ot, df_slice, pcr, gap_mode)
                 if ot == "CE":
-                    best_ce_score = score if best_ce_score is None else max(best_ce_score, score)
+                    best_ce_score = (
+                        score if best_ce_score is None else max(best_ce_score, score)
+                    )
                     trigger_ce = trigger_ce or fired
                 else:
-                    best_pe_score = score if best_pe_score is None else max(best_pe_score, score)
+                    best_pe_score = (
+                        score if best_pe_score is None else max(best_pe_score, score)
+                    )
                     trigger_pe = trigger_pe or fired
                 if fired and score >= core.STRONG_BUY_THRESHOLD:
                     if pick is None or score > pick.get("score_pct", 0):
-                        pick = {**opt, "score_pct": score, "strategy_suffix": opt_row.get("strategy_suffix", "")}
+                        pick = {
+                            **opt,
+                            "score_pct": score,
+                            "strategy_suffix": opt_row.get("strategy_suffix", ""),
+                        }
 
-        scan_log.append({
-            "datetime_ist": bh.format_ist(bar_time),
-            "best_ce_score": best_ce_score if best_ce_score is not None else "",
-            "best_pe_score": best_pe_score if best_pe_score is not None else "",
-            "trigger_1m_ce": trigger_ce,
-            "trigger_1m_pe": trigger_pe,
-            "entry_allowed": bh.is_entry_time_allowed(bar_time),
-        })
+        scan_log.append(
+            {
+                "datetime_ist": bh.format_ist(bar_time),
+                "best_ce_score": best_ce_score if best_ce_score is not None else "",
+                "best_pe_score": best_pe_score if best_pe_score is not None else "",
+                "trigger_1m_ce": trigger_ce,
+                "trigger_1m_pe": trigger_pe,
+                "entry_allowed": bh.is_entry_time_allowed(bar_time),
+            }
+        )
 
         if not chain or df_slice is None or not pick:
             continue
@@ -579,7 +728,9 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
             continue
 
         trade = simulate_trade(pick, i, nifty_1m, legs, test_date)
-        trades.append({k: v for k, v in trade.items() if k not in ("monitor_log", "trade_book")})
+        trades.append(
+            {k: v for k, v in trade.items() if k not in ("monitor_log", "trade_book")}
+        )
         for m in trade["monitor_log"]:
             monitor_rows.append({"symbol": trade["symbol"], **m})
         trade_book.extend(trade["trade_book"])
@@ -595,7 +746,7 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
         )
 
     paths = export_results(
-        test_date, trades, monitor_rows, scan_log, trade_book, results_dir=results_dir
+        test_date, trades, monitor_rows, scan_log, trade_book, results_dir=results_dir, candle_mode=candle_mode
     )
     trades_path, monitor_path, scan_path, book_path, summary_path, summary = paths
 
@@ -606,7 +757,10 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
     print(f"FAILURE        : {summary['failure']}")
     print(f"Win rate       : {summary['win_rate_pct']}%")
     print(f"Failure rate   : {summary['failure_rate_pct']}%")
-    print(f"Avg PnL        : {summary['avg_pnl_pct']}%")
+    print(f"Avg PnL (%)    : {summary.get('avg_pnl_pct', 0)}%")
+    print(f"Total PnL (%)  : {summary.get('total_pnl_pct', 0)}%")
+    print(f"Total PnL (Pts): {summary.get('total_pnl_pts', 0)}")
+    print(f"Total PnL (Rs) : ₹{summary.get('total_pnl_rs', 0)}")
     print("\nCSV files (IST):")
     print(f"  Trades      -> {trades_path}")
     print(f"  Trade Book  -> {book_path}  (BUY + SELL rows for P&L)")
@@ -614,7 +768,9 @@ def run_backtest(test_date, expiry_code, results_dir=None, candle_mode="NORMAL")
     print(f"  Scan log    -> {scan_path}")
     print(f"  Summary     -> {summary_path}")
 
-    print(f"\nScan log rows: {len(scan_log)} (expect ~375 for full 09:15–15:30 session)")
+    print(
+        f"\nScan log rows: {len(scan_log)} (expect ~375 for full 09:15–15:30 session)"
+    )
 
     if not trades:
         print("\nNo trades triggered. Try another date or EXPIRY_CODE (0-3).")
@@ -626,9 +782,11 @@ if __name__ == "__main__":
     print("\n" + "!" * 80)
     print("WARNING: You are running the single-day, single-mode Engine directly!")
     print("This will only test NORMAL mode for ONE day and then exit.")
-    print("For full multi-day testing across all modes, please run: multi_day_backtest.py")
+    print(
+        "For full multi-day testing across all modes, please run: multi_day_backtest.py"
+    )
     print("!" * 80 + "\n")
-    
+
     date = sys.argv[1] if len(sys.argv) > 1 else TEST_DATE
     try:
         run_backtest(date, EXPIRY_CODE)

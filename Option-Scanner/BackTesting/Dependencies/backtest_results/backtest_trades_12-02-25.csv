@@ -1,2 +1,2 @@
-test_date,symbol,option_type,strike,strategy,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-02-12,NIFTY 12 FEB 22900 CE,CE,22900,General Buy / Sell,85.0,10:48:00 IST,10:50:00 IST,308.61,293.61,293.61,-4.86,Failure,stop_loss_hit
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-02-12,NIFTY 12 FEB 23150 CE,,CE,23150,87.0,10:36:00 IST,10:38:00 IST,19.06,18.875,9.06,-0.97,Failure,2_min_profit_check_failed

@@ -1,3 +1,2 @@
-test_date,symbol,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-01-21,SENSEX 21 JAN 76400 PE General Buy / Sell,PE,76400,95.0,10:26:00 IST,10:50:00 IST,651.75,666.85,666.85,2.32,Success,stop_loss_hit
-2025-01-21,SENSEX 21 JAN 76300 PE General Buy / Sell,PE,76300,85.0,12:26:00 IST,12:35:00 IST,792.24,782.24,782.24,-1.26,Failure,stop_loss_hit
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2025-01-21,NIFTY 21 JAN 23000 CE,,CE,23000,82.0,13:06:00 IST,13:08:00 IST,25.0,24.75,15.0,-1.0,Failure,2_min_profit_check_failed

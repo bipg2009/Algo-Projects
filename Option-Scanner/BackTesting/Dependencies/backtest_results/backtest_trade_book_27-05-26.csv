@@ -1,0 +1,3 @@
+date,trade id,time ist,event,symbol,strategy,option_type,price,trailing_sl,rsi,oi,outcome
+27-05-26,2026-05-27_71,10:26:00 IST,BUY,NIFTY 27 MAY 23950 CE,,CE,45.3,35.3,72.38230831491828,3472950,
+27-05-26,2026-05-27_71,10:28:00 IST,SELL,NIFTY 27 MAY 23950 CE,,CE,44.85,35.3,75.48704065783893,3472950,Failure

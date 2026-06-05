@@ -1,1 +1,2 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-01-05,NIFTY 5 JAN 26150 CE,,CE,26150,100,12:58:00 IST,13:04:00 IST,10.44,11.875,10.94,13.75,Success,6_min_momentum_failed

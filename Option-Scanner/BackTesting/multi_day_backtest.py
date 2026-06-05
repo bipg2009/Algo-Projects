@@ -28,11 +28,15 @@ def run_multiday(start_date, end_date, expiry_code=1, exchange="NSE"):
     print(f"MULTI-DAY BACKTEST RUNNER ({exchange}): {start_date} to {end_date}")
     print("=" * 60)
 
+    try:
+        start_dt = pd.to_datetime(start_date, format="%Y-%m-%d")
+        end_dt = pd.to_datetime(end_date, format="%Y-%m-%d")
+    except ValueError:
+        start_dt = pd.to_datetime(start_date, format="%d-%m-%Y")
+        end_dt = pd.to_datetime(end_date, format="%d-%m-%Y")
+
     # Generate business days (Mon-Fri) excluding weekends automatically
-    dates = pd.bdate_range(
-        start=pd.to_datetime(start_date, dayfirst=True),
-        end=pd.to_datetime(end_date, dayfirst=True),
-    )
+    dates = pd.bdate_range(start=start_dt, end=end_dt)
 
     backtest_engine = load_backtest_module(exchange)
 
@@ -105,9 +109,14 @@ def run_multiday(start_date, end_date, expiry_code=1, exchange="NSE"):
         win_rate = (
             round((total_success / total_trades) * 100, 2) if total_trades > 0 else 0
         )
-        avg_pnl = (
-            round(df_results["avg_pnl_pct"].mean(), 2)
-            if "avg_pnl_pct" in df_results.columns
+        total_pnl = (
+            round(df_results["total_pnl_pct"].sum(), 2)
+            if "total_pnl_pct" in df_results.columns
+            else 0
+        )
+        total_pnl_rs = (
+            round(df_results["total_pnl_rs"].sum(), 2)
+            if "total_pnl_rs" in df_results.columns
             else 0
         )
 
@@ -131,7 +140,8 @@ def run_multiday(start_date, end_date, expiry_code=1, exchange="NSE"):
         print(f"Total Wins          : {total_success}")
         print(f"Total Losses        : {total_failure}")
         print(f"Overall Win Rate    : {win_rate}%")
-        print(f"Avg Daily P&L       : {avg_pnl}%")
+        print(f"Total Net P&L (%)   : {total_pnl}%")
+        print(f"Total Net P&L (Rs)  : ₹{total_pnl_rs}")
         print(
             f"Call (CE) Breakdown : {ce_total} trades ({ce_wins} wins, {ce_losses} losses)"
         )
@@ -149,7 +159,8 @@ def run_multiday(start_date, end_date, expiry_code=1, exchange="NSE"):
             "Wins": total_success,
             "Losses": total_failure,
             "Win_Rate_Pct": win_rate,
-            "Avg_Daily_PnL_Pct": avg_pnl,
+            "Total_Net_PnL_Pct": total_pnl,
+            "Total_Net_PnL_Rs": total_pnl_rs,
             "BUY Total Trades": f"{ce_total} ({ce_wins} win {ce_losses} loss)",
             "BUY Success %": ce_win_rate,
             "PUT Total Trades": f"{pe_total} ({pe_wins} win {pe_losses} loss)",

@@ -1,0 +1,4 @@
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,pnl_pts,pnl_rs,outcome,exit_reason
+2025-01-03,NIFTY 3 JAN 24050 CE,,CE,24050,75.0,11:15:00 IST,11:28:00 IST,173.52,196.1,196.1,13.01,22.58,1693.5,Success,stop_loss_hit
+2025-01-03,NIFTY 3 JAN 24100 CE,,CE,24100,82.0,11:56:00 IST,12:03:00 IST,174.53,177.03,177.03,1.43,2.5,187.5,Success,stop_loss_hit
+2025-01-03,NIFTY 3 JAN 24050 PE,,PE,24050,100.0,13:59:00 IST,14:06:00 IST,169.48,171.98,171.98,1.48,2.5,187.5,Success,stop_loss_hit

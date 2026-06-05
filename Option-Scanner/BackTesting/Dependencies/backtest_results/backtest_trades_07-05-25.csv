@@ -1,2 +1,0 @@
-test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
-2025-05-07,SENSEX 7 MAY 80600 CE Uptrend,Uptrend,CE,80600,97.0,11:21:00 IST,11:25:00 IST,590.6,580.6,580.6,-1.69,Failure,stop_loss_hit

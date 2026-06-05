@@ -1,1 +1,4 @@
-
+test_date,symbol,strategy,option_type,strike,score_pct,entry_time_ist,exit_time_ist,entry_ltp,exit_ltp,trailing_sl,pnl_pct,outcome,exit_reason
+2026-01-01,NIFTY 1 JAN 26250 CE,,CE,26250,80.0,10:49:00 IST,10:51:00 IST,23.1,23.1,13.1,0.0,Failure,2_min_profit_check_failed
+2026-01-01,NIFTY 1 JAN 26300 PE,,PE,26300,100.0,11:54:00 IST,11:56:00 IST,16.97,16.9125,6.97,-0.34,Failure,2_min_profit_check_failed
+2026-01-01,NIFTY 1 JAN 26300 CE,,CE,26300,92.0,14:07:00 IST,14:09:00 IST,18.57,18.7,8.57,0.7,Success,2_min_profit_check_failed
